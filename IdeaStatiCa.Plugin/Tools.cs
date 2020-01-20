@@ -1,0 +1,77 @@
+﻿using System.Collections.Generic;
+using System.IO;
+using System.Text;
+using System.Xml;
+using System.Xml.Serialization;
+
+namespace IdeaStatiCa.Plugin
+{
+	public static class Tools
+	{
+		public static string ModelToXml(List<ModelBIM> model)
+		{
+			XmlSerializer xs = new XmlSerializer(typeof(List<ModelBIM>));
+			return SerializeModel(model, xs);
+		}
+
+		private static string SerializeModel(object model, XmlSerializer xs)
+		{
+			string res;
+			using (MemoryStream ms = new MemoryStream())
+			{
+				XmlTextWriter writer = new XmlTextWriter(ms, Encoding.UTF8);
+				// Serialize using the XmlTextWriter.
+				writer.Formatting = Formatting.Indented;
+				xs.Serialize(writer, model);
+				writer.Flush();
+				ms.Position = 0;
+				res = Encoding.UTF8.GetString(ms.ToArray());
+			}
+
+			return res;
+		}
+
+		public static string ModelToXml(ModelBIM model)
+		{
+			XmlSerializer xs = new XmlSerializer(typeof(ModelBIM));
+			return SerializeModel(model, xs);
+		}
+
+		public static string ProjectToXml(BIMProject project)
+		{
+			XmlSerializer xs = new XmlSerializer(typeof(BIMProject));
+			return SerializeModel(project, xs);
+		}
+
+		public static BIMProject ProjectFromXml(string xml)
+		{
+			var serializer = new XmlSerializer(typeof(BIMProject));
+			return serializer.Deserialize(new MemoryStream(Encoding.UTF8.GetBytes(xml))) as BIMProject;
+		}
+
+		public static ModelBIM ModelFromXml(string xml)
+		{
+			var serializer = new XmlSerializer(typeof(ModelBIM));
+			ModelBIM modelFEA = serializer.Deserialize(new MemoryStream(Encoding.UTF8.GetBytes(xml))) as ModelBIM;
+			if(modelFEA != null && modelFEA.Model != null)
+			{
+				modelFEA.Model.ReferenceElementsReconstruction();
+			}
+			return modelFEA;
+		}
+
+		public static List<ModelBIM> ModelsFromXml(string xml)
+		{
+			var serializer = new XmlSerializer(typeof(List<ModelBIM>));
+			var models = serializer.Deserialize(new MemoryStream(Encoding.UTF8.GetBytes(xml))) as List<ModelBIM>;
+			foreach (var model in models)
+			{
+				if (model != null && model.Model != null)
+				{
+					model.Model.ReferenceElementsReconstruction();
+				}
+			}
+			return models;
+		}
+	}
+}
