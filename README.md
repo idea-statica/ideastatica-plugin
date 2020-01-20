@@ -1,2 +1,2 @@
-# ideastatisa-plugin
-The new gateway to IDEA StatiCA
+# ideastatica-plugin
+The new gateway to IDEA StatiCa
