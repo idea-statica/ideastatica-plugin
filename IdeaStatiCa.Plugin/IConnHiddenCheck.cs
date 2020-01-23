@@ -1,8 +1,6 @@
 ﻿using IdeaRS.OpenModel;
 using IdeaRS.OpenModel.Connection;
 using IdeaRS.OpenModel.Result;
-using System;
-using System.Collections.Generic;
 using System.ServiceModel;
 
 namespace IdeaStatiCa.Plugin
@@ -53,7 +51,7 @@ namespace IdeaStatiCa.Plugin
 		void CreateConProjFromIOM(OpenModel openModel, OpenModelResult openModelResult, string newIdeaConFileName);
 
 		/// <summary>
-		/// 
+		/// Close project which is open in the service
 		/// </summary>
 		[OperationContract]
 		void CloseProject();

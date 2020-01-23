@@ -15,6 +15,7 @@ namespace IdeaStatiCa.Plugin
 		public const string ConnectionChangedEventFormat = "IdeaStatiCaConnectionChanged{0}";
 		public const string MemberChangedEventFormat = "IdeaStatiCaMemberChanged{0}";
 		public const string ConCalculatorChangedEventFormat = "IdeaStatiCa.ConnHiddenCalculator-{0}";
+		public const string MemHiddenCalcChangedEventFormat = "IdeaStatiCa.MemberHiddenCalculator-{0}";
 
 		#region BIM Plugin default constants
 		public const string DefaultPluginEventName = "IdeaStatiCaBIMPluginEvent";
@@ -28,5 +29,7 @@ namespace IdeaStatiCa.Plugin
 		#endregion
 
 		public const string ConnHiddenCalculatorUrlFormat = "net.pipe://localhost/IdeaStatiCa.ConnHiddenCalculator{0}";
+
+		public const string MemberHiddenCalculatorUrlFormat = "net.pipe://localhost/IdeaStatiCa.MemberHiddenCalculator{0}";
 	}
 }

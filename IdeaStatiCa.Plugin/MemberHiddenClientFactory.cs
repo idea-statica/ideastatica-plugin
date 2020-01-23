@@ -6,12 +6,12 @@ using System.Threading;
 
 namespace IdeaStatiCa.Plugin
 {
-	public interface IConnCalculatorFactory
+	public interface IMemberCalculatorFactory
 	{
-		ConnectionHiddenCheckClient Create();
+		MemberHiddenCheckClient Create();
 	}
 
-	public class ConnHiddenClientFactory : IDisposable
+	public class MemberHiddenClientFactory : IDisposable, IMemberCalculatorFactory
 	{
 		private readonly string IdeaInstallDir;
 		Process CalculatorProcess { get; set; }
@@ -23,18 +23,18 @@ namespace IdeaStatiCa.Plugin
 		int StartTimeout = 1000*20;
 #endif
 
-		public ConnHiddenClientFactory(string ideaInstallDir)
+		public MemberHiddenClientFactory(string ideaInstallDir)
 		{
 			IdeaInstallDir = ideaInstallDir;
 		}
 
-		public ConnectionHiddenCheckClient Create()
+		public MemberHiddenCheckClient Create()
 		{
 			RunCalculatorProcess();
 
 			NetNamedPipeBinding pluginBinding = new NetNamedPipeBinding { MaxReceivedMessageSize = 2147483647, OpenTimeout = TimeSpan.MaxValue, CloseTimeout = TimeSpan.MaxValue, ReceiveTimeout = TimeSpan.MaxValue, SendTimeout = TimeSpan.MaxValue };
 
-			ConnectionHiddenCheckClient calculatorClient = new ConnectionHiddenCheckClient(pluginBinding, new EndpointAddress(CalculatorUrl));
+			MemberHiddenCheckClient calculatorClient = new MemberHiddenCheckClient(pluginBinding, new EndpointAddress(CalculatorUrl));
 			calculatorClient.Open();
 
 			return calculatorClient;
@@ -49,11 +49,11 @@ namespace IdeaStatiCa.Plugin
 
 			int processId = Process.GetCurrentProcess().Id;
 
-			string eventName = string.Format(Constants.ConCalculatorChangedEventFormat, processId);
+			string eventName = string.Format(Constants.MemHiddenCalcChangedEventFormat, processId);
 			using (EventWaitHandle syncEvent = new EventWaitHandle(false, EventResetMode.AutoReset, eventName))
 			{
-				string connChangedEventName = string.Format(Constants.ConCalculatorChangedEventFormat, processId);
-				string applicationExePath = Path.Combine(IdeaInstallDir, "IdeaStatiCa.ConnHiddenCalculator.exe");
+				string connChangedEventName = string.Format(Constants.MemHiddenCalcChangedEventFormat, processId);
+				string applicationExePath = Path.Combine(IdeaInstallDir, "IdeaStatiCa.MemberHiddenCalculator.exe");
 
 				string cmdParams = $"-automation{processId}";
 				ProcessStartInfo psi = new ProcessStartInfo(applicationExePath, cmdParams);
@@ -77,7 +77,7 @@ namespace IdeaStatiCa.Plugin
 				}
 			}
 
-			CalculatorUrl = new Uri(string.Format(Constants.ConnHiddenCalculatorUrlFormat, processId));
+			CalculatorUrl = new Uri(string.Format(Constants.MemberHiddenCalculatorUrlFormat, processId));
 			CalculatorProcess.Exited += CalculatorProcess_Exited;
 		}
 
@@ -102,20 +102,6 @@ namespace IdeaStatiCa.Plugin
 			{
 				if (disposing)
 				{
-					try
-					{
-						if (CalculatorProcess != null)
-						{
-							CalculatorProcess.EnableRaisingEvents = false;
-							CalculatorProcess.Kill();
-							CalculatorProcess = null;
-							CalculatorUrl = null;
-						}
-					}
-					catch
-					{
-
-					}
 					// TODO: dispose managed state (managed objects).
 				}
 
@@ -127,7 +113,7 @@ namespace IdeaStatiCa.Plugin
 		}
 
 		// TODO: override a finalizer only if Dispose(bool disposing) above has code to free unmanaged resources.
-		// ~ConnHiddenClientFactory()
+		// ~MemberHiddenClientFactory()
 		// {
 		//   // Do not change this code. Put cleanup code in Dispose(bool disposing) above.
 		//   Dispose(false);
