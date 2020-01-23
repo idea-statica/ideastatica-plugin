@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFramework>net48</TargetFramework>
-    <AppendTargetFrameworkToOutputPath>False</AppendTargetFrameworkToOutputPath>
+    <TargetFrameworks>net46;net47;net48</TargetFrameworks>
+    <AppendTargetFrameworkToOutputPath>True</AppendTargetFrameworkToOutputPath>
     <AssemblyTitle>IdeaStatiCa.Plugin</AssemblyTitle>
     <Product>IdeaStatiCa.Plugin</Product>
     <Copyright></Copyright>
