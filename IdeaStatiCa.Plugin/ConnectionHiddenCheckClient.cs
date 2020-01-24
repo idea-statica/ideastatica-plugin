@@ -35,9 +35,9 @@ namespace IdeaStatiCa.Plugin
 		{
 			return Service.GetConnectionModel(connectionId);
 		}
-		public void CreateConProjFromIOM(OpenModel openModel, OpenModelResult openModelResult, string newIdeaConFileName)
+		public void CreateConProjFromIOM(string iomXmlFileName, string iomResXmlFileName, string newIdeaConFileName)
 		{
-			Service.CreateConProjFromIOM(openModel, openModelResult, newIdeaConFileName);
+			Service.CreateConProjFromIOM(iomXmlFileName, iomResXmlFileName, newIdeaConFileName);
 		}
 
 		protected IConnHiddenCheck Service => base.Channel;
