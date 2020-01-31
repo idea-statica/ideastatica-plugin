@@ -47,15 +47,15 @@ namespace IdeaStatiCa.Plugin
 				return;
 			}
 
-			int processId = Process.GetCurrentProcess().Id;
+			int myProcessId = Process.GetCurrentProcess().Id;
 
-			string eventName = string.Format(Constants.MemHiddenCalcChangedEventFormat, processId);
+			string eventName = string.Format(Constants.MemHiddenCalcChangedEventFormat, myProcessId);
 			using (EventWaitHandle syncEvent = new EventWaitHandle(false, EventResetMode.AutoReset, eventName))
 			{
-				string connChangedEventName = string.Format(Constants.MemHiddenCalcChangedEventFormat, processId);
+				string connChangedEventName = string.Format(Constants.MemHiddenCalcChangedEventFormat, myProcessId);
 				string applicationExePath = Path.Combine(IdeaInstallDir, "IdeaStatiCa.MemberHiddenCalculator.exe");
 
-				string cmdParams = $"-automation{processId}";
+				string cmdParams = $"-automation{myProcessId}";
 				ProcessStartInfo psi = new ProcessStartInfo(applicationExePath, cmdParams);
 				psi.WindowStyle = ProcessWindowStyle.Normal;
 				psi.UseShellExecute = false;
@@ -77,7 +77,7 @@ namespace IdeaStatiCa.Plugin
 				}
 			}
 
-			CalculatorUrl = new Uri(string.Format(Constants.MemberHiddenCalculatorUrlFormat, processId));
+			CalculatorUrl = new Uri(string.Format(Constants.MemberHiddenCalculatorUrlFormat, CalculatorProcess.Id));
 			CalculatorProcess.Exited += CalculatorProcess_Exited;
 		}
 

@@ -143,6 +143,11 @@ namespace IdeaStatiCa.Plugin
 			{
 				IdeaStaticaApp.Exited += new EventHandler(IS_Exited);
 				NotifyAppStatusChanged(AppStatus.Started);
+
+				if(bimAppService is ApplicationBIM appBim)
+				{
+					appBim.Id = IdeaStaticaApp.Id;
+				}
 			}
 		}
 

@@ -49,7 +49,7 @@ namespace IdeaStatiCa.Plugin
 		private MyInterface automation;
 		private IdeaStatiCaClient<ClientInterface> bimClient;
 		private Process bimProcess = null;
-		private int processId;
+		private int myAutomatingProcessId;
 		private readonly string EventName;
 		private readonly string ClientUrlFormat;
 		private readonly string AutomationUrlFormat;
@@ -127,9 +127,9 @@ namespace IdeaStatiCa.Plugin
 				mre.Reset();
 				try
 				{
-					processId = int.Parse(id);
+					myAutomatingProcessId = int.Parse(id);
 
-					bimProcess = Process.GetProcessById(processId);
+					bimProcess = Process.GetProcessById(myAutomatingProcessId);
 					bimProcess.EnableRaisingEvents = true;
 					bimProcess.Exited += new EventHandler(BimProcess_Exited);
 
@@ -166,7 +166,7 @@ namespace IdeaStatiCa.Plugin
 				catch (Exception)
 				{
 					bimProcess = null;
-					processId = -1;
+					myAutomatingProcessId = -1;
 					if (automation != null)
 					{
 						// service was injected, set client's interface
@@ -177,7 +177,10 @@ namespace IdeaStatiCa.Plugin
 					}
 				}
 
-				string baseAddress = string.Format(AutomationUrlFormat, id);
+				var myProcess = Process.GetCurrentProcess();
+				int myProcessId = myProcess.Id;
+
+				string baseAddress = string.Format(AutomationUrlFormat, myProcessId);
 
 				// expose my IAutomation interface
 				using (ServiceHost selfServiceHost = new ServiceHost(automation, new Uri(baseAddress)))
@@ -189,7 +192,7 @@ namespace IdeaStatiCa.Plugin
 					//Net named pipe
 					NetNamedPipeBinding binding = new NetNamedPipeBinding { MaxReceivedMessageSize = 2147483647 };
 					binding.ReceiveTimeout = TimeSpan.MaxValue;
-					selfServiceHost.AddServiceEndpoint(typeof(IAutomation), binding, baseAddress);
+					selfServiceHost.AddServiceEndpoint(typeof(MyInterface), binding, baseAddress);
 
 					//MEX - Meta data exchange
 					ServiceMetadataBehavior behavior = new ServiceMetadataBehavior();
@@ -265,7 +268,7 @@ namespace IdeaStatiCa.Plugin
 			Status &= ~AutomationStatus.IsClient;
 			bimProcess.Dispose();
 			bimProcess = null;
-			processId = -1;
+			myAutomatingProcessId = -1;
 
 			Stop();
 		}

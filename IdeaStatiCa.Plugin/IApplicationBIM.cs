@@ -34,11 +34,5 @@ namespace IdeaStatiCa.Plugin
 
 		[OperationContract]
 		Task SelectAsync(List<BIMItemId> items);
-
-		[OperationContract]
-		void SetCrossectionList(IList<Tuple<string, string>> crossectionList);
-
-		[OperationContract]
-		void SetMaterialList(IList<Tuple<string, string>> materialList);
 	}
 }

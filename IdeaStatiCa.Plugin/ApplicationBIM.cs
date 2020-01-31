@@ -12,6 +12,8 @@ namespace IdeaStatiCa.Plugin
 
 		public virtual List<BIMItemId> GetActiveSelection() => null;
 
+		public int Id { get; internal set; }
+
 		public ModelBIM GetActiveSelectionModel(IdeaRS.OpenModel.CountryCode countryCode, RequestedItemsType requestedType)
 		{
 			var model = ImportActive(countryCode, requestedType);
@@ -47,14 +49,6 @@ namespace IdeaStatiCa.Plugin
 		public virtual bool IsCAD() => false;
 
 		public Task SelectAsync(List<BIMItemId> items) => Task.Run(() => ActivateInBIM(items));
-
-		public virtual void SetCrossectionList(IList<Tuple<string, string>> crossectionList)
-		{
-		}
-
-		public virtual void SetMaterialList(IList<Tuple<string, string>> materialList)
-		{
-		}
 
 		protected abstract ModelBIM ImportActive(IdeaRS.OpenModel.CountryCode countryCode, RequestedItemsType requestedType);
 
