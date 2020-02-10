@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace IdeaStatiCa.Plugin
+﻿namespace IdeaStatiCa.Plugin
 {
 	public sealed class Constants
 	{
@@ -15,12 +9,15 @@ namespace IdeaStatiCa.Plugin
 		public const string ConnectionChangedEventFormat = "IdeaStatiCaConnectionChanged{0}";
 		public const string MemberChangedEventFormat = "IdeaStatiCaMemberChanged{0}";
 		public const string ConCalculatorChangedEventFormat = "IdeaStatiCa.ConnHiddenCalculator-{0}";
+		public const string ConCalculatorCancelEventFormat = "IdeaStatiCa.ConnHiddenCalculatorCancel-{0}";
 		public const string MemHiddenCalcChangedEventFormat = "IdeaStatiCa.MemberHiddenCalculator-{0}";
+		public const string MemHiddenCalcCancelEventFormat = "IdeaStatiCa.MemberHiddenCalculatorCancel-{0}";
 
 		#region BIM Plugin default constants
 		public const string DefaultPluginEventName = "IdeaStatiCaBIMPluginEvent";
 		public const string DefaultPluginUrlFormat = "net.pipe://localhost/IdeaBIMPlugin{0}";
 		public const string DefaultIdeaStaticaAutoUrlFormat = "net.pipe://localhost/IdeaStatiCaAuto{0}";
+		public const string ProgressCallbackUrlFormat = "net.pipe://localhost/IdeaStatiCaProgress{0}";
 		#endregion
 
 		#region Member plugin constants

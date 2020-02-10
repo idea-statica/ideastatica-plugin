@@ -34,6 +34,14 @@ namespace IdeaStatiCa.Plugin
 		/// Stops BIM application
 		/// </summary>
 		void Stop();
+
+		/// <summary>
+		/// Get status of the BIM application
+		/// </summary>
+		AutomationStatus Status
+		{
+			get;
+		}
 	}
 
 	/// <summary>
@@ -121,7 +129,6 @@ namespace IdeaStatiCa.Plugin
 
 		private void RunServer(string id, System.Threading.CancellationToken cancellationToken)
 		{
-			
 			try
 			{
 				mre.Reset();

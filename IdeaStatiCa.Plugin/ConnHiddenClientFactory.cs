@@ -77,6 +77,7 @@ namespace IdeaStatiCa.Plugin
 				}
 			}
 
+			ConnectionHiddenCheckClient.HiddenCalculatorId = CalculatorProcess.Id;
 			CalculatorUrl = new Uri(string.Format(Constants.ConnHiddenCalculatorUrlFormat, CalculatorProcess.Id));
 			CalculatorProcess.Exited += CalculatorProcess_Exited;
 		}
@@ -88,6 +89,7 @@ namespace IdeaStatiCa.Plugin
 				return;
 			}
 
+			ConnectionHiddenCheckClient.HiddenCalculatorId = -1;
 			CalculatorProcess.Dispose();
 			CalculatorProcess = null;
 			CalculatorUrl = null;

@@ -23,5 +23,11 @@ namespace IdeaStatiCa.Plugin
 		/// </summary>
 		[OperationContract]
 		void CloseProject();
+
+		/// <summary>
+		/// Cancel current calcullation
+		/// </summary>
+		[OperationContract]
+		void Cancel();
 	}
 }
