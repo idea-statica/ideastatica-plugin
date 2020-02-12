@@ -1,8 +1,5 @@
-﻿using System;
+﻿using IdeaRS.OpenModel.Connection;
 using System.Threading;
-using IdeaRS.OpenModel;
-using IdeaRS.OpenModel.Connection;
-using IdeaRS.OpenModel.Result;
 
 namespace IdeaStatiCa.Plugin
 {
@@ -37,6 +34,21 @@ namespace IdeaStatiCa.Plugin
 		public void OpenProject(string ideaConFileName)
 		{
 			Service.OpenProject(ideaConFileName);
+		}
+
+		public void SaveAsProject(string newProjectFileName)
+		{
+			Service.SaveAsProject(newProjectFileName);
+		}
+
+		public string ApplyTemplate(string connectionId, string conTemplateFileName)
+		{
+			return Service.ApplyTemplate(connectionId, conTemplateFileName);
+		}
+
+		public string ExportToTemplate(string connectionId, string conTemplateFileName)
+		{
+			return Service.ExportToTemplate(connectionId, conTemplateFileName);
 		}
 
 		public ConnectionData GetConnectionModel(string connectionId)

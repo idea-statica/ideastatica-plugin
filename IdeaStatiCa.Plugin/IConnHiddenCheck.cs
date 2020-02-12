@@ -19,6 +19,31 @@ namespace IdeaStatiCa.Plugin
 		void OpenProject(string ideaConProject);
 
 		/// <summary>
+		/// Save the current data in file <paramref name="newProjectFileName"/>
+		/// </summary>
+		/// <param name="newProjectFileName">File name of the new idea connection project</param>
+		[OperationContract]
+		void SaveAsProject(string newProjectFileName);
+
+		/// <summary>
+		/// Apply the selected template in file <paramref name="conTemplateFileName"/> on connection <paramref name="connectionId"/>
+		/// </summary>
+		/// <param name="connectionId">Identifier of the connection in the project, empty guid means the first connection in the project</param>
+		/// <param name="conTemplateFileName">contemp filename including connection template</param>
+		/// <returns>returns 'OK' if success otherwise an error message</returns>
+		[OperationContract]
+		string ApplyTemplate(string connectionId, string conTemplateFileName);
+
+		/// <summary>
+		/// Export the manufacture sequence of <paramref name="connectionId"/> as a template and save it in <paramref name="conTemplateFileName"/> (.contemp file) 
+		/// </summary>
+		/// <param name="connectionId">>Identifier of the connection in the project, empty guid means the first connection in the project</param>
+		/// <param name="conTemplateFileName">The file name of the output file</param>
+		/// <returns>returns 'OK' if success otherwise an error message</returns>
+		[OperationContract]
+		string ExportToTemplate(string connectionId, string conTemplateFileName);
+
+		/// <summary>
 		/// Gets details about the open project and its connections
 		/// </summary>
 		/// <returns></returns>

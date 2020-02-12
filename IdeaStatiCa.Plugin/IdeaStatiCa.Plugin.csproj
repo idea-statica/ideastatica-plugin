@@ -8,7 +8,7 @@
     <OutputPath>bin\$(Configuration)\</OutputPath>
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
     <Authors>IdeaStatiCa</Authors>
-    <Version>20.0.6</Version>
+    <Version>20.0.9</Version>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">

@@ -2,6 +2,7 @@
 {
 	public sealed class Constants
 	{
+		public const string CodeCheckManagerAppName = "IdeaCodeCheck.exe";
 		public const string AutomationParam = "-automation";
 		public const string ProjectParam = "-project";
 		public const string LibraryReposPath = "-libReposPath";
