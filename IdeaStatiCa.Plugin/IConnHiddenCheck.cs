@@ -30,9 +30,10 @@ namespace IdeaStatiCa.Plugin
 		/// </summary>
 		/// <param name="connectionId">Identifier of the connection in the project, empty guid means the first connection in the project</param>
 		/// <param name="conTemplateFileName">contemp filename including connection template</param>
+		/// <param name="templateSettingJson">Additional setting for application of the template in JSON format</param>
 		/// <returns>returns 'OK' if success otherwise an error message</returns>
 		[OperationContract]
-		string ApplyTemplate(string connectionId, string conTemplateFileName);
+		string ApplyTemplate(string connectionId, string conTemplateFileName, string templateSettingJson);
 
 		/// <summary>
 		/// Export the manufacture sequence of <paramref name="connectionId"/> as a template and save it in <paramref name="conTemplateFileName"/> (.contemp file) 

@@ -41,9 +41,9 @@ namespace IdeaStatiCa.Plugin
 			Service.SaveAsProject(newProjectFileName);
 		}
 
-		public string ApplyTemplate(string connectionId, string conTemplateFileName)
+		public string ApplyTemplate(string connectionId, string conTemplateFileName, string templateSettingJson)
 		{
-			return Service.ApplyTemplate(connectionId, conTemplateFileName);
+			return Service.ApplyTemplate(connectionId, conTemplateFileName, templateSettingJson);
 		}
 
 		public string ExportToTemplate(string connectionId, string conTemplateFileName)
