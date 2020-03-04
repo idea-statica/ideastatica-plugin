@@ -11,14 +11,14 @@ namespace IdeaStatiCa.Plugin
 		ConnectionHiddenCheckClient Create();
 	}
 
-	public class ConnHiddenClientFactory : IDisposable
+	public class ConnHiddenClientFactory : IDisposable, IConnCalculatorFactory
 	{
 		private readonly string IdeaInstallDir;
-		Process CalculatorProcess { get; set; }
-		Uri CalculatorUrl { get; set; }
+		private Process CalculatorProcess { get; set; }
+		private Uri CalculatorUrl { get; set; }
 
 #if DEBUG
-		int StartTimeout = -1;
+		private int StartTimeout = -1;
 #else
 		int StartTimeout = 1000*20;
 #endif
@@ -96,6 +96,7 @@ namespace IdeaStatiCa.Plugin
 		}
 
 		#region IDisposable Support
+
 		private bool disposedValue = false; // To detect redundant calls
 
 		protected virtual void Dispose(bool disposing)
@@ -116,7 +117,6 @@ namespace IdeaStatiCa.Plugin
 					}
 					catch
 					{
-
 					}
 					// TODO: dispose managed state (managed objects).
 				}
@@ -143,6 +143,7 @@ namespace IdeaStatiCa.Plugin
 			// TODO: uncomment the following line if the finalizer is overridden above.
 			// GC.SuppressFinalize(this);
 		}
-		#endregion
+
+		#endregion IDisposable Support
 	}
 }
