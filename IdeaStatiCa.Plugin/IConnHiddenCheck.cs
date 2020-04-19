@@ -1,6 +1,4 @@
-﻿using IdeaRS.OpenModel;
-using IdeaRS.OpenModel.Connection;
-using IdeaRS.OpenModel.Result;
+﻿using IdeaRS.OpenModel.Connection;
 using System.ServiceModel;
 
 namespace IdeaStatiCa.Plugin
@@ -36,7 +34,7 @@ namespace IdeaStatiCa.Plugin
 		string ApplyTemplate(string connectionId, string conTemplateFileName, string templateSettingJson);
 
 		/// <summary>
-		/// Export the manufacture sequence of <paramref name="connectionId"/> as a template and save it in <paramref name="conTemplateFileName"/> (.contemp file) 
+		/// Export the manufacture sequence of <paramref name="connectionId"/> as a template and save it in <paramref name="conTemplateFileName"/> (.contemp file)
 		/// </summary>
 		/// <param name="connectionId">>Identifier of the connection in the project, empty guid means the first connection in the project</param>
 		/// <param name="conTemplateFileName">The file name of the output file</param>

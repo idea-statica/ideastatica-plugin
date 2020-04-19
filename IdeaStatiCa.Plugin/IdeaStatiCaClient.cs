@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace IdeaStatiCa.Plugin
+﻿namespace IdeaStatiCa.Plugin
 {
 	public class IdeaStatiCaClient<T> : System.ServiceModel.ClientBase<T> where T : class
 	{

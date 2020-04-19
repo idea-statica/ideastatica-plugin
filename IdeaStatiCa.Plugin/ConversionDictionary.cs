@@ -59,7 +59,6 @@ namespace IdeaStatiCa.Plugin
 			return newId;
 		}
 
-
 		public int GetExEntityId(TKey name)//, ref bool add)
 		{
 			int id;
@@ -73,15 +72,16 @@ namespace IdeaStatiCa.Plugin
 		}
 
 		public abstract TKey GetSaveKey(int Id);//, ref bool add)
-		//{
-		//	TKey key;
-		//	foreach (KeyValuePair<TKey, int> obj in this)
-		//	{
-		//		if ((int)(obj.Value) == Id)
-		//		{
-		//			key = (obj.Key);
-		//		}
-		//	}
+
+												//{
+												//	TKey key;
+												//	foreach (KeyValuePair<TKey, int> obj in this)
+												//	{
+												//		if ((int)(obj.Value) == Id)
+												//		{
+												//			key = (obj.Key);
+												//		}
+												//	}
 
 		//	return key;
 		//}
@@ -121,7 +121,6 @@ namespace IdeaStatiCa.Plugin
 
 			return key;
 		}
-
 	}
 
 	public sealed class ConversionDictionaryString : ConversionDictionary<string>

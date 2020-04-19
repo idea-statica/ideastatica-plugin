@@ -3,7 +3,7 @@ using System.Threading;
 
 namespace IdeaStatiCa.Plugin
 {
-	public class ConnectionHiddenCheckClient : System.ServiceModel.ClientBase<IConnHiddenCheck> , IConnHiddenCheck
+	public class ConnectionHiddenCheckClient : System.ServiceModel.ClientBase<IConnHiddenCheck>, IConnHiddenCheck
 	{
 		public static int HiddenCalculatorId { get; set; }
 
@@ -55,6 +55,7 @@ namespace IdeaStatiCa.Plugin
 		{
 			return Service.GetConnectionModel(connectionId);
 		}
+
 		public void CreateConProjFromIOM(string iomXmlFileName, string iomResXmlFileName, string newIdeaConFileName)
 		{
 			Service.CreateConProjFromIOM(iomXmlFileName, iomResXmlFileName, newIdeaConFileName);
@@ -62,7 +63,7 @@ namespace IdeaStatiCa.Plugin
 
 		public void Cancel()
 		{
-			if(HiddenCalculatorId < 0)
+			if (HiddenCalculatorId < 0)
 			{
 				return;
 			}

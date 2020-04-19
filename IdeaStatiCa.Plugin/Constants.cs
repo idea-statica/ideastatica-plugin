@@ -15,16 +15,20 @@
 		public const string MemHiddenCalcCancelEventFormat = "IdeaStatiCa.MemberHiddenCalculatorCancel-{0}";
 
 		#region BIM Plugin default constants
+
 		public const string DefaultPluginEventName = "IdeaStatiCaBIMPluginEvent";
 		public const string DefaultPluginUrlFormat = "net.pipe://localhost/IdeaBIMPlugin{0}";
 		public const string DefaultIdeaStaticaAutoUrlFormat = "net.pipe://localhost/IdeaStatiCaAuto{0}";
 		public const string ProgressCallbackUrlFormat = "net.pipe://localhost/IdeaStatiCaProgress{0}";
-		#endregion
+
+		#endregion BIM Plugin default constants
 
 		#region Member plugin constants
+
 		public const string MemberEventName = "MemberPluginEvent";
 		public const string MemberUrlFormat = "net.pipe://localhost/IdeaMember{0}";
-		#endregion
+
+		#endregion Member plugin constants
 
 		public const string ConnHiddenCalculatorUrlFormat = "net.pipe://localhost/IdeaStatiCa.ConnHiddenCalculator{0}";
 

@@ -53,7 +53,7 @@ namespace IdeaStatiCa.Plugin
 		{
 			var serializer = new XmlSerializer(typeof(ModelBIM));
 			ModelBIM modelFEA = serializer.Deserialize(new MemoryStream(Encoding.UTF8.GetBytes(xml))) as ModelBIM;
-			if(modelFEA != null && modelFEA.Model != null)
+			if (modelFEA != null && modelFEA.Model != null)
 			{
 				modelFEA.Model.ReferenceElementsReconstruction();
 			}

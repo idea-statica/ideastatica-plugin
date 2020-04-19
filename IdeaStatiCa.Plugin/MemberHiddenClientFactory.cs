@@ -14,11 +14,11 @@ namespace IdeaStatiCa.Plugin
 	public class MemberHiddenClientFactory : IMemberCalculatorFactory
 	{
 		private readonly string IdeaInstallDir;
-		Process CalculatorProcess { get; set; }
-		Uri CalculatorUrl { get; set; }
+		private Process CalculatorProcess { get; set; }
+		private Uri CalculatorUrl { get; set; }
 
 #if DEBUG
-		int StartTimeout = -1;
+		private int StartTimeout = -1;
 #else
 		int StartTimeout = 1000*20;
 #endif

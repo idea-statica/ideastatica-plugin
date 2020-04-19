@@ -7,6 +7,9 @@ namespace IdeaStatiCa.Plugin
 	public class BIMItemsGroup
 	{
 		[DataMember]
+		public int Id { get; set; }
+
+		[DataMember]
 		public RequestedItemsType Type { get; set; }
 
 		[DataMember]

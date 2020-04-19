@@ -12,12 +12,14 @@ namespace IdeaStatiCa.Plugin
 		Task RunAsync(string id, string workingDirectory);
 
 		event ISEventHandler AppStatusChanged;
+
 		IApplicationBIM Service { get; }
 	}
 
 	public interface IBIMPluginFactory
 	{
 		IApplicationBIM Create();
+
 		string FeaAppName { get; }
 
 		string IdeaStaticaAppPath { get; }
@@ -25,18 +27,18 @@ namespace IdeaStatiCa.Plugin
 
 	public class BIMPluginHosting : IBIMPluginHosting, IDisposable
 	{
-		Task hostingTask;
-		CancellationTokenSource tokenSource;
+		private Task hostingTask;
+		private CancellationTokenSource tokenSource;
 		private ManualResetEvent mre;
-		IApplicationBIM bimAppService;
-		readonly IBIMPluginFactory bimPluginFactory;
+		private IApplicationBIM bimAppService;
+		private readonly IBIMPluginFactory bimPluginFactory;
 		private string clientId = string.Empty;
 		private string workingDirectory = string.Empty;
 		private readonly string EventName;
 		private readonly string PluginUrlFormat;
 
 #if DEBUG
-		readonly int OpenServerTimeLimit = -1;
+		private readonly int OpenServerTimeLimit = -1;
 #else
 		readonly TimeSpan OpenServerTimeLimit = TimeSpan.FromMinutes(1);
 #endif
@@ -136,7 +138,7 @@ namespace IdeaStatiCa.Plugin
 		{
 			((ServiceHost)sender).Opened -= new EventHandler(SelfServiceHost_Opened);
 
-			// run IDEA StatiCa 
+			// run IDEA StatiCa
 			IdeaStaticaApp = RunIdeaIdeaStatiCa(bimPluginFactory.IdeaStaticaAppPath, clientId);
 
 			if (IdeaStaticaApp != null)
@@ -144,7 +146,7 @@ namespace IdeaStatiCa.Plugin
 				IdeaStaticaApp.Exited += new EventHandler(IS_Exited);
 				NotifyAppStatusChanged(AppStatus.Started);
 
-				if(bimAppService is ApplicationBIM appBim)
+				if (bimAppService is ApplicationBIM appBim)
 				{
 					appBim.Id = IdeaStaticaApp.Id;
 				}
@@ -170,6 +172,7 @@ namespace IdeaStatiCa.Plugin
 		}
 
 		#region IDisposable Support
+
 		private bool disposedValue = false; // To detect redundant calls
 
 		public Task HostingTask { get => hostingTask; set => hostingTask = value; }
@@ -177,7 +180,7 @@ namespace IdeaStatiCa.Plugin
 
 		private Process RunIdeaIdeaStatiCa(string exePath, string id)
 		{
-			if(exePath == null)
+			if (exePath == null)
 			{
 				return null;
 			}
@@ -251,6 +254,7 @@ namespace IdeaStatiCa.Plugin
 			// TODO: uncomment the following line if the finalizer is overridden above.
 			// GC.SuppressFinalize(this);
 		}
-		#endregion
+
+		#endregion IDisposable Support
 	}
 }

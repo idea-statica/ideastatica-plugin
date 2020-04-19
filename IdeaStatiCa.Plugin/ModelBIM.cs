@@ -22,7 +22,7 @@ namespace IdeaStatiCa.Plugin
 		public OpenModel Model { get; set; }
 
 		[DataMember]
-		public OpenModelResult Results {get; set;}
+		public OpenModelResult Results { get; set; }
 
 		[DataMember]
 		public OpenMessages Messages { get; set; }

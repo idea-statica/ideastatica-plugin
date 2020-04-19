@@ -3,11 +3,13 @@ using System.Diagnostics;
 
 namespace IdeaStatiCa.Plugin
 {
-	//public class 
+	//public class
 
 	public class AutomationService<ClientInterface> : IAutomation, IClientBIM<ClientInterface>, IDisposable
 	{
-		public AutomationService() { }
+		public AutomationService()
+		{
+		}
 
 		public ClientInterface BIM { get; set; }
 
@@ -49,6 +51,7 @@ namespace IdeaStatiCa.Plugin
 		{
 			Debug.Fail("Not implemented");
 		}
+
 		public AutomationStatus Status { get; protected set; }
 
 		#region IDisposable Support

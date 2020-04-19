@@ -7,7 +7,7 @@ namespace IdeaStatiCa.Plugin
 {
 	public class IdeaStatiCaAppClient : System.ServiceModel.ClientBase<IIdeaStaticaApp>, IIdeaStaticaApp
 	{
-		public IdeaStatiCaAppClient(string id):base(GetBinding(), GetAddress(id))
+		public IdeaStatiCaAppClient(string id) : base(GetBinding(), GetAddress(id))
 		{
 		}
 

@@ -63,7 +63,7 @@ namespace IdeaStatiCa.Plugin
 		private readonly string AutomationUrlFormat;
 
 #if DEBUG
-		readonly TimeSpan OpenServerTimeLimit = TimeSpan.MaxValue;
+		private readonly TimeSpan OpenServerTimeLimit = TimeSpan.MaxValue;
 #else
 		private readonly TimeSpan OpenServerTimeLimit = TimeSpan.FromMinutes(1);
 #endif
@@ -83,7 +83,7 @@ namespace IdeaStatiCa.Plugin
 
 		public event ISEventHandler BIMStatusChanged;
 
-		public AutomationStatus Status {get; private set;}
+		public AutomationStatus Status { get; private set; }
 
 		public Task RunAsync(string id)
 		{

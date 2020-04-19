@@ -55,6 +55,7 @@ namespace IdeaStatiCa.Plugin
 			[OperationContract]
 			get;
 		}
+
 		string ProjectDir
 		{
 			[OperationContract]
