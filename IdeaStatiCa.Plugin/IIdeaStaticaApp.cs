@@ -71,5 +71,13 @@ namespace IdeaStatiCa.Plugin
 		/// <returns>Materials in the project</returns>
 		[OperationContract]
 		List<ProjectItem> GetMaterialsInProject();
+
+		/// <summary>
+		/// Get connection model in IOM format
+		/// </summary>
+		/// <param name="connectionId">The ID of the connection in the project</param>
+		/// <returns>Connection model</returns>
+		[OperationContract]
+		IdeaRS.OpenModel.Connection.ConnectionData GetConnectionModel(int connectionId);
 	}
 }

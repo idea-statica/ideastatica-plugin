@@ -1,4 +1,5 @@
 ﻿using IdeaRS.OpenModel;
+using IdeaRS.OpenModel.Connection;
 using System;
 using System.Collections.Generic;
 using System.ServiceModel;
@@ -41,6 +42,11 @@ namespace IdeaStatiCa.Plugin
 		public List<ProjectItem> GetMaterialsInProject()
 		{
 			return Service.GetMaterialsInProject();
+		}
+
+		public ConnectionData GetConnectionModel(int connectionId)
+		{
+			return Service.GetConnectionModel(connectionId);
 		}
 
 		protected IIdeaStaticaApp Service => base.Channel;
