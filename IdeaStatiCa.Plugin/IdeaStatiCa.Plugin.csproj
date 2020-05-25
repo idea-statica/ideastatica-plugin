@@ -8,10 +8,10 @@
     <OutputPath>bin\$(Configuration)\</OutputPath>
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
     <Authors>IdeaStatiCa</Authors>
-    <Version>20.0.14</Version>
-    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <AssemblyVersion>20.0.14.0</AssemblyVersion>
-    <FileVersion>20.0.14.0</FileVersion>
+    <Version>20.0.15</Version>
+    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+    <AssemblyVersion>20.0.15.0</AssemblyVersion>
+    <FileVersion>20.0.15.0</FileVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugType>full</DebugType>
@@ -20,7 +20,7 @@
     <DebugType>pdbonly</DebugType>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="IdeaStatiCa.OpenModel" Version="20.0.3" />
+    <PackageReference Include="IdeaStatiCa.OpenModel" Version="20.0.5" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System.ServiceModel" />
