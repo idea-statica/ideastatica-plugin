@@ -19,13 +19,13 @@ namespace IdeaStatiCa.Plugin
 			string res;
 			using (MemoryStream ms = new MemoryStream())
 			{
-				XmlTextWriter writer = new XmlTextWriter(ms, Encoding.UTF8);
+				XmlTextWriter writer = new XmlTextWriter(ms, Encoding.Unicode);
 				// Serialize using the XmlTextWriter.
 				writer.Formatting = Formatting.Indented;
 				xs.Serialize(writer, model);
 				writer.Flush();
 				ms.Position = 0;
-				res = Encoding.UTF8.GetString(ms.ToArray());
+				res = Encoding.Unicode.GetString(ms.ToArray());
 			}
 
 			return res;
@@ -46,13 +46,13 @@ namespace IdeaStatiCa.Plugin
 		public static BIMProject ProjectFromXml(string xml)
 		{
 			var serializer = new XmlSerializer(typeof(BIMProject));
-			return serializer.Deserialize(new MemoryStream(Encoding.UTF8.GetBytes(xml))) as BIMProject;
+			return serializer.Deserialize(new MemoryStream(Encoding.Unicode.GetBytes(xml))) as BIMProject;
 		}
 
 		public static ModelBIM ModelFromXml(string xml)
 		{
 			var serializer = new XmlSerializer(typeof(ModelBIM));
-			ModelBIM modelFEA = serializer.Deserialize(new MemoryStream(Encoding.UTF8.GetBytes(xml))) as ModelBIM;
+			ModelBIM modelFEA = serializer.Deserialize(new MemoryStream(Encoding.Unicode.GetBytes(xml))) as ModelBIM;
 			if (modelFEA != null && modelFEA.Model != null)
 			{
 				modelFEA.Model.ReferenceElementsReconstruction();
@@ -63,7 +63,7 @@ namespace IdeaStatiCa.Plugin
 		public static List<ModelBIM> ModelsFromXml(string xml)
 		{
 			var serializer = new XmlSerializer(typeof(List<ModelBIM>));
-			var models = serializer.Deserialize(new MemoryStream(Encoding.UTF8.GetBytes(xml))) as List<ModelBIM>;
+			var models = serializer.Deserialize(new MemoryStream(Encoding.Unicode.GetBytes(xml))) as List<ModelBIM>;
 			foreach (var model in models)
 			{
 				if (model != null && model.Model != null)
