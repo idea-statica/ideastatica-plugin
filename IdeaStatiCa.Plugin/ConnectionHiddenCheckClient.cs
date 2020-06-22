@@ -1,4 +1,5 @@
 ﻿using IdeaRS.OpenModel.Connection;
+using System.Collections.Generic;
 using System.Threading;
 
 namespace IdeaStatiCa.Plugin
@@ -41,9 +42,9 @@ namespace IdeaStatiCa.Plugin
 			Service.SaveAsProject(newProjectFileName);
 		}
 
-		public string ApplyTemplate(string connectionId, string conTemplateFileName, string templateSettingJson)
+		public string ApplyTemplate(string connectionId, string conTemplateFileName, ApplyConnTemplateSetting connTemplateSetting)
 		{
-			return Service.ApplyTemplate(connectionId, conTemplateFileName, templateSettingJson);
+			return Service.ApplyTemplate(connectionId, conTemplateFileName, connTemplateSetting);
 		}
 
 		public string ExportToTemplate(string connectionId, string conTemplateFileName)
@@ -75,6 +76,26 @@ namespace IdeaStatiCa.Plugin
 				syncEvent.Set();
 				syncEvent.Dispose();
 			}
+		}
+
+		public List<ProjectItem> GetMaterialsInProject()
+		{
+			return Service.GetMaterialsInProject();
+		}
+
+		public List<ProjectItem> GetCrossSectionsInProject()
+		{
+			return Service.GetCrossSectionsInProject();
+		}
+
+		public List<ProjectItem> GetBoltAssembliesInProject()
+		{
+			return Service.GetBoltAssembliesInProject();
+		}
+
+		public int AddBoltAssembly(string boltAssemblyName)
+		{
+			return Service.AddBoltAssembly(boltAssemblyName);
 		}
 
 		protected IConnHiddenCheck Service => base.Channel;
