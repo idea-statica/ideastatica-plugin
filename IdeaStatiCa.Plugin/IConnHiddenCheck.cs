@@ -1,4 +1,5 @@
 ﻿using IdeaRS.OpenModel.Connection;
+using System.Collections.Generic;
 using System.ServiceModel;
 
 namespace IdeaStatiCa.Plugin
@@ -28,10 +29,10 @@ namespace IdeaStatiCa.Plugin
 		/// </summary>
 		/// <param name="connectionId">Identifier of the connection in the project, empty guid means the first connection in the project</param>
 		/// <param name="conTemplateFileName">contemp filename including connection template</param>
-		/// <param name="templateSettingJson">Additional setting for application of the template in JSON format</param>
+		/// <param name="connTemplateSetting">Additional setting for application of the template.</param>
 		/// <returns>returns 'OK' if success otherwise an error message</returns>
 		[OperationContract]
-		string ApplyTemplate(string connectionId, string conTemplateFileName, string templateSettingJson);
+		string ApplyTemplate(string connectionId, string conTemplateFileName, ApplyConnTemplateSetting connTemplateSetting);
 
 		/// <summary>
 		/// Export the manufacture sequence of <paramref name="connectionId"/> as a template and save it in <paramref name="conTemplateFileName"/> (.contemp file)
@@ -85,5 +86,34 @@ namespace IdeaStatiCa.Plugin
 		/// </summary>
 		[OperationContract]
 		void Cancel();
+
+		/// <summary>
+		/// Get all materials in the currently open project
+		/// </summary>
+		/// <returns>Materials in the project</returns>
+		[OperationContract]
+		List<ProjectItem> GetMaterialsInProject();
+
+		/// <summary>
+		/// Get all cross-sections in the currently open project
+		/// </summary>
+		/// <returns>Cross-sections in the project</returns>
+		[OperationContract]
+		List<ProjectItem> GetCrossSectionsInProject();
+
+		/// <summary>
+		/// Get all bolt assemblies in the currently open project
+		/// </summary>
+		/// <returns>Bolt assemblies in the project</returns>
+		[OperationContract]
+		List<ProjectItem> GetBoltAssembliesInProject();
+
+		/// <summary>
+		/// Add the new bolt assembly. Its type is defined by its name (e.g. 'M12 4.6')
+		/// </summary>
+		/// <param name="boltAssemblyName"></param>
+		/// <returns></returns>
+		[OperationContract]
+		int AddBoltAssembly(string boltAssemblyName);
 	}
 }
