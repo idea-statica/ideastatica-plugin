@@ -1,0 +1,1 @@
+![Connection Hidden Calculation](./Images/ConnectionHiddenCalculation.svg)
