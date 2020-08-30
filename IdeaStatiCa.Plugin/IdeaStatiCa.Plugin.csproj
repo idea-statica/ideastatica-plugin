@@ -20,7 +20,7 @@
     <DebugType>pdbonly</DebugType>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="IdeaStatiCa.OpenModel" Version="20.0.8" />
+    <PackageReference Include="IdeaStatiCa.OpenModel" Version="20.1.0" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System.ServiceModel" />
