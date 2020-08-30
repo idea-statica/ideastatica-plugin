@@ -7,7 +7,8 @@ namespace IdeaStatiCa.Plugin
 	public enum RequestedItemsType
 	{
 		Connections,
-		Substructure
+		Substructure,
+		SingleConnection,
 	}
 
 	/// <summary>

@@ -5,7 +5,8 @@ namespace IdeaStatiCa.Plugin
 	public enum BIMItemType
 	{
 		Member,
-		Node
+		Node,
+		BIMItemsGroup,
 	}
 
 	[DataContract]
