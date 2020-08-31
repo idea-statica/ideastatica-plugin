@@ -6,7 +6,7 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{69890dbf-41c1-459b-b8c6-910d98a6a367}</ProjectGuid>
+    <ProjectGuid>{d58c4327-2a6d-43c0-8289-31ec6c52d798}</ProjectGuid>
     <SHFBSchemaVersion>2017.9.26.0</SHFBSchemaVersion>
     <!-- AssemblyName, Name, and RootNamespace are not used by SHFB but Visual Studio adds them anyway -->
     <AssemblyName>Documentation</AssemblyName>
@@ -15,18 +15,11 @@
     <!-- SHFB properties -->
     <FrameworkVersion>.NET Framework 4.5</FrameworkVersion>
     <OutputPath>.\Help\</OutputPath>
-    <HtmlHelpName>IdeaStatiCa.PluginTools</HtmlHelpName>
+    <HtmlHelpName>IdeaStatiCa.Plugin</HtmlHelpName>
     <Language>en-US</Language>
     <DocumentationSources>
-      <DocumentationSource sourceFile="IdeaStatiCa.PluginsTools\bin\Release\net48\IdeaStatiCa.PluginsTools.dll" xmlns="" />
-    </DocumentationSources>
-    <HelpTitle>IdeaStatiCa.PluginTools</HelpTitle>
-    <HelpFileVersion>20.1.0.0</HelpFileVersion>
-    <RootNamespaceContainer>False</RootNamespaceContainer>
-    <NamespaceGrouping>False</NamespaceGrouping>
-    <MaximumGroupParts>2</MaximumGroupParts>
-    <Preliminary>False</Preliminary>
-    <SdkLinkTarget>Blank</SdkLinkTarget>
+      <DocumentationSource sourceFile="IdeaStatiCa.Plugin\bin\Release\IdeaStatiCa.Plugin.dll" />
+<DocumentationSource sourceFile="IdeaStatiCa.Plugin\bin\Release\IdeaStatiCa.Plugin.xml" /></DocumentationSources>
     <HelpFileFormat>HtmlHelp1</HelpFileFormat>
     <SyntaxFilters>Standard</SyntaxFilters>
     <PresentationStyle>VS2013</PresentationStyle>
@@ -36,6 +29,13 @@
     <IndentHtml>False</IndentHtml>
     <BuildAssemblerVerbosity>OnlyWarningsAndErrors</BuildAssemblerVerbosity>
     <SaveComponentCacheCapacity>100</SaveComponentCacheCapacity>
+    <HelpTitle>\IdeaStatiCa.Plugin</HelpTitle>
+    <HelpFileVersion>20.1.0.0</HelpFileVersion>
+    <RootNamespaceContainer>False</RootNamespaceContainer>
+    <NamespaceGrouping>False</NamespaceGrouping>
+    <MaximumGroupParts>2</MaximumGroupParts>
+    <Preliminary>False</Preliminary>
+    <SdkLinkTarget>Blank</SdkLinkTarget>
   </PropertyGroup>
   <!-- There are no properties for these groups.  AnyCPU needs to appear in order for Visual Studio to perform
 			 the build.  The others are optional common platform types that may appear. -->
