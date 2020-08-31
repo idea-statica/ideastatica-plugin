@@ -1,0 +1,203 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{CC169B60-B3C5-40F4-B295-C94AB188EDD1}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>IdeaStatiCa.PluginsTools</RootNamespace>
+    <AssemblyName>IdeaStatiCa.PluginsTools</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="IdeaRS.OpenModel, Version=20.1.0.0, Culture=neutral, PublicKeyToken=b195254c3273d5c1, processorArchitecture=MSIL">
+      <HintPath>..\packages\IdeaStatiCa.OpenModel.20.1.0\lib\net45\IdeaRS.OpenModel.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=2.0.8.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\packages\log4net.2.0.8\lib\net45-full\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="PluginTools\CommunicationTool.cs" />
+    <Compile Include="PluginTools\Tools\Arc2D.cs" />
+    <Compile Include="PluginTools\Tools\ArcSegment3D.cs" />
+    <Compile Include="PluginTools\Tools\BasePolygonReader.cs" />
+    <Compile Include="PluginTools\Tools\BeamMesh.cs" />
+    <Compile Include="PluginTools\Tools\BoundingBox3D.cs" />
+    <Compile Include="PluginTools\Tools\BoxArrayDouble2.cs" />
+    <Compile Include="PluginTools\Tools\BoxPolygonReader.cs" />
+    <Compile Include="PluginTools\Tools\CircArc2DDiscretizator.cs" />
+    <Compile Include="PluginTools\Tools\CircArc2DTransform.cs" />
+    <Compile Include="PluginTools\Tools\Circle2D.cs" />
+    <Compile Include="PluginTools\Tools\CircularArcSegment2D.cs" />
+    <Compile Include="PluginTools\Tools\clipper.cs" />
+    <Compile Include="PluginTools\Tools\ClipperController.cs" />
+    <Compile Include="PluginTools\Tools\Comparators.cs" />
+    <Compile Include="PluginTools\Tools\ConnectedBeamTools.cs" />
+    <Compile Include="PluginTools\Tools\Constants.cs" />
+    <Compile Include="PluginTools\Tools\Constraints.cs" />
+    <Compile Include="PluginTools\Tools\Conversions.cs" />
+    <Compile Include="PluginTools\Tools\CoordSystem.cs" />
+    <Compile Include="PluginTools\Tools\CoordSystemByVector.cs" />
+    <Compile Include="PluginTools\Tools\CoordSystemByZup.cs" />
+    <Compile Include="PluginTools\Tools\Delegates.cs" />
+    <Compile Include="PluginTools\Tools\Direction.cs" />
+    <Compile Include="PluginTools\Tools\Dispatcher.cs" />
+    <Compile Include="PluginTools\Tools\DispatcherCache.cs" />
+    <Compile Include="PluginTools\Tools\DispatchResult.cs" />
+    <Compile Include="PluginTools\Tools\DispatchTable.cs" />
+    <Compile Include="PluginTools\Tools\ElementBase.cs" />
+    <Compile Include="PluginTools\Tools\EllipticArcSegment2D.cs" />
+    <Compile Include="PluginTools\Tools\ForwardedPropertyChangedEventArgs.cs" />
+    <Compile Include="PluginTools\Tools\Funcs2D.cs" />
+    <Compile Include="PluginTools\Tools\Funcs2DPolygon.cs" />
+    <Compile Include="PluginTools\Tools\Geometry2DConvertor.cs" />
+    <Compile Include="PluginTools\Tools\GeometryTools.cs" />
+    <Compile Include="PluginTools\Tools\GeomOperationBeamMesher.cs" />
+    <Compile Include="PluginTools\Tools\GeomOperationPoint.cs" />
+    <Compile Include="PluginTools\Tools\GeomOperationPolyLine.cs" />
+    <Compile Include="PluginTools\Tools\GeomOperationRegion3D.cs" />
+    <Compile Include="PluginTools\Tools\GeomOperationReinforcement3DCommon.cs" />
+    <Compile Include="PluginTools\Tools\GeomOperationSegment.cs" />
+    <Compile Include="PluginTools\Tools\GeomOperationVector.cs" />
+    <Compile Include="PluginTools\Tools\GeomTools2D.cs" />
+    <Compile Include="PluginTools\Tools\IArcSegment3D.cs" />
+    <Compile Include="PluginTools\Tools\IBeamMesh.cs" />
+    <Compile Include="PluginTools\Tools\ICircularArcSegment2D.cs" />
+    <Compile Include="PluginTools\Tools\IConnectionPart.cs" />
+    <Compile Include="PluginTools\Tools\IContainer.cs" />
+    <Compile Include="PluginTools\Tools\IContainerStorage.cs" />
+    <Compile Include="PluginTools\Tools\ICoordSystem.cs" />
+    <Compile Include="PluginTools\Tools\ICoordSystemByVector.cs" />
+    <Compile Include="PluginTools\Tools\ICopyable.cs" />
+    <Compile Include="PluginTools\Tools\IdaComPoint2D.cs" />
+    <Compile Include="PluginTools\Tools\IDbItem.cs" />
+    <Compile Include="PluginTools\Tools\IdeaXMLAttribute.cs" />
+    <Compile Include="PluginTools\Tools\IDiscretizator.cs" />
+    <Compile Include="PluginTools\Tools\IGeomEntity2D.cs" />
+    <Compile Include="PluginTools\Tools\IIndexTriangleMesh.cs" />
+    <Compile Include="PluginTools\Tools\ILineSegment2D.cs" />
+    <Compile Include="PluginTools\Tools\ILineSegment3D.cs" />
+    <Compile Include="PluginTools\Tools\IMatrix44.cs" />
+    <Compile Include="PluginTools\Tools\IModelItem.cs" />
+    <Compile Include="PluginTools\Tools\IndexTriangleMesh.cs" />
+    <Compile Include="PluginTools\Tools\IntersectionData.cs" />
+    <Compile Include="PluginTools\Tools\IntersectionInfo.cs" />
+    <Compile Include="PluginTools\Tools\IntersectionLocator2D.cs" />
+    <Compile Include="PluginTools\Tools\IntersectionResults.cs" />
+    <Compile Include="PluginTools\Tools\IPersistentBase.cs" />
+    <Compile Include="PluginTools\Tools\IPoint3D.cs" />
+    <Compile Include="PluginTools\Tools\IPointOnRegion.cs" />
+    <Compile Include="PluginTools\Tools\IPolygon2D.cs" />
+    <Compile Include="PluginTools\Tools\IPolygonReader.cs" />
+    <Compile Include="PluginTools\Tools\IPolyLine2D.cs" />
+    <Compile Include="PluginTools\Tools\IPolyLine3D.cs" />
+    <Compile Include="PluginTools\Tools\IPropertyDataChanged.cs" />
+    <Compile Include="PluginTools\Tools\IRegion2D.cs" />
+    <Compile Include="PluginTools\Tools\IRegion3D.cs" />
+    <Compile Include="PluginTools\Tools\ISegment2D.cs" />
+    <Compile Include="PluginTools\Tools\ISegment2DDiscretizator.cs" />
+    <Compile Include="PluginTools\Tools\ISegment2DTransform.cs" />
+    <Compile Include="PluginTools\Tools\ISegment3D.cs" />
+    <Compile Include="PluginTools\Tools\Iterations.cs" />
+    <Compile Include="PluginTools\Tools\ITransEngine2D.cs" />
+    <Compile Include="PluginTools\Tools\IVertexesTriangleMesh.cs" />
+    <Compile Include="PluginTools\Tools\IXSerializable.cs" />
+    <Compile Include="PluginTools\Tools\Line2D.cs" />
+    <Compile Include="PluginTools\Tools\Line2DDiscretizator.cs" />
+    <Compile Include="PluginTools\Tools\Line2DTransform.cs" />
+    <Compile Include="PluginTools\Tools\LineSegment2D.cs" />
+    <Compile Include="PluginTools\Tools\LineSegment3D.cs" />
+    <Compile Include="PluginTools\Tools\MathConstants.cs" />
+    <Compile Include="PluginTools\Tools\Matrix44.cs" />
+    <Compile Include="PluginTools\Tools\MethodInvoker.cs" />
+    <Compile Include="PluginTools\Tools\NETExtensions\DoubleEqualityComparer.cs" />
+    <Compile Include="PluginTools\Tools\NETExtensions\Extension.cs" />
+    <Compile Include="PluginTools\Tools\NETExtensions\LambdaComparer.cs" />
+    <Compile Include="PluginTools\Tools\NETExtensions\VectorExtension.cs" />
+    <Compile Include="PluginTools\Tools\NETExtensions\WindowsExtension.cs" />
+    <Compile Include="PluginTools\Tools\NotForAutoCopy.cs" />
+    <Compile Include="PluginTools\Tools\NotifyPropertyChangedImpl.cs" />
+    <Compile Include="PluginTools\Tools\ObservableItemsTools.cs" />
+    <Compile Include="PluginTools\Tools\ObservableList.cs" />
+    <Compile Include="PluginTools\Tools\OSHelper.cs" />
+    <Compile Include="PluginTools\Tools\ParabolaComputation.cs" />
+    <Compile Include="PluginTools\Tools\ParabolaProperty.cs" />
+    <Compile Include="PluginTools\Tools\ParabolaSegment3D.cs" />
+    <Compile Include="PluginTools\Tools\ParabolicArc2DDiscretizator.cs" />
+    <Compile Include="PluginTools\Tools\ParabolicArcSegment2D.cs" />
+    <Compile Include="PluginTools\Tools\Plane.cs" />
+    <Compile Include="PluginTools\Tools\Plane3D.cs" />
+    <Compile Include="PluginTools\Tools\Plane3DExtensions.cs" />
+    <Compile Include="PluginTools\Tools\Point3D.cs" />
+    <Compile Include="PluginTools\Tools\PointInsideRegion2D.cs" />
+    <Compile Include="PluginTools\Tools\PointOnRegion.cs" />
+    <Compile Include="PluginTools\Tools\Polygon2D.cs" />
+    <Compile Include="PluginTools\Tools\Polygon2DContinuator.cs" />
+    <Compile Include="PluginTools\Tools\Polygon3D.cs" />
+    <Compile Include="PluginTools\Tools\Polygon3DExtensions.cs" />
+    <Compile Include="PluginTools\Tools\PolygonOffset.cs" />
+    <Compile Include="PluginTools\Tools\PolygonSelfCrossing.cs" />
+    <Compile Include="PluginTools\Tools\Polyline.cs" />
+    <Compile Include="PluginTools\Tools\PolyLine2D.cs" />
+    <Compile Include="PluginTools\Tools\PolyLine2DDiscretizator.cs" />
+    <Compile Include="PluginTools\Tools\PolyLine2DTransform.cs" />
+    <Compile Include="PluginTools\Tools\PolyLine3D.cs" />
+    <Compile Include="PluginTools\Tools\PolylineHelper.cs" />
+    <Compile Include="PluginTools\Tools\PropertyChangedEventManager.cs" />
+    <Compile Include="PluginTools\Tools\Rect2D.cs" />
+    <Compile Include="PluginTools\Tools\Region.cs" />
+    <Compile Include="PluginTools\Tools\Region2D.cs" />
+    <Compile Include="PluginTools\Tools\Region3D.cs" />
+    <Compile Include="PluginTools\Tools\RegionRecognition.cs" />
+    <Compile Include="PluginTools\Tools\Segment2D.cs" />
+    <Compile Include="PluginTools\Tools\Segment3D.cs" />
+    <Compile Include="PluginTools\Tools\SegmentType.cs" />
+    <Compile Include="PluginTools\Tools\StorageLogger.cs" />
+    <Compile Include="PluginTools\Tools\StraightLine.cs" />
+    <Compile Include="PluginTools\Tools\Tools.cs" />
+    <Compile Include="PluginTools\Tools\TwoLine2D.cs" />
+    <Compile Include="PluginTools\Tools\Vector3D.cs" />
+    <Compile Include="PluginTools\Tools\VertexesTriangleMesh.cs" />
+    <Compile Include="PluginTools\Tools\WeakEventManagerBase.cs" />
+    <Compile Include="PluginTools\Tools\WinMediaExtensions.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
