@@ -5,7 +5,7 @@ More information about  [Connection Hidden Check](con-hidden-calculation.md)
 
 Link to its [nuget package](https://www.nuget.org/packages/IdeaStatiCa.Plugin)
 
-Link to its [Help File](Help/IdeaStatiCa.Plugin.chm)
+Link to its [Help File](Help/IdeaStatiCa.Plugin.chm?raw=true)
 
 # IdeaStatiCa.PluginsTools
 
