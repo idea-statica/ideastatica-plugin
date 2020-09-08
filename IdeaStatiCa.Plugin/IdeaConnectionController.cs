@@ -35,6 +35,11 @@ namespace IdeaStatiCa.Plugin
 
 		private IdeaConnectionController(string ideaInstallDir)
 		{
+			if(!Directory.Exists(ideaInstallDir))
+			{
+				throw new ArgumentException($"IdeaConnectionController.IdeaConnectionController - directory '{ideaInstallDir}' doesn't exist");
+			}
+
 			IdeaInstallDir = ideaInstallDir;
 		}
 
@@ -53,6 +58,11 @@ namespace IdeaStatiCa.Plugin
 
 			string applicationExePath = Path.Combine(IdeaInstallDir, "ideaconnection.exe");
 
+			if(!File.Exists(applicationExePath))
+			{
+				throw new ArgumentException($"IdeaConnectionController.OpenConnectionClient - file '{applicationExePath}' doesn't exist");
+			}
+
 			Process connectionProc = new Process();
 			string eventName = string.Format("IdeaStatiCaEvent{0}", processId);
 			using (EventWaitHandle syncEvent = new EventWaitHandle(false, EventResetMode.AutoReset, eventName))
@@ -63,7 +73,7 @@ namespace IdeaStatiCa.Plugin
 
 				if(!syncEvent.WaitOne(StartTimeout))
 				{
-					throw new TimeoutException();
+					throw new TimeoutException($"Time out - process '{applicationExePath}' doesn't set the event '{eventName}'");
 				}
 			}
 

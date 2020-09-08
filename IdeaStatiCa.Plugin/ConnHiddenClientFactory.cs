@@ -55,6 +55,11 @@ namespace IdeaStatiCa.Plugin
 				string connChangedEventName = string.Format(Constants.ConCalculatorChangedEventFormat, myProcessId);
 				string applicationExePath = Path.Combine(IdeaInstallDir, "IdeaStatiCa.ConnHiddenCalculator.exe");
 
+				if(!File.Exists(applicationExePath))
+				{
+					throw new ArgumentException($"RunCalculatorProcess - file '{applicationExePath}' doesn't exists");
+				}
+
 				string cmdParams = $"-automation{myProcessId}";
 				ProcessStartInfo psi = new ProcessStartInfo(applicationExePath, cmdParams);
 				psi.WindowStyle = ProcessWindowStyle.Normal;
@@ -73,7 +78,7 @@ namespace IdeaStatiCa.Plugin
 
 				if (!syncEvent.WaitOne(StartTimeout))
 				{
-					throw new TimeoutException();
+					throw new TimeoutException($"Timeout - the process '{applicationExePath}' doesn't set the event '{eventName}'");
 				}
 			}
 
