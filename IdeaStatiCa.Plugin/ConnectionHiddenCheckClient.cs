@@ -57,6 +57,11 @@ namespace IdeaStatiCa.Plugin
 			return Service.GetConnectionModel(connectionId);
 		}
 
+		public string GetConnectionModelXML(string connectionId)
+		{
+			return Service.GetConnectionModelXML(connectionId);
+		}
+
 		public void CreateConProjFromIOM(string iomXmlFileName, string iomResXmlFileName, string newIdeaConFileName)
 		{
 			Service.CreateConProjFromIOM(iomXmlFileName, iomResXmlFileName, newIdeaConFileName);

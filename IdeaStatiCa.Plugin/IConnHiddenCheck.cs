@@ -35,12 +35,20 @@ namespace IdeaStatiCa.Plugin
 		string ApplyTemplate(string connectionId, string conTemplateFileName, ApplyConnTemplateSetting connTemplateSetting);
 
 		/// <summary>
-		/// Export the manufacture sequence of <paramref name="connectionId"/> as a template and save it in <paramref name="conTemplateFileName"/> (.contemp file)
+		/// Get the geometry of the <paramref name="connectionId"/>
 		/// </summary>
-		/// <param name="connectionId">>Identifier of the connection in the project, empty guid means the first connection in the project</param>
-		/// <param name="conTemplateFileName">The file name of the output file</param>
-		/// <returns>returns 'OK' if success otherwise an error message</returns>
+		/// <param name="connectionId">Identifier of the required connection</param>
+		/// <returns>Geometry of the connection in the Xml format</returns>
 		[OperationContract]
+		string GetConnectionModelXML(string connectionId);
+
+        /// <summary>
+        /// Export the manufacture sequence of <paramref name="connectionId"/> as a template and save it in <paramref name="conTemplateFileName"/> (.contemp file)
+        /// </summary>
+        /// <param name="connectionId">>Identifier of the connection in the project, empty guid means the first connection in the project</param>
+        /// <param name="conTemplateFileName">The file name of the output file</param>
+        /// <returns>returns 'OK' if success otherwise an error message</returns>
+        [OperationContract]
 		string ExportToTemplate(string connectionId, string conTemplateFileName);
 
 		/// <summary>

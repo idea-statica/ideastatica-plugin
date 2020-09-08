@@ -31,6 +31,17 @@ namespace IdeaStatiCa.Plugin
 			return res;
 		}
 
+		public static string ConnectionDataToXml(IdeaRS.OpenModel.Connection.ConnectionData model)
+		{
+			XmlSerializer xs = new XmlSerializer(typeof(IdeaRS.OpenModel.Connection.ConnectionData));
+			return SerializeModel(model, xs);
+		}
+		public static IdeaRS.OpenModel.Connection.ConnectionData ConnectionDataFromXml(string xml)
+		{
+			var serializer = new XmlSerializer(typeof(IdeaRS.OpenModel.Connection.ConnectionData));
+			return serializer.Deserialize(new MemoryStream(Encoding.Unicode.GetBytes(xml))) as IdeaRS.OpenModel.Connection.ConnectionData;
+		}
+
 		public static string ModelToXml(ModelBIM model)
 		{
 			XmlSerializer xs = new XmlSerializer(typeof(ModelBIM));
