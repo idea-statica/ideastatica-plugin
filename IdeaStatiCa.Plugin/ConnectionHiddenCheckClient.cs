@@ -32,6 +32,11 @@ namespace IdeaStatiCa.Plugin
 			return Service.GetProjectInfo();
 		}
 
+		public string ApplySimpleTemplate(string connectionId, string templateFilePath, ApplyConnTemplateSetting connTemplateSetting, int mainMember, List<int> attachedMembers)
+		{
+			return Service.ApplySimpleTemplate(connectionId, templateFilePath, connTemplateSetting, mainMember, attachedMembers);
+		}
+
 		public void OpenProject(string ideaConFileName)
 		{
 			Service.OpenProject(ideaConFileName);

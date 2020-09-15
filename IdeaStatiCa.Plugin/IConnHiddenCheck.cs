@@ -35,6 +35,18 @@ namespace IdeaStatiCa.Plugin
 		string ApplyTemplate(string connectionId, string conTemplateFileName, ApplyConnTemplateSetting connTemplateSetting);
 
 		/// <summary>
+		/// Apply the simple connectionsimple template from file <paramref name="templateFilePath"/> on connection <paramref name="connectionId"/>
+		/// </summary>
+		/// <param name="connectionId">The id of the connection on which templete will be applied</param>
+		/// <param name="templateFilePath">The path to the connection teplate</param>
+		/// <param name="connTemplateSetting">The additional settings - e.g. default bolts</param>
+		/// <param name="mainMember">Main (supporting member)</param>
+		/// <param name="attachedMembers">The list of members which are supported by <paramref name="mainMember"/></param>
+		/// <returns>Returns 'Ok' in case of the success otherwise 'Fail'</returns>
+		[OperationContract]
+		string ApplySimpleTemplate(string connectionId, string templateFilePath, ApplyConnTemplateSetting connTemplateSetting, int mainMember, List<int> attachedMembers);
+
+		/// <summary>
 		/// Get the geometry of the <paramref name="connectionId"/>
 		/// </summary>
 		/// <param name="connectionId">Identifier of the required connection</param>
