@@ -271,6 +271,7 @@ namespace CI.Geometry2D
 		/// <param name="centre">The centre point of circle.</param>
 		/// <param name="radius">The radius of circle.</param>
 		/// <param name="result">The intersections, if no intersection, then null.</param>
+		/// <param name="tolerance">Tolerance</param>
 		/// <returns>The intersection info.</returns>
 		public static IntersectionInfo LineCircleIntersection(Point a, Vector ua, Point centre, double radius, out Point[] result, double tolerance = 1e-12)
 		{
@@ -1189,7 +1190,7 @@ namespace CI.Geometry2D
 		/// <param name="begPtOfLine">First point on the line</param>
 		/// <param name="endPtOfLine">Second point on the line</param>
 		/// <param name="point">Given point</param>
-		/// <returns>The distance between Point and a Line</returns
+		/// <returns>The distance between Point and a Line</returns>
 		public static double Distance(Point begPtOfLine, Point endPtOfLine, Point point)
 		{
 			Vector vector = Subtract(ref begPtOfLine, ref point);
@@ -1516,9 +1517,18 @@ namespace CI.Geometry2D
 			return roundedPolyline;
 		}
 
+		/// <summary>
+		/// http://stackoverflow.com/questions/24771828/algorithm-for-creating-rounded-corners-in-a-polygon
+		/// </summary>
+		/// <param name="start"></param>
+		/// <param name="line1"></param>
+		/// <param name="line2"></param>
+		/// <param name="radius"></param>
+		/// <param name="arcStart"></param>
+		/// <param name="arcSegment"></param>
+		/// <returns></returns>
 		public static bool Round(ref Point start, ISegment2D line1, ISegment2D line2, double radius, out Point arcStart, out CircularArcSegment2D arcSegment)
 		{
-			/// http://stackoverflow.com/questions/24771828/algorithm-for-creating-rounded-corners-in-a-polygon
 			var P1 = start;
 			var P = (Point)line1.EndPoint;
 			var P2 = (Point)line2.EndPoint;

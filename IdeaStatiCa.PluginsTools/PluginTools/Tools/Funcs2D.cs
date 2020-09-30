@@ -189,14 +189,14 @@ namespace CI.GiCL2D
 			return PointOnLine(pt, v, rel);
 		}
 
-		// 
+
 		/// <summary>
-		/// Vypocte bod na primce ve vzdalenosti 'len' od pocatku
+		/// 
 		/// </summary>
-		/// <param name="pt">pocatecni bod primky</param>
-		/// <param name="v">konecny bod primky</param>
-		/// <param name="len">vzdalenost od pocatku</param>
-		/// <returns>vrati absolutni bod na usecce [a1,a2]</returns>
+		/// <param name="a1"></param>
+		/// <param name="a2"></param>
+		/// <param name="len"></param>
+		/// <returns></returns>
 		public static Point PointOnLineLen(Point a1, Point a2, double len)
 		{
 			return PointOnLineLen(a1, a2.Minus(a1), len);

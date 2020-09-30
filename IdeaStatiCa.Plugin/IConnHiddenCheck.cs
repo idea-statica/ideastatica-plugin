@@ -86,13 +86,13 @@ namespace IdeaStatiCa.Plugin
 		[OperationContract]
 		IdeaRS.OpenModel.Connection.ConnectionData GetConnectionModel(string connectionId);
 
-		[OperationContract]
 		/// <summary>
 		/// Creates Idea connection project from given <paramref name="iomXmlFileName"/>, <paramref name="iomResXmlFileName"/> and projects saves into the <paramref name="newIdeaConFileName"/>
 		/// </summary>
 		/// <param name="iomXmlFileName">Filename of a given IOM xml file</param>
 		/// <param name="iomResXmlFileName">Filename of a given IOM Result xml file</param>
 		/// <param name="newIdeaConFileName">File name of idea connection project where generated project will be saved</param>
+		[OperationContract]
 		void CreateConProjFromIOM(string iomXmlFileName, string iomResXmlFileName, string newIdeaConFileName);
 
 		/// <summary>
