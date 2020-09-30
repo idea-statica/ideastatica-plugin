@@ -1,0 +1,583 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<HelpKI>
+  <HelpKINode Title="ActivateInBIM method" Url="html/M_IdeaStatiCa_Plugin_ApplicationBIM_ActivateInBIM.htm" />
+  <HelpKINode Title="ApplicationBIM class">
+    <HelpKINode Title="ApplicationBIM Class" Url="html/T_IdeaStatiCa_Plugin_ApplicationBIM.htm" />
+    <HelpKINode Title="constructor" Url="html/M_IdeaStatiCa_Plugin_ApplicationBIM__ctor.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_IdeaStatiCa_Plugin_ApplicationBIM.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_IdeaStatiCa_Plugin_ApplicationBIM.htm" />
+  </HelpKINode>
+  <HelpKINode Title="ApplicationBIM.ActivateInBIM method" Url="html/M_IdeaStatiCa_Plugin_ApplicationBIM_ActivateInBIM.htm" />
+  <HelpKINode Title="ApplicationBIM.ApplicationBIM constructor" Url="html/M_IdeaStatiCa_Plugin_ApplicationBIM__ctor.htm" />
+  <HelpKINode Title="ApplicationBIM.ApplicationName property" Url="html/P_IdeaStatiCa_Plugin_ApplicationBIM_ApplicationName.htm" />
+  <HelpKINode Title="ApplicationBIM.GetActiveSelection method" Url="html/M_IdeaStatiCa_Plugin_ApplicationBIM_GetActiveSelection.htm" />
+  <HelpKINode Title="ApplicationBIM.GetActiveSelectionModel method" Url="html/M_IdeaStatiCa_Plugin_ApplicationBIM_GetActiveSelectionModel.htm" />
+  <HelpKINode Title="ApplicationBIM.GetActiveSelectionModelXML method" Url="html/M_IdeaStatiCa_Plugin_ApplicationBIM_GetActiveSelectionModelXML.htm" />
+  <HelpKINode Title="ApplicationBIM.GetApplicationName method" Url="html/M_IdeaStatiCa_Plugin_ApplicationBIM_GetApplicationName.htm" />
+  <HelpKINode Title="ApplicationBIM.GetModelForSelection method" Url="html/M_IdeaStatiCa_Plugin_ApplicationBIM_GetModelForSelection.htm" />
+  <HelpKINode Title="ApplicationBIM.GetModelForSelectionXML method" Url="html/M_IdeaStatiCa_Plugin_ApplicationBIM_GetModelForSelectionXML.htm" />
+  <HelpKINode Title="ApplicationBIM.ImportActive method" Url="html/M_IdeaStatiCa_Plugin_ApplicationBIM_ImportActive.htm" />
+  <HelpKINode Title="ApplicationBIM.ImportSelection method" Url="html/M_IdeaStatiCa_Plugin_ApplicationBIM_ImportSelection.htm" />
+  <HelpKINode Title="ApplicationBIM.IsCAD method" Url="html/M_IdeaStatiCa_Plugin_ApplicationBIM_IsCAD.htm" />
+  <HelpKINode Title="ApplicationBIM.SelectAsync method" Url="html/M_IdeaStatiCa_Plugin_ApplicationBIM_SelectAsync.htm" />
+  <HelpKINode Title="ApplicationBIM.SetCrossectionList method" Url="html/M_IdeaStatiCa_Plugin_ApplicationBIM_SetCrossectionList.htm" />
+  <HelpKINode Title="ApplicationBIM.SetMaterialList method" Url="html/M_IdeaStatiCa_Plugin_ApplicationBIM_SetMaterialList.htm" />
+  <HelpKINode Title="ApplicationName property" Url="html/P_IdeaStatiCa_Plugin_ApplicationBIM_ApplicationName.htm" />
+  <HelpKINode Title="AppStatus enumeration" Url="html/T_IdeaStatiCa_Plugin_AppStatus.htm" />
+  <HelpKINode Title="AppStatusChanged event">
+    <HelpKINode Title="BIMPluginHosting.AppStatusChanged Event" Url="html/E_IdeaStatiCa_Plugin_BIMPluginHosting_AppStatusChanged.htm" />
+    <HelpKINode Title="IBIMPluginHosting.AppStatusChanged Event" Url="html/E_IdeaStatiCa_Plugin_IBIMPluginHosting_AppStatusChanged.htm" />
+  </HelpKINode>
+  <HelpKINode Title="AutomationHosting(Of MyInterface, ClientInterface) class">
+    <HelpKINode Title="AutomationHosting(MyInterface, ClientInterface) Class" Url="html/T_IdeaStatiCa_Plugin_AutomationHosting_2.htm" />
+    <HelpKINode Title="constructor" Url="html/M_IdeaStatiCa_Plugin_AutomationHosting_2__ctor.htm" />
+    <HelpKINode Title="events" Url="html/Events_T_IdeaStatiCa_Plugin_AutomationHosting_2.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_IdeaStatiCa_Plugin_AutomationHosting_2.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_IdeaStatiCa_Plugin_AutomationHosting_2.htm" />
+  </HelpKINode>
+  <HelpKINode Title="AutomationHosting(Of MyInterface, ClientInterface).AutomationHosting constructor" Url="html/M_IdeaStatiCa_Plugin_AutomationHosting_2__ctor.htm" />
+  <HelpKINode Title="AutomationHosting(Of MyInterface, ClientInterface).BIMStatusChanged event" Url="html/E_IdeaStatiCa_Plugin_AutomationHosting_2_BIMStatusChanged.htm" />
+  <HelpKINode Title="AutomationHosting(Of MyInterface, ClientInterface).Dispose method" Url="html/Overload_IdeaStatiCa_Plugin_AutomationHosting_2_Dispose.htm" />
+  <HelpKINode Title="AutomationHosting(Of MyInterface, ClientInterface).HostingTask property" Url="html/P_IdeaStatiCa_Plugin_AutomationHosting_2_HostingTask.htm" />
+  <HelpKINode Title="AutomationHosting(Of MyInterface, ClientInterface).MyBIM property" Url="html/P_IdeaStatiCa_Plugin_AutomationHosting_2_MyBIM.htm" />
+  <HelpKINode Title="AutomationHosting(Of MyInterface, ClientInterface).NotifyBIMStatusChanged method" Url="html/M_IdeaStatiCa_Plugin_AutomationHosting_2_NotifyBIMStatusChanged.htm" />
+  <HelpKINode Title="AutomationHosting(Of MyInterface, ClientInterface).RunAsync method" Url="html/M_IdeaStatiCa_Plugin_AutomationHosting_2_RunAsync.htm" />
+  <HelpKINode Title="AutomationHosting(Of MyInterface, ClientInterface).Service property" Url="html/P_IdeaStatiCa_Plugin_AutomationHosting_2_Service.htm" />
+  <HelpKINode Title="AutomationHosting(Of MyInterface, ClientInterface).Status property" Url="html/P_IdeaStatiCa_Plugin_AutomationHosting_2_Status.htm" />
+  <HelpKINode Title="AutomationHosting(Of MyInterface, ClientInterface).Stop method" Url="html/M_IdeaStatiCa_Plugin_AutomationHosting_2_Stop.htm" />
+  <HelpKINode Title="AutomationHosting&lt;MyInterface, ClientInterface&gt; class">
+    <HelpKINode Title="AutomationHosting(MyInterface, ClientInterface) Class" Url="html/T_IdeaStatiCa_Plugin_AutomationHosting_2.htm" />
+    <HelpKINode Title="constructor" Url="html/M_IdeaStatiCa_Plugin_AutomationHosting_2__ctor.htm" />
+    <HelpKINode Title="events" Url="html/Events_T_IdeaStatiCa_Plugin_AutomationHosting_2.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_IdeaStatiCa_Plugin_AutomationHosting_2.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_IdeaStatiCa_Plugin_AutomationHosting_2.htm" />
+  </HelpKINode>
+  <HelpKINode Title="AutomationHosting&lt;MyInterface, ClientInterface&gt;.AutomationHosting constructor" Url="html/M_IdeaStatiCa_Plugin_AutomationHosting_2__ctor.htm" />
+  <HelpKINode Title="AutomationHosting&lt;MyInterface, ClientInterface&gt;.BIMStatusChanged event" Url="html/E_IdeaStatiCa_Plugin_AutomationHosting_2_BIMStatusChanged.htm" />
+  <HelpKINode Title="AutomationHosting&lt;MyInterface, ClientInterface&gt;.Dispose method" Url="html/Overload_IdeaStatiCa_Plugin_AutomationHosting_2_Dispose.htm" />
+  <HelpKINode Title="AutomationHosting&lt;MyInterface, ClientInterface&gt;.HostingTask property" Url="html/P_IdeaStatiCa_Plugin_AutomationHosting_2_HostingTask.htm" />
+  <HelpKINode Title="AutomationHosting&lt;MyInterface, ClientInterface&gt;.MyBIM property" Url="html/P_IdeaStatiCa_Plugin_AutomationHosting_2_MyBIM.htm" />
+  <HelpKINode Title="AutomationHosting&lt;MyInterface, ClientInterface&gt;.NotifyBIMStatusChanged method" Url="html/M_IdeaStatiCa_Plugin_AutomationHosting_2_NotifyBIMStatusChanged.htm" />
+  <HelpKINode Title="AutomationHosting&lt;MyInterface, ClientInterface&gt;.RunAsync method" Url="html/M_IdeaStatiCa_Plugin_AutomationHosting_2_RunAsync.htm" />
+  <HelpKINode Title="AutomationHosting&lt;MyInterface, ClientInterface&gt;.Service property" Url="html/P_IdeaStatiCa_Plugin_AutomationHosting_2_Service.htm" />
+  <HelpKINode Title="AutomationHosting&lt;MyInterface, ClientInterface&gt;.Status property" Url="html/P_IdeaStatiCa_Plugin_AutomationHosting_2_Status.htm" />
+  <HelpKINode Title="AutomationHosting&lt;MyInterface, ClientInterface&gt;.Stop method" Url="html/M_IdeaStatiCa_Plugin_AutomationHosting_2_Stop.htm" />
+  <HelpKINode Title="AutomationParam field" Url="html/F_IdeaStatiCa_Plugin_Constants_AutomationParam.htm" />
+  <HelpKINode Title="AutomationService(Of ClientInterface) class">
+    <HelpKINode Title="AutomationService(ClientInterface) Class" Url="html/T_IdeaStatiCa_Plugin_AutomationService_1.htm" />
+    <HelpKINode Title="constructor" Url="html/M_IdeaStatiCa_Plugin_AutomationService_1__ctor.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_IdeaStatiCa_Plugin_AutomationService_1.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_IdeaStatiCa_Plugin_AutomationService_1.htm" />
+  </HelpKINode>
+  <HelpKINode Title="AutomationService(Of ClientInterface).AutomationService constructor" Url="html/M_IdeaStatiCa_Plugin_AutomationService_1__ctor.htm" />
+  <HelpKINode Title="AutomationService(Of ClientInterface).BIM property" Url="html/P_IdeaStatiCa_Plugin_AutomationService_1_BIM.htm" />
+  <HelpKINode Title="AutomationService(Of ClientInterface).CloseProject method" Url="html/M_IdeaStatiCa_Plugin_AutomationService_1_CloseProject.htm" />
+  <HelpKINode Title="AutomationService(Of ClientInterface).Dispose method" Url="html/Overload_IdeaStatiCa_Plugin_AutomationService_1_Dispose.htm" />
+  <HelpKINode Title="AutomationService(Of ClientInterface).NotifyChange method" Url="html/M_IdeaStatiCa_Plugin_AutomationService_1_NotifyChange.htm" />
+  <HelpKINode Title="AutomationService(Of ClientInterface).OpenProject method" Url="html/M_IdeaStatiCa_Plugin_AutomationService_1_OpenProject.htm" />
+  <HelpKINode Title="AutomationService(Of ClientInterface).ProjectDir property" Url="html/P_IdeaStatiCa_Plugin_AutomationService_1_ProjectDir.htm" />
+  <HelpKINode Title="AutomationService(Of ClientInterface).Refresh method" Url="html/M_IdeaStatiCa_Plugin_AutomationService_1_Refresh.htm" />
+  <HelpKINode Title="AutomationService(Of ClientInterface).RefreshProject method" Url="html/M_IdeaStatiCa_Plugin_AutomationService_1_RefreshProject.htm" />
+  <HelpKINode Title="AutomationService(Of ClientInterface).SelectItem method" Url="html/M_IdeaStatiCa_Plugin_AutomationService_1_SelectItem.htm" />
+  <HelpKINode Title="AutomationService(Of ClientInterface).Shutdown method" Url="html/M_IdeaStatiCa_Plugin_AutomationService_1_Shutdown.htm" />
+  <HelpKINode Title="AutomationService(Of ClientInterface).Status property" Url="html/P_IdeaStatiCa_Plugin_AutomationService_1_Status.htm" />
+  <HelpKINode Title="AutomationService(Of ClientInterface).TempWorkingDir property" Url="html/P_IdeaStatiCa_Plugin_AutomationService_1_TempWorkingDir.htm" />
+  <HelpKINode Title="AutomationService&lt;ClientInterface&gt; class">
+    <HelpKINode Title="AutomationService(ClientInterface) Class" Url="html/T_IdeaStatiCa_Plugin_AutomationService_1.htm" />
+    <HelpKINode Title="constructor" Url="html/M_IdeaStatiCa_Plugin_AutomationService_1__ctor.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_IdeaStatiCa_Plugin_AutomationService_1.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_IdeaStatiCa_Plugin_AutomationService_1.htm" />
+  </HelpKINode>
+  <HelpKINode Title="AutomationService&lt;ClientInterface&gt;.AutomationService constructor" Url="html/M_IdeaStatiCa_Plugin_AutomationService_1__ctor.htm" />
+  <HelpKINode Title="AutomationService&lt;ClientInterface&gt;.BIM property" Url="html/P_IdeaStatiCa_Plugin_AutomationService_1_BIM.htm" />
+  <HelpKINode Title="AutomationService&lt;ClientInterface&gt;.CloseProject method" Url="html/M_IdeaStatiCa_Plugin_AutomationService_1_CloseProject.htm" />
+  <HelpKINode Title="AutomationService&lt;ClientInterface&gt;.Dispose method" Url="html/Overload_IdeaStatiCa_Plugin_AutomationService_1_Dispose.htm" />
+  <HelpKINode Title="AutomationService&lt;ClientInterface&gt;.NotifyChange method" Url="html/M_IdeaStatiCa_Plugin_AutomationService_1_NotifyChange.htm" />
+  <HelpKINode Title="AutomationService&lt;ClientInterface&gt;.OpenProject method" Url="html/M_IdeaStatiCa_Plugin_AutomationService_1_OpenProject.htm" />
+  <HelpKINode Title="AutomationService&lt;ClientInterface&gt;.ProjectDir property" Url="html/P_IdeaStatiCa_Plugin_AutomationService_1_ProjectDir.htm" />
+  <HelpKINode Title="AutomationService&lt;ClientInterface&gt;.Refresh method" Url="html/M_IdeaStatiCa_Plugin_AutomationService_1_Refresh.htm" />
+  <HelpKINode Title="AutomationService&lt;ClientInterface&gt;.RefreshProject method" Url="html/M_IdeaStatiCa_Plugin_AutomationService_1_RefreshProject.htm" />
+  <HelpKINode Title="AutomationService&lt;ClientInterface&gt;.SelectItem method" Url="html/M_IdeaStatiCa_Plugin_AutomationService_1_SelectItem.htm" />
+  <HelpKINode Title="AutomationService&lt;ClientInterface&gt;.Shutdown method" Url="html/M_IdeaStatiCa_Plugin_AutomationService_1_Shutdown.htm" />
+  <HelpKINode Title="AutomationService&lt;ClientInterface&gt;.Status property" Url="html/P_IdeaStatiCa_Plugin_AutomationService_1_Status.htm" />
+  <HelpKINode Title="AutomationService&lt;ClientInterface&gt;.TempWorkingDir property" Url="html/P_IdeaStatiCa_Plugin_AutomationService_1_TempWorkingDir.htm" />
+  <HelpKINode Title="AutomationStatus enumeration" Url="html/T_IdeaStatiCa_Plugin_AutomationStatus.htm" />
+  <HelpKINode Title="BIM property">
+    <HelpKINode Title="AutomationService(ClientInterface).BIM Property " Url="html/P_IdeaStatiCa_Plugin_AutomationService_1_BIM.htm" />
+    <HelpKINode Title="IClientBIM(B).BIM Property " Url="html/P_IdeaStatiCa_Plugin_IClientBIM_1_BIM.htm" />
+  </HelpKINode>
+  <HelpKINode Title="BIMItemId class">
+    <HelpKINode Title="BIMItemId Class" Url="html/T_IdeaStatiCa_Plugin_BIMItemId.htm" />
+    <HelpKINode Title="constructor" Url="html/M_IdeaStatiCa_Plugin_BIMItemId__ctor.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_IdeaStatiCa_Plugin_BIMItemId.htm" />
+  </HelpKINode>
+  <HelpKINode Title="BIMItemId.BIMItemId constructor" Url="html/M_IdeaStatiCa_Plugin_BIMItemId__ctor.htm" />
+  <HelpKINode Title="BIMItemId.Id property" Url="html/P_IdeaStatiCa_Plugin_BIMItemId_Id.htm" />
+  <HelpKINode Title="BIMItemId.Type property" Url="html/P_IdeaStatiCa_Plugin_BIMItemId_Type.htm" />
+  <HelpKINode Title="BIMItemsGroup class">
+    <HelpKINode Title="BIMItemsGroup Class" Url="html/T_IdeaStatiCa_Plugin_BIMItemsGroup.htm" />
+    <HelpKINode Title="constructor" Url="html/M_IdeaStatiCa_Plugin_BIMItemsGroup__ctor.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_IdeaStatiCa_Plugin_BIMItemsGroup.htm" />
+  </HelpKINode>
+  <HelpKINode Title="BIMItemsGroup.BIMItemsGroup constructor" Url="html/M_IdeaStatiCa_Plugin_BIMItemsGroup__ctor.htm" />
+  <HelpKINode Title="BIMItemsGroup.Items property" Url="html/P_IdeaStatiCa_Plugin_BIMItemsGroup_Items.htm" />
+  <HelpKINode Title="BIMItemsGroup.Type property" Url="html/P_IdeaStatiCa_Plugin_BIMItemsGroup_Type.htm" />
+  <HelpKINode Title="BIMItemType enumeration" Url="html/T_IdeaStatiCa_Plugin_BIMItemType.htm" />
+  <HelpKINode Title="BIMPluginHosting class">
+    <HelpKINode Title="BIMPluginHosting Class" Url="html/T_IdeaStatiCa_Plugin_BIMPluginHosting.htm" />
+    <HelpKINode Title="constructor" Url="html/M_IdeaStatiCa_Plugin_BIMPluginHosting__ctor.htm" />
+    <HelpKINode Title="events" Url="html/Events_T_IdeaStatiCa_Plugin_BIMPluginHosting.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_IdeaStatiCa_Plugin_BIMPluginHosting.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_IdeaStatiCa_Plugin_BIMPluginHosting.htm" />
+  </HelpKINode>
+  <HelpKINode Title="BIMPluginHosting.AppStatusChanged event" Url="html/E_IdeaStatiCa_Plugin_BIMPluginHosting_AppStatusChanged.htm" />
+  <HelpKINode Title="BIMPluginHosting.BIMPluginHosting constructor" Url="html/M_IdeaStatiCa_Plugin_BIMPluginHosting__ctor.htm" />
+  <HelpKINode Title="BIMPluginHosting.Dispose method" Url="html/Overload_IdeaStatiCa_Plugin_BIMPluginHosting_Dispose.htm" />
+  <HelpKINode Title="BIMPluginHosting.HostingTask property" Url="html/P_IdeaStatiCa_Plugin_BIMPluginHosting_HostingTask.htm" />
+  <HelpKINode Title="BIMPluginHosting.NotifyAppStatusChanged method" Url="html/M_IdeaStatiCa_Plugin_BIMPluginHosting_NotifyAppStatusChanged.htm" />
+  <HelpKINode Title="BIMPluginHosting.RunAsync method" Url="html/M_IdeaStatiCa_Plugin_BIMPluginHosting_RunAsync.htm" />
+  <HelpKINode Title="BIMPluginHosting.Service property" Url="html/P_IdeaStatiCa_Plugin_BIMPluginHosting_Service.htm" />
+  <HelpKINode Title="BIMPluginHosting.Stop method" Url="html/M_IdeaStatiCa_Plugin_BIMPluginHosting_Stop.htm" />
+  <HelpKINode Title="BIMProject class">
+    <HelpKINode Title="BIMProject Class" Url="html/T_IdeaStatiCa_Plugin_BIMProject.htm" />
+    <HelpKINode Title="constructor" Url="html/M_IdeaStatiCa_Plugin_BIMProject__ctor.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_IdeaStatiCa_Plugin_BIMProject.htm" />
+  </HelpKINode>
+  <HelpKINode Title="BIMProject.BIMProject constructor" Url="html/M_IdeaStatiCa_Plugin_BIMProject__ctor.htm" />
+  <HelpKINode Title="BIMProject.CoutryCode property" Url="html/P_IdeaStatiCa_Plugin_BIMProject_CoutryCode.htm" />
+  <HelpKINode Title="BIMStatusChanged event">
+    <HelpKINode Title="AutomationHosting(MyInterface, ClientInterface).BIMStatusChanged Event" Url="html/E_IdeaStatiCa_Plugin_AutomationHosting_2_BIMStatusChanged.htm" />
+    <HelpKINode Title="IBIMPluginClient(T).BIMStatusChanged Event" Url="html/E_IdeaStatiCa_Plugin_IBIMPluginClient_1_BIMStatusChanged.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Calculate method">
+    <HelpKINode Title="ConnectionHiddenCheckClient.Calculate Method " Url="html/M_IdeaStatiCa_Plugin_ConnectionHiddenCheckClient_Calculate.htm" />
+    <HelpKINode Title="IConnHiddenCheck.Calculate Method " Url="html/M_IdeaStatiCa_Plugin_IConnHiddenCheck_Calculate.htm" />
+    <HelpKINode Title="IMemberHiddenCheck.Calculate Method " Url="html/M_IdeaStatiCa_Plugin_IMemberHiddenCheck_Calculate.htm" />
+    <HelpKINode Title="MemberHiddenCheckClient.Calculate Method " Url="html/M_IdeaStatiCa_Plugin_MemberHiddenCheckClient_Calculate.htm" />
+  </HelpKINode>
+  <HelpKINode Title="CloseProject method">
+    <HelpKINode Title="AutomationService(ClientInterface).CloseProject Method " Url="html/M_IdeaStatiCa_Plugin_AutomationService_1_CloseProject.htm" />
+    <HelpKINode Title="ConnectionHiddenCheckClient.CloseProject Method " Url="html/M_IdeaStatiCa_Plugin_ConnectionHiddenCheckClient_CloseProject.htm" />
+    <HelpKINode Title="IAutomation.CloseProject Method " Url="html/M_IdeaStatiCa_Plugin_IAutomation_CloseProject.htm" />
+    <HelpKINode Title="IConnHiddenCheck.CloseProject Method " Url="html/M_IdeaStatiCa_Plugin_IConnHiddenCheck_CloseProject.htm" />
+    <HelpKINode Title="IMemberHiddenCheck.CloseProject Method " Url="html/M_IdeaStatiCa_Plugin_IMemberHiddenCheck_CloseProject.htm" />
+    <HelpKINode Title="MemberHiddenCheckClient.CloseProject Method " Url="html/M_IdeaStatiCa_Plugin_MemberHiddenCheckClient_CloseProject.htm" />
+  </HelpKINode>
+  <HelpKINode Title="ConCalculatorChangedEventFormat field" Url="html/F_IdeaStatiCa_Plugin_Constants_ConCalculatorChangedEventFormat.htm" />
+  <HelpKINode Title="ConnectionChangedEventFormat field" Url="html/F_IdeaStatiCa_Plugin_Constants_ConnectionChangedEventFormat.htm" />
+  <HelpKINode Title="ConnectionHiddenCheckClient class">
+    <HelpKINode Title="ConnectionHiddenCheckClient Class" Url="html/T_IdeaStatiCa_Plugin_ConnectionHiddenCheckClient.htm" />
+    <HelpKINode Title="constructor" Url="html/M_IdeaStatiCa_Plugin_ConnectionHiddenCheckClient__ctor.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_IdeaStatiCa_Plugin_ConnectionHiddenCheckClient.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_IdeaStatiCa_Plugin_ConnectionHiddenCheckClient.htm" />
+  </HelpKINode>
+  <HelpKINode Title="ConnectionHiddenCheckClient.Calculate method" Url="html/M_IdeaStatiCa_Plugin_ConnectionHiddenCheckClient_Calculate.htm" />
+  <HelpKINode Title="ConnectionHiddenCheckClient.CloseProject method" Url="html/M_IdeaStatiCa_Plugin_ConnectionHiddenCheckClient_CloseProject.htm" />
+  <HelpKINode Title="ConnectionHiddenCheckClient.ConnectionHiddenCheckClient constructor" Url="html/M_IdeaStatiCa_Plugin_ConnectionHiddenCheckClient__ctor.htm" />
+  <HelpKINode Title="ConnectionHiddenCheckClient.CreateConProjFromIOM method" Url="html/M_IdeaStatiCa_Plugin_ConnectionHiddenCheckClient_CreateConProjFromIOM.htm" />
+  <HelpKINode Title="ConnectionHiddenCheckClient.GetConnectionModel method" Url="html/M_IdeaStatiCa_Plugin_ConnectionHiddenCheckClient_GetConnectionModel.htm" />
+  <HelpKINode Title="ConnectionHiddenCheckClient.GetProjectInfo method" Url="html/M_IdeaStatiCa_Plugin_ConnectionHiddenCheckClient_GetProjectInfo.htm" />
+  <HelpKINode Title="ConnectionHiddenCheckClient.OpenProject method" Url="html/M_IdeaStatiCa_Plugin_ConnectionHiddenCheckClient_OpenProject.htm" />
+  <HelpKINode Title="ConnectionHiddenCheckClient.Service property" Url="html/P_IdeaStatiCa_Plugin_ConnectionHiddenCheckClient_Service.htm" />
+  <HelpKINode Title="Connections enumeration member" Url="html/T_IdeaStatiCa_Plugin_RequestedItemsType.htm" />
+  <HelpKINode Title="ConnHiddenCalculatorUrlFormat field" Url="html/F_IdeaStatiCa_Plugin_Constants_ConnHiddenCalculatorUrlFormat.htm" />
+  <HelpKINode Title="ConnHiddenClientFactory class">
+    <HelpKINode Title="ConnHiddenClientFactory Class" Url="html/T_IdeaStatiCa_Plugin_ConnHiddenClientFactory.htm" />
+    <HelpKINode Title="constructor" Url="html/M_IdeaStatiCa_Plugin_ConnHiddenClientFactory__ctor.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_IdeaStatiCa_Plugin_ConnHiddenClientFactory.htm" />
+  </HelpKINode>
+  <HelpKINode Title="ConnHiddenClientFactory.ConnHiddenClientFactory constructor" Url="html/M_IdeaStatiCa_Plugin_ConnHiddenClientFactory__ctor.htm" />
+  <HelpKINode Title="ConnHiddenClientFactory.Create method" Url="html/M_IdeaStatiCa_Plugin_ConnHiddenClientFactory_Create.htm" />
+  <HelpKINode Title="ConnHiddenClientFactory.Dispose method" Url="html/Overload_IdeaStatiCa_Plugin_ConnHiddenClientFactory_Dispose.htm" />
+  <HelpKINode Title="Constants class">
+    <HelpKINode Title="Constants Class" Url="html/T_IdeaStatiCa_Plugin_Constants.htm" />
+    <HelpKINode Title="constructor" Url="html/M_IdeaStatiCa_Plugin_Constants__ctor.htm" />
+    <HelpKINode Title="fields" Url="html/Fields_T_IdeaStatiCa_Plugin_Constants.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Constants.AutomationParam field" Url="html/F_IdeaStatiCa_Plugin_Constants_AutomationParam.htm" />
+  <HelpKINode Title="Constants.ConCalculatorChangedEventFormat field" Url="html/F_IdeaStatiCa_Plugin_Constants_ConCalculatorChangedEventFormat.htm" />
+  <HelpKINode Title="Constants.ConnectionChangedEventFormat field" Url="html/F_IdeaStatiCa_Plugin_Constants_ConnectionChangedEventFormat.htm" />
+  <HelpKINode Title="Constants.ConnHiddenCalculatorUrlFormat field" Url="html/F_IdeaStatiCa_Plugin_Constants_ConnHiddenCalculatorUrlFormat.htm" />
+  <HelpKINode Title="Constants.Constants constructor" Url="html/M_IdeaStatiCa_Plugin_Constants__ctor.htm" />
+  <HelpKINode Title="Constants.DefaultIdeaStaticaAutoUrlFormat field" Url="html/F_IdeaStatiCa_Plugin_Constants_DefaultIdeaStaticaAutoUrlFormat.htm" />
+  <HelpKINode Title="Constants.DefaultPluginEventName field" Url="html/F_IdeaStatiCa_Plugin_Constants_DefaultPluginEventName.htm" />
+  <HelpKINode Title="Constants.DefaultPluginUrlFormat field" Url="html/F_IdeaStatiCa_Plugin_Constants_DefaultPluginUrlFormat.htm" />
+  <HelpKINode Title="Constants.LibraryReposPath field" Url="html/F_IdeaStatiCa_Plugin_Constants_LibraryReposPath.htm" />
+  <HelpKINode Title="Constants.MemberChangedEventFormat field" Url="html/F_IdeaStatiCa_Plugin_Constants_MemberChangedEventFormat.htm" />
+  <HelpKINode Title="Constants.MemberEventName field" Url="html/F_IdeaStatiCa_Plugin_Constants_MemberEventName.htm" />
+  <HelpKINode Title="Constants.MemberHiddenCalculatorUrlFormat field" Url="html/F_IdeaStatiCa_Plugin_Constants_MemberHiddenCalculatorUrlFormat.htm" />
+  <HelpKINode Title="Constants.MemberUrlFormat field" Url="html/F_IdeaStatiCa_Plugin_Constants_MemberUrlFormat.htm" />
+  <HelpKINode Title="Constants.MemHiddenCalcChangedEventFormat field" Url="html/F_IdeaStatiCa_Plugin_Constants_MemHiddenCalcChangedEventFormat.htm" />
+  <HelpKINode Title="Constants.ProjectParam field" Url="html/F_IdeaStatiCa_Plugin_Constants_ProjectParam.htm" />
+  <HelpKINode Title="CoutryCode property" Url="html/P_IdeaStatiCa_Plugin_BIMProject_CoutryCode.htm" />
+  <HelpKINode Title="Create method">
+    <HelpKINode Title="ConnHiddenClientFactory.Create Method " Url="html/M_IdeaStatiCa_Plugin_ConnHiddenClientFactory_Create.htm" />
+    <HelpKINode Title="IBIMPluginFactory.Create Method " Url="html/M_IdeaStatiCa_Plugin_IBIMPluginFactory_Create.htm" />
+    <HelpKINode Title="IConnCalculatorFactory.Create Method " Url="html/M_IdeaStatiCa_Plugin_IConnCalculatorFactory_Create.htm" />
+    <HelpKINode Title="IMemberCalculatorFactory.Create Method " Url="html/M_IdeaStatiCa_Plugin_IMemberCalculatorFactory_Create.htm" />
+    <HelpKINode Title="MemberHiddenClientFactory.Create Method " Url="html/M_IdeaStatiCa_Plugin_MemberHiddenClientFactory_Create.htm" />
+  </HelpKINode>
+  <HelpKINode Title="CreateConProjFromIOM method">
+    <HelpKINode Title="ConnectionHiddenCheckClient.CreateConProjFromIOM Method " Url="html/M_IdeaStatiCa_Plugin_ConnectionHiddenCheckClient_CreateConProjFromIOM.htm" />
+    <HelpKINode Title="IConnHiddenCheck.CreateConProjFromIOM Method " Url="html/M_IdeaStatiCa_Plugin_IConnHiddenCheck_CreateConProjFromIOM.htm" />
+  </HelpKINode>
+  <HelpKINode Title="DefaultIdeaStaticaAutoUrlFormat field" Url="html/F_IdeaStatiCa_Plugin_Constants_DefaultIdeaStaticaAutoUrlFormat.htm" />
+  <HelpKINode Title="DefaultPluginEventName field" Url="html/F_IdeaStatiCa_Plugin_Constants_DefaultPluginEventName.htm" />
+  <HelpKINode Title="DefaultPluginUrlFormat field" Url="html/F_IdeaStatiCa_Plugin_Constants_DefaultPluginUrlFormat.htm" />
+  <HelpKINode Title="Dispose method">
+    <HelpKINode Title="AutomationHosting(MyInterface, ClientInterface).Dispose Method " Url="html/Overload_IdeaStatiCa_Plugin_AutomationHosting_2_Dispose.htm" />
+    <HelpKINode Title="AutomationService(ClientInterface).Dispose Method " Url="html/Overload_IdeaStatiCa_Plugin_AutomationService_1_Dispose.htm" />
+    <HelpKINode Title="BIMPluginHosting.Dispose Method " Url="html/Overload_IdeaStatiCa_Plugin_BIMPluginHosting_Dispose.htm" />
+    <HelpKINode Title="ConnHiddenClientFactory.Dispose Method " Url="html/Overload_IdeaStatiCa_Plugin_ConnHiddenClientFactory_Dispose.htm" />
+  </HelpKINode>
+  <HelpKINode Title="FeaAppName property" Url="html/P_IdeaStatiCa_Plugin_IBIMPluginFactory_FeaAppName.htm" />
+  <HelpKINode Title="Finished enumeration member" Url="html/T_IdeaStatiCa_Plugin_AppStatus.htm" />
+  <HelpKINode Title="GetActiveSelection method">
+    <HelpKINode Title="ApplicationBIM.GetActiveSelection Method " Url="html/M_IdeaStatiCa_Plugin_ApplicationBIM_GetActiveSelection.htm" />
+    <HelpKINode Title="IApplicationBIM.GetActiveSelection Method " Url="html/M_IdeaStatiCa_Plugin_IApplicationBIM_GetActiveSelection.htm" />
+  </HelpKINode>
+  <HelpKINode Title="GetActiveSelectionModel method" Url="html/M_IdeaStatiCa_Plugin_ApplicationBIM_GetActiveSelectionModel.htm" />
+  <HelpKINode Title="GetActiveSelectionModelXML method">
+    <HelpKINode Title="ApplicationBIM.GetActiveSelectionModelXML Method " Url="html/M_IdeaStatiCa_Plugin_ApplicationBIM_GetActiveSelectionModelXML.htm" />
+    <HelpKINode Title="IApplicationBIM.GetActiveSelectionModelXML Method " Url="html/M_IdeaStatiCa_Plugin_IApplicationBIM_GetActiveSelectionModelXML.htm" />
+  </HelpKINode>
+  <HelpKINode Title="GetApplicationName method">
+    <HelpKINode Title="ApplicationBIM.GetApplicationName Method " Url="html/M_IdeaStatiCa_Plugin_ApplicationBIM_GetApplicationName.htm" />
+    <HelpKINode Title="IApplicationBIM.GetApplicationName Method " Url="html/M_IdeaStatiCa_Plugin_IApplicationBIM_GetApplicationName.htm" />
+  </HelpKINode>
+  <HelpKINode Title="GetConnectionModel method">
+    <HelpKINode Title="ConnectionHiddenCheckClient.GetConnectionModel Method " Url="html/M_IdeaStatiCa_Plugin_ConnectionHiddenCheckClient_GetConnectionModel.htm" />
+    <HelpKINode Title="IConnHiddenCheck.GetConnectionModel Method " Url="html/M_IdeaStatiCa_Plugin_IConnHiddenCheck_GetConnectionModel.htm" />
+  </HelpKINode>
+  <HelpKINode Title="GetModelForSelection method" Url="html/M_IdeaStatiCa_Plugin_ApplicationBIM_GetModelForSelection.htm" />
+  <HelpKINode Title="GetModelForSelectionXML method">
+    <HelpKINode Title="ApplicationBIM.GetModelForSelectionXML Method " Url="html/M_IdeaStatiCa_Plugin_ApplicationBIM_GetModelForSelectionXML.htm" />
+    <HelpKINode Title="IApplicationBIM.GetModelForSelectionXML Method " Url="html/M_IdeaStatiCa_Plugin_IApplicationBIM_GetModelForSelectionXML.htm" />
+  </HelpKINode>
+  <HelpKINode Title="GetProjectInfo method">
+    <HelpKINode Title="ConnectionHiddenCheckClient.GetProjectInfo Method " Url="html/M_IdeaStatiCa_Plugin_ConnectionHiddenCheckClient_GetProjectInfo.htm" />
+    <HelpKINode Title="IConnHiddenCheck.GetProjectInfo Method " Url="html/M_IdeaStatiCa_Plugin_IConnHiddenCheck_GetProjectInfo.htm" />
+  </HelpKINode>
+  <HelpKINode Title="HostingTask property">
+    <HelpKINode Title="AutomationHosting(MyInterface, ClientInterface).HostingTask Property " Url="html/P_IdeaStatiCa_Plugin_AutomationHosting_2_HostingTask.htm" />
+    <HelpKINode Title="BIMPluginHosting.HostingTask Property " Url="html/P_IdeaStatiCa_Plugin_BIMPluginHosting_HostingTask.htm" />
+  </HelpKINode>
+  <HelpKINode Title="IApplicationBIM interface">
+    <HelpKINode Title="IApplicationBIM Interface" Url="html/T_IdeaStatiCa_Plugin_IApplicationBIM.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_IdeaStatiCa_Plugin_IApplicationBIM.htm" />
+  </HelpKINode>
+  <HelpKINode Title="IApplicationBIM.GetActiveSelection method" Url="html/M_IdeaStatiCa_Plugin_IApplicationBIM_GetActiveSelection.htm" />
+  <HelpKINode Title="IApplicationBIM.GetActiveSelectionModelXML method" Url="html/M_IdeaStatiCa_Plugin_IApplicationBIM_GetActiveSelectionModelXML.htm" />
+  <HelpKINode Title="IApplicationBIM.GetApplicationName method" Url="html/M_IdeaStatiCa_Plugin_IApplicationBIM_GetApplicationName.htm" />
+  <HelpKINode Title="IApplicationBIM.GetModelForSelectionXML method" Url="html/M_IdeaStatiCa_Plugin_IApplicationBIM_GetModelForSelectionXML.htm" />
+  <HelpKINode Title="IApplicationBIM.IsCAD method" Url="html/M_IdeaStatiCa_Plugin_IApplicationBIM_IsCAD.htm" />
+  <HelpKINode Title="IApplicationBIM.SelectAsync method" Url="html/M_IdeaStatiCa_Plugin_IApplicationBIM_SelectAsync.htm" />
+  <HelpKINode Title="IApplicationBIM.SetCrossectionList method" Url="html/M_IdeaStatiCa_Plugin_IApplicationBIM_SetCrossectionList.htm" />
+  <HelpKINode Title="IApplicationBIM.SetMaterialList method" Url="html/M_IdeaStatiCa_Plugin_IApplicationBIM_SetMaterialList.htm" />
+  <HelpKINode Title="IAutomation interface">
+    <HelpKINode Title="IAutomation Interface" Url="html/T_IdeaStatiCa_Plugin_IAutomation.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_IdeaStatiCa_Plugin_IAutomation.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_IdeaStatiCa_Plugin_IAutomation.htm" />
+  </HelpKINode>
+  <HelpKINode Title="IAutomation.CloseProject method" Url="html/M_IdeaStatiCa_Plugin_IAutomation_CloseProject.htm" />
+  <HelpKINode Title="IAutomation.NotifyChange method" Url="html/M_IdeaStatiCa_Plugin_IAutomation_NotifyChange.htm" />
+  <HelpKINode Title="IAutomation.OpenProject method" Url="html/M_IdeaStatiCa_Plugin_IAutomation_OpenProject.htm" />
+  <HelpKINode Title="IAutomation.ProjectDir property" Url="html/P_IdeaStatiCa_Plugin_IAutomation_ProjectDir.htm" />
+  <HelpKINode Title="IAutomation.Refresh method" Url="html/M_IdeaStatiCa_Plugin_IAutomation_Refresh.htm" />
+  <HelpKINode Title="IAutomation.RefreshProject method" Url="html/M_IdeaStatiCa_Plugin_IAutomation_RefreshProject.htm" />
+  <HelpKINode Title="IAutomation.SelectItem method" Url="html/M_IdeaStatiCa_Plugin_IAutomation_SelectItem.htm" />
+  <HelpKINode Title="IAutomation.Shutdown method" Url="html/M_IdeaStatiCa_Plugin_IAutomation_Shutdown.htm" />
+  <HelpKINode Title="IAutomation.Status property" Url="html/P_IdeaStatiCa_Plugin_IAutomation_Status.htm" />
+  <HelpKINode Title="IAutomation.TempWorkingDir property" Url="html/P_IdeaStatiCa_Plugin_IAutomation_TempWorkingDir.htm" />
+  <HelpKINode Title="IBIMPluginClient(Of T) interface">
+    <HelpKINode Title="IBIMPluginClient(T) Interface" Url="html/T_IdeaStatiCa_Plugin_IBIMPluginClient_1.htm" />
+    <HelpKINode Title="events" Url="html/Events_T_IdeaStatiCa_Plugin_IBIMPluginClient_1.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_IdeaStatiCa_Plugin_IBIMPluginClient_1.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_IdeaStatiCa_Plugin_IBIMPluginClient_1.htm" />
+  </HelpKINode>
+  <HelpKINode Title="IBIMPluginClient(Of T).BIMStatusChanged event" Url="html/E_IdeaStatiCa_Plugin_IBIMPluginClient_1_BIMStatusChanged.htm" />
+  <HelpKINode Title="IBIMPluginClient(Of T).MyBIM property" Url="html/P_IdeaStatiCa_Plugin_IBIMPluginClient_1_MyBIM.htm" />
+  <HelpKINode Title="IBIMPluginClient(Of T).RunAsync method" Url="html/M_IdeaStatiCa_Plugin_IBIMPluginClient_1_RunAsync.htm" />
+  <HelpKINode Title="IBIMPluginClient(Of T).Stop method" Url="html/M_IdeaStatiCa_Plugin_IBIMPluginClient_1_Stop.htm" />
+  <HelpKINode Title="IBIMPluginClient&lt;T&gt; interface">
+    <HelpKINode Title="IBIMPluginClient(T) Interface" Url="html/T_IdeaStatiCa_Plugin_IBIMPluginClient_1.htm" />
+    <HelpKINode Title="events" Url="html/Events_T_IdeaStatiCa_Plugin_IBIMPluginClient_1.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_IdeaStatiCa_Plugin_IBIMPluginClient_1.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_IdeaStatiCa_Plugin_IBIMPluginClient_1.htm" />
+  </HelpKINode>
+  <HelpKINode Title="IBIMPluginClient&lt;T&gt;.BIMStatusChanged event" Url="html/E_IdeaStatiCa_Plugin_IBIMPluginClient_1_BIMStatusChanged.htm" />
+  <HelpKINode Title="IBIMPluginClient&lt;T&gt;.MyBIM property" Url="html/P_IdeaStatiCa_Plugin_IBIMPluginClient_1_MyBIM.htm" />
+  <HelpKINode Title="IBIMPluginClient&lt;T&gt;.RunAsync method" Url="html/M_IdeaStatiCa_Plugin_IBIMPluginClient_1_RunAsync.htm" />
+  <HelpKINode Title="IBIMPluginClient&lt;T&gt;.Stop method" Url="html/M_IdeaStatiCa_Plugin_IBIMPluginClient_1_Stop.htm" />
+  <HelpKINode Title="IBIMPluginFactory interface">
+    <HelpKINode Title="IBIMPluginFactory Interface" Url="html/T_IdeaStatiCa_Plugin_IBIMPluginFactory.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_IdeaStatiCa_Plugin_IBIMPluginFactory.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_IdeaStatiCa_Plugin_IBIMPluginFactory.htm" />
+  </HelpKINode>
+  <HelpKINode Title="IBIMPluginFactory.Create method" Url="html/M_IdeaStatiCa_Plugin_IBIMPluginFactory_Create.htm" />
+  <HelpKINode Title="IBIMPluginFactory.FeaAppName property" Url="html/P_IdeaStatiCa_Plugin_IBIMPluginFactory_FeaAppName.htm" />
+  <HelpKINode Title="IBIMPluginFactory.IdeaStaticaAppPath property" Url="html/P_IdeaStatiCa_Plugin_IBIMPluginFactory_IdeaStaticaAppPath.htm" />
+  <HelpKINode Title="IBIMPluginHosting interface">
+    <HelpKINode Title="IBIMPluginHosting Interface" Url="html/T_IdeaStatiCa_Plugin_IBIMPluginHosting.htm" />
+    <HelpKINode Title="events" Url="html/Events_T_IdeaStatiCa_Plugin_IBIMPluginHosting.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_IdeaStatiCa_Plugin_IBIMPluginHosting.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_IdeaStatiCa_Plugin_IBIMPluginHosting.htm" />
+  </HelpKINode>
+  <HelpKINode Title="IBIMPluginHosting.AppStatusChanged event" Url="html/E_IdeaStatiCa_Plugin_IBIMPluginHosting_AppStatusChanged.htm" />
+  <HelpKINode Title="IBIMPluginHosting.RunAsync method" Url="html/M_IdeaStatiCa_Plugin_IBIMPluginHosting_RunAsync.htm" />
+  <HelpKINode Title="IBIMPluginHosting.Service property" Url="html/P_IdeaStatiCa_Plugin_IBIMPluginHosting_Service.htm" />
+  <HelpKINode Title="IClientBIM(Of B) interface">
+    <HelpKINode Title="IClientBIM(B) Interface" Url="html/T_IdeaStatiCa_Plugin_IClientBIM_1.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_IdeaStatiCa_Plugin_IClientBIM_1.htm" />
+  </HelpKINode>
+  <HelpKINode Title="IClientBIM(Of B).BIM property" Url="html/P_IdeaStatiCa_Plugin_IClientBIM_1_BIM.htm" />
+  <HelpKINode Title="IClientBIM&lt;B&gt; interface">
+    <HelpKINode Title="IClientBIM(B) Interface" Url="html/T_IdeaStatiCa_Plugin_IClientBIM_1.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_IdeaStatiCa_Plugin_IClientBIM_1.htm" />
+  </HelpKINode>
+  <HelpKINode Title="IClientBIM&lt;B&gt;.BIM property" Url="html/P_IdeaStatiCa_Plugin_IClientBIM_1_BIM.htm" />
+  <HelpKINode Title="IConnCalculatorFactory interface">
+    <HelpKINode Title="IConnCalculatorFactory Interface" Url="html/T_IdeaStatiCa_Plugin_IConnCalculatorFactory.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_IdeaStatiCa_Plugin_IConnCalculatorFactory.htm" />
+  </HelpKINode>
+  <HelpKINode Title="IConnCalculatorFactory.Create method" Url="html/M_IdeaStatiCa_Plugin_IConnCalculatorFactory_Create.htm" />
+  <HelpKINode Title="IConnHiddenCheck interface">
+    <HelpKINode Title="IConnHiddenCheck Interface" Url="html/T_IdeaStatiCa_Plugin_IConnHiddenCheck.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_IdeaStatiCa_Plugin_IConnHiddenCheck.htm" />
+  </HelpKINode>
+  <HelpKINode Title="IConnHiddenCheck.Calculate method" Url="html/M_IdeaStatiCa_Plugin_IConnHiddenCheck_Calculate.htm" />
+  <HelpKINode Title="IConnHiddenCheck.CloseProject method" Url="html/M_IdeaStatiCa_Plugin_IConnHiddenCheck_CloseProject.htm" />
+  <HelpKINode Title="IConnHiddenCheck.CreateConProjFromIOM method" Url="html/M_IdeaStatiCa_Plugin_IConnHiddenCheck_CreateConProjFromIOM.htm" />
+  <HelpKINode Title="IConnHiddenCheck.GetConnectionModel method" Url="html/M_IdeaStatiCa_Plugin_IConnHiddenCheck_GetConnectionModel.htm" />
+  <HelpKINode Title="IConnHiddenCheck.GetProjectInfo method" Url="html/M_IdeaStatiCa_Plugin_IConnHiddenCheck_GetProjectInfo.htm" />
+  <HelpKINode Title="IConnHiddenCheck.OpenProject method" Url="html/M_IdeaStatiCa_Plugin_IConnHiddenCheck_OpenProject.htm" />
+  <HelpKINode Title="Id property" Url="html/P_IdeaStatiCa_Plugin_BIMItemId_Id.htm" />
+  <HelpKINode Title="IdeaStatiCa.Plugin namespace" Url="html/N_IdeaStatiCa_Plugin.htm" />
+  <HelpKINode Title="IdeaStatiCa.Plugin.ApplicationBIM class" Url="html/T_IdeaStatiCa_Plugin_ApplicationBIM.htm" />
+  <HelpKINode Title="IdeaStatiCa.Plugin.AppStatus enumeration" Url="html/T_IdeaStatiCa_Plugin_AppStatus.htm" />
+  <HelpKINode Title="IdeaStatiCa.Plugin.AutomationHosting(Of MyInterface, ClientInterface) class" Url="html/T_IdeaStatiCa_Plugin_AutomationHosting_2.htm" />
+  <HelpKINode Title="IdeaStatiCa.Plugin.AutomationHosting&lt;MyInterface, ClientInterface&gt; class" Url="html/T_IdeaStatiCa_Plugin_AutomationHosting_2.htm" />
+  <HelpKINode Title="IdeaStatiCa.Plugin.AutomationService(Of ClientInterface) class" Url="html/T_IdeaStatiCa_Plugin_AutomationService_1.htm" />
+  <HelpKINode Title="IdeaStatiCa.Plugin.AutomationService&lt;ClientInterface&gt; class" Url="html/T_IdeaStatiCa_Plugin_AutomationService_1.htm" />
+  <HelpKINode Title="IdeaStatiCa.Plugin.AutomationStatus enumeration" Url="html/T_IdeaStatiCa_Plugin_AutomationStatus.htm" />
+  <HelpKINode Title="IdeaStatiCa.Plugin.BIMItemId class" Url="html/T_IdeaStatiCa_Plugin_BIMItemId.htm" />
+  <HelpKINode Title="IdeaStatiCa.Plugin.BIMItemsGroup class" Url="html/T_IdeaStatiCa_Plugin_BIMItemsGroup.htm" />
+  <HelpKINode Title="IdeaStatiCa.Plugin.BIMItemType enumeration" Url="html/T_IdeaStatiCa_Plugin_BIMItemType.htm" />
+  <HelpKINode Title="IdeaStatiCa.Plugin.BIMPluginHosting class" Url="html/T_IdeaStatiCa_Plugin_BIMPluginHosting.htm" />
+  <HelpKINode Title="IdeaStatiCa.Plugin.BIMProject class" Url="html/T_IdeaStatiCa_Plugin_BIMProject.htm" />
+  <HelpKINode Title="IdeaStatiCa.Plugin.ConnectionHiddenCheckClient class" Url="html/T_IdeaStatiCa_Plugin_ConnectionHiddenCheckClient.htm" />
+  <HelpKINode Title="IdeaStatiCa.Plugin.ConnHiddenClientFactory class" Url="html/T_IdeaStatiCa_Plugin_ConnHiddenClientFactory.htm" />
+  <HelpKINode Title="IdeaStatiCa.Plugin.Constants class" Url="html/T_IdeaStatiCa_Plugin_Constants.htm" />
+  <HelpKINode Title="IdeaStatiCa.Plugin.IApplicationBIM interface" Url="html/T_IdeaStatiCa_Plugin_IApplicationBIM.htm" />
+  <HelpKINode Title="IdeaStatiCa.Plugin.IAutomation interface" Url="html/T_IdeaStatiCa_Plugin_IAutomation.htm" />
+  <HelpKINode Title="IdeaStatiCa.Plugin.IBIMPluginClient(Of T) interface" Url="html/T_IdeaStatiCa_Plugin_IBIMPluginClient_1.htm" />
+  <HelpKINode Title="IdeaStatiCa.Plugin.IBIMPluginClient&lt;T&gt; interface" Url="html/T_IdeaStatiCa_Plugin_IBIMPluginClient_1.htm" />
+  <HelpKINode Title="IdeaStatiCa.Plugin.IBIMPluginFactory interface" Url="html/T_IdeaStatiCa_Plugin_IBIMPluginFactory.htm" />
+  <HelpKINode Title="IdeaStatiCa.Plugin.IBIMPluginHosting interface" Url="html/T_IdeaStatiCa_Plugin_IBIMPluginHosting.htm" />
+  <HelpKINode Title="IdeaStatiCa.Plugin.IClientBIM(Of B) interface" Url="html/T_IdeaStatiCa_Plugin_IClientBIM_1.htm" />
+  <HelpKINode Title="IdeaStatiCa.Plugin.IClientBIM&lt;B&gt; interface" Url="html/T_IdeaStatiCa_Plugin_IClientBIM_1.htm" />
+  <HelpKINode Title="IdeaStatiCa.Plugin.IConnCalculatorFactory interface" Url="html/T_IdeaStatiCa_Plugin_IConnCalculatorFactory.htm" />
+  <HelpKINode Title="IdeaStatiCa.Plugin.IConnHiddenCheck interface" Url="html/T_IdeaStatiCa_Plugin_IConnHiddenCheck.htm" />
+  <HelpKINode Title="IdeaStatiCa.Plugin.IdeaStatiCaClient(Of T) class" Url="html/T_IdeaStatiCa_Plugin_IdeaStatiCaClient_1.htm" />
+  <HelpKINode Title="IdeaStatiCa.Plugin.IdeaStatiCaClient&lt;T&gt; class" Url="html/T_IdeaStatiCa_Plugin_IdeaStatiCaClient_1.htm" />
+  <HelpKINode Title="IdeaStatiCa.Plugin.IMemberCalculatorFactory interface" Url="html/T_IdeaStatiCa_Plugin_IMemberCalculatorFactory.htm" />
+  <HelpKINode Title="IdeaStatiCa.Plugin.IMemberHiddenCheck interface" Url="html/T_IdeaStatiCa_Plugin_IMemberHiddenCheck.htm" />
+  <HelpKINode Title="IdeaStatiCa.Plugin.ISEventArgs class" Url="html/T_IdeaStatiCa_Plugin_ISEventArgs.htm" />
+  <HelpKINode Title="IdeaStatiCa.Plugin.ISEventHandler delegate" Url="html/T_IdeaStatiCa_Plugin_ISEventHandler.htm" />
+  <HelpKINode Title="IdeaStatiCa.Plugin.MemberHiddenCheckClient class" Url="html/T_IdeaStatiCa_Plugin_MemberHiddenCheckClient.htm" />
+  <HelpKINode Title="IdeaStatiCa.Plugin.MemberHiddenClientFactory class" Url="html/T_IdeaStatiCa_Plugin_MemberHiddenClientFactory.htm" />
+  <HelpKINode Title="IdeaStatiCa.Plugin.ModelBIM class" Url="html/T_IdeaStatiCa_Plugin_ModelBIM.htm" />
+  <HelpKINode Title="IdeaStatiCa.Plugin.RequestedItemsType enumeration" Url="html/T_IdeaStatiCa_Plugin_RequestedItemsType.htm" />
+  <HelpKINode Title="IdeaStatiCa.Plugin.Tools class" Url="html/T_IdeaStatiCa_Plugin_Tools.htm" />
+  <HelpKINode Title="IdeaStaticaAppPath property" Url="html/P_IdeaStatiCa_Plugin_IBIMPluginFactory_IdeaStaticaAppPath.htm" />
+  <HelpKINode Title="IdeaStatiCaClient(Of T) class">
+    <HelpKINode Title="IdeaStatiCaClient(T) Class" Url="html/T_IdeaStatiCa_Plugin_IdeaStatiCaClient_1.htm" />
+    <HelpKINode Title="constructor" Url="html/M_IdeaStatiCa_Plugin_IdeaStatiCaClient_1__ctor.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_IdeaStatiCa_Plugin_IdeaStatiCaClient_1.htm" />
+  </HelpKINode>
+  <HelpKINode Title="IdeaStatiCaClient(Of T).IdeaStatiCaClient constructor" Url="html/M_IdeaStatiCa_Plugin_IdeaStatiCaClient_1__ctor.htm" />
+  <HelpKINode Title="IdeaStatiCaClient(Of T).Service property" Url="html/P_IdeaStatiCa_Plugin_IdeaStatiCaClient_1_Service.htm" />
+  <HelpKINode Title="IdeaStatiCaClient&lt;T&gt; class">
+    <HelpKINode Title="IdeaStatiCaClient(T) Class" Url="html/T_IdeaStatiCa_Plugin_IdeaStatiCaClient_1.htm" />
+    <HelpKINode Title="constructor" Url="html/M_IdeaStatiCa_Plugin_IdeaStatiCaClient_1__ctor.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_IdeaStatiCa_Plugin_IdeaStatiCaClient_1.htm" />
+  </HelpKINode>
+  <HelpKINode Title="IdeaStatiCaClient&lt;T&gt;.IdeaStatiCaClient constructor" Url="html/M_IdeaStatiCa_Plugin_IdeaStatiCaClient_1__ctor.htm" />
+  <HelpKINode Title="IdeaStatiCaClient&lt;T&gt;.Service property" Url="html/P_IdeaStatiCa_Plugin_IdeaStatiCaClient_1_Service.htm" />
+  <HelpKINode Title="IMemberCalculatorFactory interface">
+    <HelpKINode Title="IMemberCalculatorFactory Interface" Url="html/T_IdeaStatiCa_Plugin_IMemberCalculatorFactory.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_IdeaStatiCa_Plugin_IMemberCalculatorFactory.htm" />
+  </HelpKINode>
+  <HelpKINode Title="IMemberCalculatorFactory.Create method" Url="html/M_IdeaStatiCa_Plugin_IMemberCalculatorFactory_Create.htm" />
+  <HelpKINode Title="IMemberHiddenCheck interface">
+    <HelpKINode Title="IMemberHiddenCheck Interface" Url="html/T_IdeaStatiCa_Plugin_IMemberHiddenCheck.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_IdeaStatiCa_Plugin_IMemberHiddenCheck.htm" />
+  </HelpKINode>
+  <HelpKINode Title="IMemberHiddenCheck.Calculate method" Url="html/M_IdeaStatiCa_Plugin_IMemberHiddenCheck_Calculate.htm" />
+  <HelpKINode Title="IMemberHiddenCheck.CloseProject method" Url="html/M_IdeaStatiCa_Plugin_IMemberHiddenCheck_CloseProject.htm" />
+  <HelpKINode Title="IMemberHiddenCheck.OpenProject method" Url="html/M_IdeaStatiCa_Plugin_IMemberHiddenCheck_OpenProject.htm" />
+  <HelpKINode Title="ImportActive method" Url="html/M_IdeaStatiCa_Plugin_ApplicationBIM_ImportActive.htm" />
+  <HelpKINode Title="ImportSelection method" Url="html/M_IdeaStatiCa_Plugin_ApplicationBIM_ImportSelection.htm" />
+  <HelpKINode Title="IsCAD method">
+    <HelpKINode Title="ApplicationBIM.IsCAD Method " Url="html/M_IdeaStatiCa_Plugin_ApplicationBIM_IsCAD.htm" />
+    <HelpKINode Title="IApplicationBIM.IsCAD Method " Url="html/M_IdeaStatiCa_Plugin_IApplicationBIM_IsCAD.htm" />
+  </HelpKINode>
+  <HelpKINode Title="IsClient enumeration member" Url="html/T_IdeaStatiCa_Plugin_AutomationStatus.htm" />
+  <HelpKINode Title="ISEventArgs class">
+    <HelpKINode Title="ISEventArgs Class" Url="html/T_IdeaStatiCa_Plugin_ISEventArgs.htm" />
+    <HelpKINode Title="constructor" Url="html/M_IdeaStatiCa_Plugin_ISEventArgs__ctor.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_IdeaStatiCa_Plugin_ISEventArgs.htm" />
+  </HelpKINode>
+  <HelpKINode Title="ISEventArgs.ISEventArgs constructor" Url="html/M_IdeaStatiCa_Plugin_ISEventArgs__ctor.htm" />
+  <HelpKINode Title="ISEventArgs.Status property" Url="html/P_IdeaStatiCa_Plugin_ISEventArgs_Status.htm" />
+  <HelpKINode Title="ISEventHandler delegate" Url="html/T_IdeaStatiCa_Plugin_ISEventHandler.htm" />
+  <HelpKINode Title="Items property">
+    <HelpKINode Title="BIMItemsGroup.Items Property " Url="html/P_IdeaStatiCa_Plugin_BIMItemsGroup_Items.htm" />
+    <HelpKINode Title="ModelBIM.Items Property " Url="html/P_IdeaStatiCa_Plugin_ModelBIM_Items.htm" />
+  </HelpKINode>
+  <HelpKINode Title="LibraryReposPath field" Url="html/F_IdeaStatiCa_Plugin_Constants_LibraryReposPath.htm" />
+  <HelpKINode Title="Member enumeration member" Url="html/T_IdeaStatiCa_Plugin_BIMItemType.htm" />
+  <HelpKINode Title="MemberChangedEventFormat field" Url="html/F_IdeaStatiCa_Plugin_Constants_MemberChangedEventFormat.htm" />
+  <HelpKINode Title="MemberEventName field" Url="html/F_IdeaStatiCa_Plugin_Constants_MemberEventName.htm" />
+  <HelpKINode Title="MemberHiddenCalculatorUrlFormat field" Url="html/F_IdeaStatiCa_Plugin_Constants_MemberHiddenCalculatorUrlFormat.htm" />
+  <HelpKINode Title="MemberHiddenCheckClient class">
+    <HelpKINode Title="MemberHiddenCheckClient Class" Url="html/T_IdeaStatiCa_Plugin_MemberHiddenCheckClient.htm" />
+    <HelpKINode Title="constructor" Url="html/M_IdeaStatiCa_Plugin_MemberHiddenCheckClient__ctor.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_IdeaStatiCa_Plugin_MemberHiddenCheckClient.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_IdeaStatiCa_Plugin_MemberHiddenCheckClient.htm" />
+  </HelpKINode>
+  <HelpKINode Title="MemberHiddenCheckClient.Calculate method" Url="html/M_IdeaStatiCa_Plugin_MemberHiddenCheckClient_Calculate.htm" />
+  <HelpKINode Title="MemberHiddenCheckClient.CloseProject method" Url="html/M_IdeaStatiCa_Plugin_MemberHiddenCheckClient_CloseProject.htm" />
+  <HelpKINode Title="MemberHiddenCheckClient.MemberHiddenCheckClient constructor" Url="html/M_IdeaStatiCa_Plugin_MemberHiddenCheckClient__ctor.htm" />
+  <HelpKINode Title="MemberHiddenCheckClient.OpenProject method" Url="html/M_IdeaStatiCa_Plugin_MemberHiddenCheckClient_OpenProject.htm" />
+  <HelpKINode Title="MemberHiddenCheckClient.Service property" Url="html/P_IdeaStatiCa_Plugin_MemberHiddenCheckClient_Service.htm" />
+  <HelpKINode Title="MemberHiddenClientFactory class">
+    <HelpKINode Title="MemberHiddenClientFactory Class" Url="html/T_IdeaStatiCa_Plugin_MemberHiddenClientFactory.htm" />
+    <HelpKINode Title="constructor" Url="html/M_IdeaStatiCa_Plugin_MemberHiddenClientFactory__ctor.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_IdeaStatiCa_Plugin_MemberHiddenClientFactory.htm" />
+  </HelpKINode>
+  <HelpKINode Title="MemberHiddenClientFactory.Create method" Url="html/M_IdeaStatiCa_Plugin_MemberHiddenClientFactory_Create.htm" />
+  <HelpKINode Title="MemberHiddenClientFactory.MemberHiddenClientFactory constructor" Url="html/M_IdeaStatiCa_Plugin_MemberHiddenClientFactory__ctor.htm" />
+  <HelpKINode Title="MemberUrlFormat field" Url="html/F_IdeaStatiCa_Plugin_Constants_MemberUrlFormat.htm" />
+  <HelpKINode Title="MemHiddenCalcChangedEventFormat field" Url="html/F_IdeaStatiCa_Plugin_Constants_MemHiddenCalcChangedEventFormat.htm" />
+  <HelpKINode Title="Messages property" Url="html/P_IdeaStatiCa_Plugin_ModelBIM_Messages.htm" />
+  <HelpKINode Title="Model property" Url="html/P_IdeaStatiCa_Plugin_ModelBIM_Model.htm" />
+  <HelpKINode Title="ModelBIM class">
+    <HelpKINode Title="ModelBIM Class" Url="html/T_IdeaStatiCa_Plugin_ModelBIM.htm" />
+    <HelpKINode Title="constructor" Url="html/M_IdeaStatiCa_Plugin_ModelBIM__ctor.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_IdeaStatiCa_Plugin_ModelBIM.htm" />
+  </HelpKINode>
+  <HelpKINode Title="ModelBIM.Items property" Url="html/P_IdeaStatiCa_Plugin_ModelBIM_Items.htm" />
+  <HelpKINode Title="ModelBIM.Messages property" Url="html/P_IdeaStatiCa_Plugin_ModelBIM_Messages.htm" />
+  <HelpKINode Title="ModelBIM.Model property" Url="html/P_IdeaStatiCa_Plugin_ModelBIM_Model.htm" />
+  <HelpKINode Title="ModelBIM.ModelBIM constructor" Url="html/M_IdeaStatiCa_Plugin_ModelBIM__ctor.htm" />
+  <HelpKINode Title="ModelBIM.Project property" Url="html/P_IdeaStatiCa_Plugin_ModelBIM_Project.htm" />
+  <HelpKINode Title="ModelBIM.RequestedItems property" Url="html/P_IdeaStatiCa_Plugin_ModelBIM_RequestedItems.htm" />
+  <HelpKINode Title="ModelBIM.Results property" Url="html/P_IdeaStatiCa_Plugin_ModelBIM_Results.htm" />
+  <HelpKINode Title="ModelFromXml method" Url="html/M_IdeaStatiCa_Plugin_Tools_ModelFromXml.htm" />
+  <HelpKINode Title="ModelsFromXml method" Url="html/M_IdeaStatiCa_Plugin_Tools_ModelsFromXml.htm" />
+  <HelpKINode Title="ModelToXml method" Url="html/Overload_IdeaStatiCa_Plugin_Tools_ModelToXml.htm" />
+  <HelpKINode Title="MyBIM property">
+    <HelpKINode Title="AutomationHosting(MyInterface, ClientInterface).MyBIM Property " Url="html/P_IdeaStatiCa_Plugin_AutomationHosting_2_MyBIM.htm" />
+    <HelpKINode Title="IBIMPluginClient(T).MyBIM Property " Url="html/P_IdeaStatiCa_Plugin_IBIMPluginClient_1_MyBIM.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Node enumeration member" Url="html/T_IdeaStatiCa_Plugin_BIMItemType.htm" />
+  <HelpKINode Title="NotifyAppStatusChanged method" Url="html/M_IdeaStatiCa_Plugin_BIMPluginHosting_NotifyAppStatusChanged.htm" />
+  <HelpKINode Title="NotifyBIMStatusChanged method" Url="html/M_IdeaStatiCa_Plugin_AutomationHosting_2_NotifyBIMStatusChanged.htm" />
+  <HelpKINode Title="NotifyChange method">
+    <HelpKINode Title="AutomationService(ClientInterface).NotifyChange Method " Url="html/M_IdeaStatiCa_Plugin_AutomationService_1_NotifyChange.htm" />
+    <HelpKINode Title="IAutomation.NotifyChange Method " Url="html/M_IdeaStatiCa_Plugin_IAutomation_NotifyChange.htm" />
+  </HelpKINode>
+  <HelpKINode Title="OpenProject method">
+    <HelpKINode Title="AutomationService(ClientInterface).OpenProject Method " Url="html/M_IdeaStatiCa_Plugin_AutomationService_1_OpenProject.htm" />
+    <HelpKINode Title="ConnectionHiddenCheckClient.OpenProject Method " Url="html/M_IdeaStatiCa_Plugin_ConnectionHiddenCheckClient_OpenProject.htm" />
+    <HelpKINode Title="IAutomation.OpenProject Method " Url="html/M_IdeaStatiCa_Plugin_IAutomation_OpenProject.htm" />
+    <HelpKINode Title="IConnHiddenCheck.OpenProject Method " Url="html/M_IdeaStatiCa_Plugin_IConnHiddenCheck_OpenProject.htm" />
+    <HelpKINode Title="IMemberHiddenCheck.OpenProject Method " Url="html/M_IdeaStatiCa_Plugin_IMemberHiddenCheck_OpenProject.htm" />
+    <HelpKINode Title="MemberHiddenCheckClient.OpenProject Method " Url="html/M_IdeaStatiCa_Plugin_MemberHiddenCheckClient_OpenProject.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Project property" Url="html/P_IdeaStatiCa_Plugin_ModelBIM_Project.htm" />
+  <HelpKINode Title="ProjectDir property">
+    <HelpKINode Title="AutomationService(ClientInterface).ProjectDir Property " Url="html/P_IdeaStatiCa_Plugin_AutomationService_1_ProjectDir.htm" />
+    <HelpKINode Title="IAutomation.ProjectDir Property " Url="html/P_IdeaStatiCa_Plugin_IAutomation_ProjectDir.htm" />
+  </HelpKINode>
+  <HelpKINode Title="ProjectFromXml method" Url="html/M_IdeaStatiCa_Plugin_Tools_ProjectFromXml.htm" />
+  <HelpKINode Title="ProjectParam field" Url="html/F_IdeaStatiCa_Plugin_Constants_ProjectParam.htm" />
+  <HelpKINode Title="ProjectToXml method" Url="html/M_IdeaStatiCa_Plugin_Tools_ProjectToXml.htm" />
+  <HelpKINode Title="Refresh method">
+    <HelpKINode Title="AutomationService(ClientInterface).Refresh Method " Url="html/M_IdeaStatiCa_Plugin_AutomationService_1_Refresh.htm" />
+    <HelpKINode Title="IAutomation.Refresh Method " Url="html/M_IdeaStatiCa_Plugin_IAutomation_Refresh.htm" />
+  </HelpKINode>
+  <HelpKINode Title="RefreshProject method">
+    <HelpKINode Title="AutomationService(ClientInterface).RefreshProject Method " Url="html/M_IdeaStatiCa_Plugin_AutomationService_1_RefreshProject.htm" />
+    <HelpKINode Title="IAutomation.RefreshProject Method " Url="html/M_IdeaStatiCa_Plugin_IAutomation_RefreshProject.htm" />
+  </HelpKINode>
+  <HelpKINode Title="RequestedItems property" Url="html/P_IdeaStatiCa_Plugin_ModelBIM_RequestedItems.htm" />
+  <HelpKINode Title="RequestedItemsType enumeration" Url="html/T_IdeaStatiCa_Plugin_RequestedItemsType.htm" />
+  <HelpKINode Title="Results property" Url="html/P_IdeaStatiCa_Plugin_ModelBIM_Results.htm" />
+  <HelpKINode Title="RunAsync method">
+    <HelpKINode Title="AutomationHosting(MyInterface, ClientInterface).RunAsync Method " Url="html/M_IdeaStatiCa_Plugin_AutomationHosting_2_RunAsync.htm" />
+    <HelpKINode Title="BIMPluginHosting.RunAsync Method " Url="html/M_IdeaStatiCa_Plugin_BIMPluginHosting_RunAsync.htm" />
+    <HelpKINode Title="IBIMPluginClient(T).RunAsync Method " Url="html/M_IdeaStatiCa_Plugin_IBIMPluginClient_1_RunAsync.htm" />
+    <HelpKINode Title="IBIMPluginHosting.RunAsync Method " Url="html/M_IdeaStatiCa_Plugin_IBIMPluginHosting_RunAsync.htm" />
+  </HelpKINode>
+  <HelpKINode Title="SelectAsync method">
+    <HelpKINode Title="ApplicationBIM.SelectAsync Method " Url="html/M_IdeaStatiCa_Plugin_ApplicationBIM_SelectAsync.htm" />
+    <HelpKINode Title="IApplicationBIM.SelectAsync Method " Url="html/M_IdeaStatiCa_Plugin_IApplicationBIM_SelectAsync.htm" />
+  </HelpKINode>
+  <HelpKINode Title="SelectItem method">
+    <HelpKINode Title="AutomationService(ClientInterface).SelectItem Method " Url="html/M_IdeaStatiCa_Plugin_AutomationService_1_SelectItem.htm" />
+    <HelpKINode Title="IAutomation.SelectItem Method " Url="html/M_IdeaStatiCa_Plugin_IAutomation_SelectItem.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Service property">
+    <HelpKINode Title="AutomationHosting(MyInterface, ClientInterface).Service Property " Url="html/P_IdeaStatiCa_Plugin_AutomationHosting_2_Service.htm" />
+    <HelpKINode Title="BIMPluginHosting.Service Property " Url="html/P_IdeaStatiCa_Plugin_BIMPluginHosting_Service.htm" />
+    <HelpKINode Title="ConnectionHiddenCheckClient.Service Property " Url="html/P_IdeaStatiCa_Plugin_ConnectionHiddenCheckClient_Service.htm" />
+    <HelpKINode Title="IBIMPluginHosting.Service Property " Url="html/P_IdeaStatiCa_Plugin_IBIMPluginHosting_Service.htm" />
+    <HelpKINode Title="IdeaStatiCaClient(T).Service Property " Url="html/P_IdeaStatiCa_Plugin_IdeaStatiCaClient_1_Service.htm" />
+    <HelpKINode Title="MemberHiddenCheckClient.Service Property " Url="html/P_IdeaStatiCa_Plugin_MemberHiddenCheckClient_Service.htm" />
+  </HelpKINode>
+  <HelpKINode Title="SetCrossectionList method">
+    <HelpKINode Title="ApplicationBIM.SetCrossectionList Method " Url="html/M_IdeaStatiCa_Plugin_ApplicationBIM_SetCrossectionList.htm" />
+    <HelpKINode Title="IApplicationBIM.SetCrossectionList Method " Url="html/M_IdeaStatiCa_Plugin_IApplicationBIM_SetCrossectionList.htm" />
+  </HelpKINode>
+  <HelpKINode Title="SetMaterialList method">
+    <HelpKINode Title="ApplicationBIM.SetMaterialList Method " Url="html/M_IdeaStatiCa_Plugin_ApplicationBIM_SetMaterialList.htm" />
+    <HelpKINode Title="IApplicationBIM.SetMaterialList Method " Url="html/M_IdeaStatiCa_Plugin_IApplicationBIM_SetMaterialList.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Shutdown method">
+    <HelpKINode Title="AutomationService(ClientInterface).Shutdown Method " Url="html/M_IdeaStatiCa_Plugin_AutomationService_1_Shutdown.htm" />
+    <HelpKINode Title="IAutomation.Shutdown Method " Url="html/M_IdeaStatiCa_Plugin_IAutomation_Shutdown.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Started enumeration member" Url="html/T_IdeaStatiCa_Plugin_AppStatus.htm" />
+  <HelpKINode Title="Status property">
+    <HelpKINode Title="AutomationHosting(MyInterface, ClientInterface).Status Property " Url="html/P_IdeaStatiCa_Plugin_AutomationHosting_2_Status.htm" />
+    <HelpKINode Title="AutomationService(ClientInterface).Status Property " Url="html/P_IdeaStatiCa_Plugin_AutomationService_1_Status.htm" />
+    <HelpKINode Title="IAutomation.Status Property " Url="html/P_IdeaStatiCa_Plugin_IAutomation_Status.htm" />
+    <HelpKINode Title="ISEventArgs.Status Property " Url="html/P_IdeaStatiCa_Plugin_ISEventArgs_Status.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Stop method">
+    <HelpKINode Title="AutomationHosting(MyInterface, ClientInterface).Stop Method " Url="html/M_IdeaStatiCa_Plugin_AutomationHosting_2_Stop.htm" />
+    <HelpKINode Title="BIMPluginHosting.Stop Method " Url="html/M_IdeaStatiCa_Plugin_BIMPluginHosting_Stop.htm" />
+    <HelpKINode Title="IBIMPluginClient(T).Stop Method " Url="html/M_IdeaStatiCa_Plugin_IBIMPluginClient_1_Stop.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Substructure enumeration member" Url="html/T_IdeaStatiCa_Plugin_RequestedItemsType.htm" />
+  <HelpKINode Title="TempWorkingDir property">
+    <HelpKINode Title="AutomationService(ClientInterface).TempWorkingDir Property " Url="html/P_IdeaStatiCa_Plugin_AutomationService_1_TempWorkingDir.htm" />
+    <HelpKINode Title="IAutomation.TempWorkingDir Property " Url="html/P_IdeaStatiCa_Plugin_IAutomation_TempWorkingDir.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Tools class">
+    <HelpKINode Title="Tools Class" Url="html/T_IdeaStatiCa_Plugin_Tools.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_IdeaStatiCa_Plugin_Tools.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Tools.ModelFromXml method" Url="html/M_IdeaStatiCa_Plugin_Tools_ModelFromXml.htm" />
+  <HelpKINode Title="Tools.ModelsFromXml method" Url="html/M_IdeaStatiCa_Plugin_Tools_ModelsFromXml.htm" />
+  <HelpKINode Title="Tools.ModelToXml method" Url="html/Overload_IdeaStatiCa_Plugin_Tools_ModelToXml.htm" />
+  <HelpKINode Title="Tools.ProjectFromXml method" Url="html/M_IdeaStatiCa_Plugin_Tools_ProjectFromXml.htm" />
+  <HelpKINode Title="Tools.ProjectToXml method" Url="html/M_IdeaStatiCa_Plugin_Tools_ProjectToXml.htm" />
+  <HelpKINode Title="Type property">
+    <HelpKINode Title="BIMItemId.Type Property " Url="html/P_IdeaStatiCa_Plugin_BIMItemId_Type.htm" />
+    <HelpKINode Title="BIMItemsGroup.Type Property " Url="html/P_IdeaStatiCa_Plugin_BIMItemsGroup_Type.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Unknown enumeration member" Url="html/T_IdeaStatiCa_Plugin_AutomationStatus.htm" />
+</HelpKI>

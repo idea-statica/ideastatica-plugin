@@ -1,0 +1,303 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<HelpTOC>
+
+  <HelpTOCNode Id="01641dae-b74d-4964-8844-4b17c80b2f03" Title="Namespaces" Url="html/R_Project_IdeaStatiCa_Plugin.htm">
+    <HelpTOCNode Id="fe3cb44c-aa82-46e1-b7e1-58b671a94ef9" Title="IdeaStatiCa.Plugin" Url="html/N_IdeaStatiCa_Plugin.htm">
+      <HelpTOCNode Id="3011ca3e-beee-4e11-a928-bf1fdcbf647e" Title="ApplicationBIM Class" Url="html/T_IdeaStatiCa_Plugin_ApplicationBIM.htm">
+        <HelpTOCNode Title="ApplicationBIM Constructor " Url="html/M_IdeaStatiCa_Plugin_ApplicationBIM__ctor.htm" />
+        <HelpTOCNode Id="4fa82277-828d-4cce-ab7f-70ea7e52cf81" Title="ApplicationBIM Properties" Url="html/Properties_T_IdeaStatiCa_Plugin_ApplicationBIM.htm">
+          <HelpTOCNode Title="ApplicationName Property " Url="html/P_IdeaStatiCa_Plugin_ApplicationBIM_ApplicationName.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Id="e1b37774-edfc-4086-9079-dc2121499779" Title="ApplicationBIM Methods" Url="html/Methods_T_IdeaStatiCa_Plugin_ApplicationBIM.htm">
+          <HelpTOCNode Title="ActivateInBIM Method " Url="html/M_IdeaStatiCa_Plugin_ApplicationBIM_ActivateInBIM.htm" />
+          <HelpTOCNode Title="GetActiveSelection Method " Url="html/M_IdeaStatiCa_Plugin_ApplicationBIM_GetActiveSelection.htm" />
+          <HelpTOCNode Title="GetActiveSelectionModel Method " Url="html/M_IdeaStatiCa_Plugin_ApplicationBIM_GetActiveSelectionModel.htm" />
+          <HelpTOCNode Title="GetActiveSelectionModelXML Method " Url="html/M_IdeaStatiCa_Plugin_ApplicationBIM_GetActiveSelectionModelXML.htm" />
+          <HelpTOCNode Title="GetApplicationName Method " Url="html/M_IdeaStatiCa_Plugin_ApplicationBIM_GetApplicationName.htm" />
+          <HelpTOCNode Title="GetModelForSelection Method " Url="html/M_IdeaStatiCa_Plugin_ApplicationBIM_GetModelForSelection.htm" />
+          <HelpTOCNode Title="GetModelForSelectionXML Method " Url="html/M_IdeaStatiCa_Plugin_ApplicationBIM_GetModelForSelectionXML.htm" />
+          <HelpTOCNode Title="ImportActive Method " Url="html/M_IdeaStatiCa_Plugin_ApplicationBIM_ImportActive.htm" />
+          <HelpTOCNode Title="ImportSelection Method " Url="html/M_IdeaStatiCa_Plugin_ApplicationBIM_ImportSelection.htm" />
+          <HelpTOCNode Title="IsCAD Method " Url="html/M_IdeaStatiCa_Plugin_ApplicationBIM_IsCAD.htm" />
+          <HelpTOCNode Title="SelectAsync Method " Url="html/M_IdeaStatiCa_Plugin_ApplicationBIM_SelectAsync.htm" />
+          <HelpTOCNode Title="SetCrossectionList Method " Url="html/M_IdeaStatiCa_Plugin_ApplicationBIM_SetCrossectionList.htm" />
+          <HelpTOCNode Title="SetMaterialList Method " Url="html/M_IdeaStatiCa_Plugin_ApplicationBIM_SetMaterialList.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+      <HelpTOCNode Title="AppStatus Enumeration" Url="html/T_IdeaStatiCa_Plugin_AppStatus.htm" />
+      <HelpTOCNode Id="4cffbd17-7187-407a-bf74-9a61831951c7" Title="AutomationHosting(MyInterface, ClientInterface) Class" Url="html/T_IdeaStatiCa_Plugin_AutomationHosting_2.htm">
+        <HelpTOCNode Title="AutomationHosting(MyInterface, ClientInterface) Constructor " Url="html/M_IdeaStatiCa_Plugin_AutomationHosting_2__ctor.htm" />
+        <HelpTOCNode Id="13ad5ae0-443a-4607-921f-6d4284475c26" Title="AutomationHosting(MyInterface, ClientInterface) Properties" Url="html/Properties_T_IdeaStatiCa_Plugin_AutomationHosting_2.htm">
+          <HelpTOCNode Title="HostingTask Property " Url="html/P_IdeaStatiCa_Plugin_AutomationHosting_2_HostingTask.htm" />
+          <HelpTOCNode Title="MyBIM Property " Url="html/P_IdeaStatiCa_Plugin_AutomationHosting_2_MyBIM.htm" />
+          <HelpTOCNode Title="Service Property " Url="html/P_IdeaStatiCa_Plugin_AutomationHosting_2_Service.htm" />
+          <HelpTOCNode Title="Status Property " Url="html/P_IdeaStatiCa_Plugin_AutomationHosting_2_Status.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Id="73b2f8cf-5509-4249-9b31-ed1366b8993a" Title="AutomationHosting(MyInterface, ClientInterface) Methods" Url="html/Methods_T_IdeaStatiCa_Plugin_AutomationHosting_2.htm">
+          <HelpTOCNode Id="04140e3f-01c4-4c01-b72e-f9b56cdbacff" Title="Dispose Method " Url="html/Overload_IdeaStatiCa_Plugin_AutomationHosting_2_Dispose.htm">
+            <HelpTOCNode Title="Dispose Method " Url="html/M_IdeaStatiCa_Plugin_AutomationHosting_2_Dispose.htm" />
+            <HelpTOCNode Title="Dispose Method (Boolean)" Url="html/M_IdeaStatiCa_Plugin_AutomationHosting_2_Dispose_1.htm" />
+          </HelpTOCNode>
+          <HelpTOCNode Title="NotifyBIMStatusChanged Method " Url="html/M_IdeaStatiCa_Plugin_AutomationHosting_2_NotifyBIMStatusChanged.htm" />
+          <HelpTOCNode Title="RunAsync Method " Url="html/M_IdeaStatiCa_Plugin_AutomationHosting_2_RunAsync.htm" />
+          <HelpTOCNode Title="Stop Method " Url="html/M_IdeaStatiCa_Plugin_AutomationHosting_2_Stop.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Id="26f351f4-629c-4257-82c4-48cc6acd16b6" Title="AutomationHosting(MyInterface, ClientInterface) Events" Url="html/Events_T_IdeaStatiCa_Plugin_AutomationHosting_2.htm">
+          <HelpTOCNode Title="BIMStatusChanged Event" Url="html/E_IdeaStatiCa_Plugin_AutomationHosting_2_BIMStatusChanged.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+      <HelpTOCNode Id="4ab4fa30-324e-41a0-abfd-d6b3b72bc3f5" Title="AutomationService(ClientInterface) Class" Url="html/T_IdeaStatiCa_Plugin_AutomationService_1.htm">
+        <HelpTOCNode Title="AutomationService(ClientInterface) Constructor " Url="html/M_IdeaStatiCa_Plugin_AutomationService_1__ctor.htm" />
+        <HelpTOCNode Id="bc6ec889-b5e9-4073-ac5f-123e3d85035a" Title="AutomationService(ClientInterface) Properties" Url="html/Properties_T_IdeaStatiCa_Plugin_AutomationService_1.htm">
+          <HelpTOCNode Title="BIM Property " Url="html/P_IdeaStatiCa_Plugin_AutomationService_1_BIM.htm" />
+          <HelpTOCNode Title="ProjectDir Property " Url="html/P_IdeaStatiCa_Plugin_AutomationService_1_ProjectDir.htm" />
+          <HelpTOCNode Title="Status Property " Url="html/P_IdeaStatiCa_Plugin_AutomationService_1_Status.htm" />
+          <HelpTOCNode Title="TempWorkingDir Property " Url="html/P_IdeaStatiCa_Plugin_AutomationService_1_TempWorkingDir.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Id="ca6aed6e-ab55-45f2-97d2-e14c856973e9" Title="AutomationService(ClientInterface) Methods" Url="html/Methods_T_IdeaStatiCa_Plugin_AutomationService_1.htm">
+          <HelpTOCNode Title="CloseProject Method " Url="html/M_IdeaStatiCa_Plugin_AutomationService_1_CloseProject.htm" />
+          <HelpTOCNode Id="f9ac798d-fe54-4169-8293-e94967a9184b" Title="Dispose Method " Url="html/Overload_IdeaStatiCa_Plugin_AutomationService_1_Dispose.htm">
+            <HelpTOCNode Title="Dispose Method " Url="html/M_IdeaStatiCa_Plugin_AutomationService_1_Dispose.htm" />
+            <HelpTOCNode Title="Dispose Method (Boolean)" Url="html/M_IdeaStatiCa_Plugin_AutomationService_1_Dispose_1.htm" />
+          </HelpTOCNode>
+          <HelpTOCNode Title="NotifyChange Method " Url="html/M_IdeaStatiCa_Plugin_AutomationService_1_NotifyChange.htm" />
+          <HelpTOCNode Title="OpenProject Method " Url="html/M_IdeaStatiCa_Plugin_AutomationService_1_OpenProject.htm" />
+          <HelpTOCNode Title="Refresh Method " Url="html/M_IdeaStatiCa_Plugin_AutomationService_1_Refresh.htm" />
+          <HelpTOCNode Title="RefreshProject Method " Url="html/M_IdeaStatiCa_Plugin_AutomationService_1_RefreshProject.htm" />
+          <HelpTOCNode Title="SelectItem Method " Url="html/M_IdeaStatiCa_Plugin_AutomationService_1_SelectItem.htm" />
+          <HelpTOCNode Title="Shutdown Method " Url="html/M_IdeaStatiCa_Plugin_AutomationService_1_Shutdown.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+      <HelpTOCNode Title="AutomationStatus Enumeration" Url="html/T_IdeaStatiCa_Plugin_AutomationStatus.htm" />
+      <HelpTOCNode Id="1e7484ea-444a-46a7-ae93-163e8dc28ccc" Title="BIMItemId Class" Url="html/T_IdeaStatiCa_Plugin_BIMItemId.htm">
+        <HelpTOCNode Title="BIMItemId Constructor " Url="html/M_IdeaStatiCa_Plugin_BIMItemId__ctor.htm" />
+        <HelpTOCNode Id="980f5c15-43a3-4e52-b243-64fb43dcacf0" Title="BIMItemId Properties" Url="html/Properties_T_IdeaStatiCa_Plugin_BIMItemId.htm">
+          <HelpTOCNode Title="Id Property " Url="html/P_IdeaStatiCa_Plugin_BIMItemId_Id.htm" />
+          <HelpTOCNode Title="Type Property " Url="html/P_IdeaStatiCa_Plugin_BIMItemId_Type.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+      <HelpTOCNode Id="c7f44a22-5648-4b52-a868-29c65f3d75f0" Title="BIMItemsGroup Class" Url="html/T_IdeaStatiCa_Plugin_BIMItemsGroup.htm">
+        <HelpTOCNode Title="BIMItemsGroup Constructor " Url="html/M_IdeaStatiCa_Plugin_BIMItemsGroup__ctor.htm" />
+        <HelpTOCNode Id="6bfd9bbc-c80e-43c2-a0f1-4bfb40bf84ce" Title="BIMItemsGroup Properties" Url="html/Properties_T_IdeaStatiCa_Plugin_BIMItemsGroup.htm">
+          <HelpTOCNode Title="Items Property " Url="html/P_IdeaStatiCa_Plugin_BIMItemsGroup_Items.htm" />
+          <HelpTOCNode Title="Type Property " Url="html/P_IdeaStatiCa_Plugin_BIMItemsGroup_Type.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+      <HelpTOCNode Title="BIMItemType Enumeration" Url="html/T_IdeaStatiCa_Plugin_BIMItemType.htm" />
+      <HelpTOCNode Id="28d05d0a-2aa9-4de1-9982-991d0295d9a5" Title="BIMPluginHosting Class" Url="html/T_IdeaStatiCa_Plugin_BIMPluginHosting.htm">
+        <HelpTOCNode Title="BIMPluginHosting Constructor " Url="html/M_IdeaStatiCa_Plugin_BIMPluginHosting__ctor.htm" />
+        <HelpTOCNode Id="30d2c44a-1b5b-441f-8de5-da0cb8f7f4b3" Title="BIMPluginHosting Properties" Url="html/Properties_T_IdeaStatiCa_Plugin_BIMPluginHosting.htm">
+          <HelpTOCNode Title="HostingTask Property " Url="html/P_IdeaStatiCa_Plugin_BIMPluginHosting_HostingTask.htm" />
+          <HelpTOCNode Title="Service Property " Url="html/P_IdeaStatiCa_Plugin_BIMPluginHosting_Service.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Id="cea02eda-51f4-4229-85d5-37a5b2f4f7a1" Title="BIMPluginHosting Methods" Url="html/Methods_T_IdeaStatiCa_Plugin_BIMPluginHosting.htm">
+          <HelpTOCNode Id="da630aa0-0885-4990-9d03-b58ab8444dfb" Title="Dispose Method " Url="html/Overload_IdeaStatiCa_Plugin_BIMPluginHosting_Dispose.htm">
+            <HelpTOCNode Title="Dispose Method " Url="html/M_IdeaStatiCa_Plugin_BIMPluginHosting_Dispose.htm" />
+            <HelpTOCNode Title="Dispose Method (Boolean)" Url="html/M_IdeaStatiCa_Plugin_BIMPluginHosting_Dispose_1.htm" />
+          </HelpTOCNode>
+          <HelpTOCNode Title="NotifyAppStatusChanged Method " Url="html/M_IdeaStatiCa_Plugin_BIMPluginHosting_NotifyAppStatusChanged.htm" />
+          <HelpTOCNode Title="RunAsync Method " Url="html/M_IdeaStatiCa_Plugin_BIMPluginHosting_RunAsync.htm" />
+          <HelpTOCNode Title="Stop Method " Url="html/M_IdeaStatiCa_Plugin_BIMPluginHosting_Stop.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Id="4d7cb979-2700-4e4c-8a11-8b88213f95ae" Title="BIMPluginHosting Events" Url="html/Events_T_IdeaStatiCa_Plugin_BIMPluginHosting.htm">
+          <HelpTOCNode Title="AppStatusChanged Event" Url="html/E_IdeaStatiCa_Plugin_BIMPluginHosting_AppStatusChanged.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+      <HelpTOCNode Id="b46573a6-02f0-4126-b155-5d00fde62c84" Title="BIMProject Class" Url="html/T_IdeaStatiCa_Plugin_BIMProject.htm">
+        <HelpTOCNode Title="BIMProject Constructor " Url="html/M_IdeaStatiCa_Plugin_BIMProject__ctor.htm" />
+        <HelpTOCNode Id="8b3d5a41-306b-4489-8fde-5733a920a2d4" Title="BIMProject Properties" Url="html/Properties_T_IdeaStatiCa_Plugin_BIMProject.htm">
+          <HelpTOCNode Title="CoutryCode Property " Url="html/P_IdeaStatiCa_Plugin_BIMProject_CoutryCode.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+      <HelpTOCNode Id="df71bb61-4669-4dd2-86e2-7711c1dbc984" Title="ConnectionHiddenCheckClient Class" Url="html/T_IdeaStatiCa_Plugin_ConnectionHiddenCheckClient.htm">
+        <HelpTOCNode Title="ConnectionHiddenCheckClient Constructor " Url="html/M_IdeaStatiCa_Plugin_ConnectionHiddenCheckClient__ctor.htm" />
+        <HelpTOCNode Id="7cbb3c60-9f15-4ca6-a623-b44348ad2d07" Title="ConnectionHiddenCheckClient Properties" Url="html/Properties_T_IdeaStatiCa_Plugin_ConnectionHiddenCheckClient.htm">
+          <HelpTOCNode Title="Service Property " Url="html/P_IdeaStatiCa_Plugin_ConnectionHiddenCheckClient_Service.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Id="266faad4-5642-4ecb-90f0-bde19e44ec4d" Title="ConnectionHiddenCheckClient Methods" Url="html/Methods_T_IdeaStatiCa_Plugin_ConnectionHiddenCheckClient.htm">
+          <HelpTOCNode Title="Calculate Method " Url="html/M_IdeaStatiCa_Plugin_ConnectionHiddenCheckClient_Calculate.htm" />
+          <HelpTOCNode Title="CloseProject Method " Url="html/M_IdeaStatiCa_Plugin_ConnectionHiddenCheckClient_CloseProject.htm" />
+          <HelpTOCNode Title="CreateConProjFromIOM Method " Url="html/M_IdeaStatiCa_Plugin_ConnectionHiddenCheckClient_CreateConProjFromIOM.htm" />
+          <HelpTOCNode Title="GetConnectionModel Method " Url="html/M_IdeaStatiCa_Plugin_ConnectionHiddenCheckClient_GetConnectionModel.htm" />
+          <HelpTOCNode Title="GetProjectInfo Method " Url="html/M_IdeaStatiCa_Plugin_ConnectionHiddenCheckClient_GetProjectInfo.htm" />
+          <HelpTOCNode Title="OpenProject Method " Url="html/M_IdeaStatiCa_Plugin_ConnectionHiddenCheckClient_OpenProject.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+      <HelpTOCNode Id="542a2f95-c920-4a2f-bb87-3f3387e92b07" Title="ConnHiddenClientFactory Class" Url="html/T_IdeaStatiCa_Plugin_ConnHiddenClientFactory.htm">
+        <HelpTOCNode Title="ConnHiddenClientFactory Constructor " Url="html/M_IdeaStatiCa_Plugin_ConnHiddenClientFactory__ctor.htm" />
+        <HelpTOCNode Id="ef65507a-4bdf-4ae3-a730-be0b8c97a616" Title="ConnHiddenClientFactory Methods" Url="html/Methods_T_IdeaStatiCa_Plugin_ConnHiddenClientFactory.htm">
+          <HelpTOCNode Title="Create Method " Url="html/M_IdeaStatiCa_Plugin_ConnHiddenClientFactory_Create.htm" />
+          <HelpTOCNode Id="efa8053e-d835-4139-8cad-2f32cb0fef4b" Title="Dispose Method " Url="html/Overload_IdeaStatiCa_Plugin_ConnHiddenClientFactory_Dispose.htm">
+            <HelpTOCNode Title="Dispose Method " Url="html/M_IdeaStatiCa_Plugin_ConnHiddenClientFactory_Dispose.htm" />
+            <HelpTOCNode Title="Dispose Method (Boolean)" Url="html/M_IdeaStatiCa_Plugin_ConnHiddenClientFactory_Dispose_1.htm" />
+          </HelpTOCNode>
+        </HelpTOCNode>
+      </HelpTOCNode>
+      <HelpTOCNode Id="2cbade3b-4f00-4032-be92-c51437d43d1f" Title="Constants Class" Url="html/T_IdeaStatiCa_Plugin_Constants.htm">
+        <HelpTOCNode Title="Constants Constructor " Url="html/M_IdeaStatiCa_Plugin_Constants__ctor.htm" />
+        <HelpTOCNode Id="e331653d-f9cc-4336-b816-c47502909b28" Title="Constants Fields" Url="html/Fields_T_IdeaStatiCa_Plugin_Constants.htm">
+          <HelpTOCNode Title="AutomationParam Field" Url="html/F_IdeaStatiCa_Plugin_Constants_AutomationParam.htm" />
+          <HelpTOCNode Title="ConCalculatorChangedEventFormat Field" Url="html/F_IdeaStatiCa_Plugin_Constants_ConCalculatorChangedEventFormat.htm" />
+          <HelpTOCNode Title="ConnectionChangedEventFormat Field" Url="html/F_IdeaStatiCa_Plugin_Constants_ConnectionChangedEventFormat.htm" />
+          <HelpTOCNode Title="ConnHiddenCalculatorUrlFormat Field" Url="html/F_IdeaStatiCa_Plugin_Constants_ConnHiddenCalculatorUrlFormat.htm" />
+          <HelpTOCNode Title="DefaultIdeaStaticaAutoUrlFormat Field" Url="html/F_IdeaStatiCa_Plugin_Constants_DefaultIdeaStaticaAutoUrlFormat.htm" />
+          <HelpTOCNode Title="DefaultPluginEventName Field" Url="html/F_IdeaStatiCa_Plugin_Constants_DefaultPluginEventName.htm" />
+          <HelpTOCNode Title="DefaultPluginUrlFormat Field" Url="html/F_IdeaStatiCa_Plugin_Constants_DefaultPluginUrlFormat.htm" />
+          <HelpTOCNode Title="LibraryReposPath Field" Url="html/F_IdeaStatiCa_Plugin_Constants_LibraryReposPath.htm" />
+          <HelpTOCNode Title="MemberEventName Field" Url="html/F_IdeaStatiCa_Plugin_Constants_MemberEventName.htm" />
+          <HelpTOCNode Title="MemberHiddenCalculatorUrlFormat Field" Url="html/F_IdeaStatiCa_Plugin_Constants_MemberHiddenCalculatorUrlFormat.htm" />
+          <HelpTOCNode Title="MemberChangedEventFormat Field" Url="html/F_IdeaStatiCa_Plugin_Constants_MemberChangedEventFormat.htm" />
+          <HelpTOCNode Title="MemberUrlFormat Field" Url="html/F_IdeaStatiCa_Plugin_Constants_MemberUrlFormat.htm" />
+          <HelpTOCNode Title="MemHiddenCalcChangedEventFormat Field" Url="html/F_IdeaStatiCa_Plugin_Constants_MemHiddenCalcChangedEventFormat.htm" />
+          <HelpTOCNode Title="ProjectParam Field" Url="html/F_IdeaStatiCa_Plugin_Constants_ProjectParam.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+      <HelpTOCNode Id="bd323875-5030-43d3-ba14-d9bfc0f65e1c" Title="IApplicationBIM Interface" Url="html/T_IdeaStatiCa_Plugin_IApplicationBIM.htm">
+        <HelpTOCNode Id="d15654e8-f78a-40e0-9b03-25619049b220" Title="IApplicationBIM Methods" Url="html/Methods_T_IdeaStatiCa_Plugin_IApplicationBIM.htm">
+          <HelpTOCNode Title="GetActiveSelection Method " Url="html/M_IdeaStatiCa_Plugin_IApplicationBIM_GetActiveSelection.htm" />
+          <HelpTOCNode Title="GetActiveSelectionModelXML Method " Url="html/M_IdeaStatiCa_Plugin_IApplicationBIM_GetActiveSelectionModelXML.htm" />
+          <HelpTOCNode Title="GetApplicationName Method " Url="html/M_IdeaStatiCa_Plugin_IApplicationBIM_GetApplicationName.htm" />
+          <HelpTOCNode Title="GetModelForSelectionXML Method " Url="html/M_IdeaStatiCa_Plugin_IApplicationBIM_GetModelForSelectionXML.htm" />
+          <HelpTOCNode Title="IsCAD Method " Url="html/M_IdeaStatiCa_Plugin_IApplicationBIM_IsCAD.htm" />
+          <HelpTOCNode Title="SelectAsync Method " Url="html/M_IdeaStatiCa_Plugin_IApplicationBIM_SelectAsync.htm" />
+          <HelpTOCNode Title="SetCrossectionList Method " Url="html/M_IdeaStatiCa_Plugin_IApplicationBIM_SetCrossectionList.htm" />
+          <HelpTOCNode Title="SetMaterialList Method " Url="html/M_IdeaStatiCa_Plugin_IApplicationBIM_SetMaterialList.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+      <HelpTOCNode Id="a568125c-fbf1-4ff9-8115-ca9e73be1c4c" Title="IAutomation Interface" Url="html/T_IdeaStatiCa_Plugin_IAutomation.htm">
+        <HelpTOCNode Id="22272040-c303-494d-be13-185055f64750" Title="IAutomation Properties" Url="html/Properties_T_IdeaStatiCa_Plugin_IAutomation.htm">
+          <HelpTOCNode Title="ProjectDir Property " Url="html/P_IdeaStatiCa_Plugin_IAutomation_ProjectDir.htm" />
+          <HelpTOCNode Title="Status Property " Url="html/P_IdeaStatiCa_Plugin_IAutomation_Status.htm" />
+          <HelpTOCNode Title="TempWorkingDir Property " Url="html/P_IdeaStatiCa_Plugin_IAutomation_TempWorkingDir.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Id="d47f3ae9-628d-48dc-8d6d-4a48bb746dff" Title="IAutomation Methods" Url="html/Methods_T_IdeaStatiCa_Plugin_IAutomation.htm">
+          <HelpTOCNode Title="CloseProject Method " Url="html/M_IdeaStatiCa_Plugin_IAutomation_CloseProject.htm" />
+          <HelpTOCNode Title="NotifyChange Method " Url="html/M_IdeaStatiCa_Plugin_IAutomation_NotifyChange.htm" />
+          <HelpTOCNode Title="OpenProject Method " Url="html/M_IdeaStatiCa_Plugin_IAutomation_OpenProject.htm" />
+          <HelpTOCNode Title="Refresh Method " Url="html/M_IdeaStatiCa_Plugin_IAutomation_Refresh.htm" />
+          <HelpTOCNode Title="RefreshProject Method " Url="html/M_IdeaStatiCa_Plugin_IAutomation_RefreshProject.htm" />
+          <HelpTOCNode Title="SelectItem Method " Url="html/M_IdeaStatiCa_Plugin_IAutomation_SelectItem.htm" />
+          <HelpTOCNode Title="Shutdown Method " Url="html/M_IdeaStatiCa_Plugin_IAutomation_Shutdown.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+      <HelpTOCNode Id="bde5e516-d39b-4336-a868-910ac3490ce5" Title="IBIMPluginClient(T) Interface" Url="html/T_IdeaStatiCa_Plugin_IBIMPluginClient_1.htm">
+        <HelpTOCNode Id="9697b243-aa0c-4889-98ac-bbceee6dabd4" Title="IBIMPluginClient(T) Properties" Url="html/Properties_T_IdeaStatiCa_Plugin_IBIMPluginClient_1.htm">
+          <HelpTOCNode Title="MyBIM Property " Url="html/P_IdeaStatiCa_Plugin_IBIMPluginClient_1_MyBIM.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Id="e64c6c34-cb0f-45de-baf1-d05533e0337b" Title="IBIMPluginClient(T) Methods" Url="html/Methods_T_IdeaStatiCa_Plugin_IBIMPluginClient_1.htm">
+          <HelpTOCNode Title="RunAsync Method " Url="html/M_IdeaStatiCa_Plugin_IBIMPluginClient_1_RunAsync.htm" />
+          <HelpTOCNode Title="Stop Method " Url="html/M_IdeaStatiCa_Plugin_IBIMPluginClient_1_Stop.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Id="e9641a8b-61bd-4dc4-847e-84f885d72f54" Title="IBIMPluginClient(T) Events" Url="html/Events_T_IdeaStatiCa_Plugin_IBIMPluginClient_1.htm">
+          <HelpTOCNode Title="BIMStatusChanged Event" Url="html/E_IdeaStatiCa_Plugin_IBIMPluginClient_1_BIMStatusChanged.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+      <HelpTOCNode Id="be986d9c-b157-4b15-addf-aeaad9d604c6" Title="IBIMPluginFactory Interface" Url="html/T_IdeaStatiCa_Plugin_IBIMPluginFactory.htm">
+        <HelpTOCNode Id="d434ef4a-b31e-404a-8a18-eb4809911f68" Title="IBIMPluginFactory Properties" Url="html/Properties_T_IdeaStatiCa_Plugin_IBIMPluginFactory.htm">
+          <HelpTOCNode Title="FeaAppName Property " Url="html/P_IdeaStatiCa_Plugin_IBIMPluginFactory_FeaAppName.htm" />
+          <HelpTOCNode Title="IdeaStaticaAppPath Property " Url="html/P_IdeaStatiCa_Plugin_IBIMPluginFactory_IdeaStaticaAppPath.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Id="6a809c09-98c0-43bc-8654-4ff3f5861ad3" Title="IBIMPluginFactory Methods" Url="html/Methods_T_IdeaStatiCa_Plugin_IBIMPluginFactory.htm">
+          <HelpTOCNode Title="Create Method " Url="html/M_IdeaStatiCa_Plugin_IBIMPluginFactory_Create.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+      <HelpTOCNode Id="58512b58-e8c4-4cc0-baf5-7c6c61756a4c" Title="IBIMPluginHosting Interface" Url="html/T_IdeaStatiCa_Plugin_IBIMPluginHosting.htm">
+        <HelpTOCNode Id="1134a2bf-8dac-4588-8891-0a318b8398a9" Title="IBIMPluginHosting Properties" Url="html/Properties_T_IdeaStatiCa_Plugin_IBIMPluginHosting.htm">
+          <HelpTOCNode Title="Service Property " Url="html/P_IdeaStatiCa_Plugin_IBIMPluginHosting_Service.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Id="3a094098-ccb6-4dbe-aac7-8d668a531536" Title="IBIMPluginHosting Methods" Url="html/Methods_T_IdeaStatiCa_Plugin_IBIMPluginHosting.htm">
+          <HelpTOCNode Title="RunAsync Method " Url="html/M_IdeaStatiCa_Plugin_IBIMPluginHosting_RunAsync.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Id="fe43df4d-27c5-45ff-bff8-34f34d84f187" Title="IBIMPluginHosting Events" Url="html/Events_T_IdeaStatiCa_Plugin_IBIMPluginHosting.htm">
+          <HelpTOCNode Title="AppStatusChanged Event" Url="html/E_IdeaStatiCa_Plugin_IBIMPluginHosting_AppStatusChanged.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+      <HelpTOCNode Id="802680ad-939e-4698-9829-16c58daf61be" Title="IClientBIM(B) Interface" Url="html/T_IdeaStatiCa_Plugin_IClientBIM_1.htm">
+        <HelpTOCNode Id="c49a6956-210d-4371-b159-b1e7dcfd3473" Title="IClientBIM(B) Properties" Url="html/Properties_T_IdeaStatiCa_Plugin_IClientBIM_1.htm">
+          <HelpTOCNode Title="BIM Property " Url="html/P_IdeaStatiCa_Plugin_IClientBIM_1_BIM.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+      <HelpTOCNode Id="fe58c323-fc15-43ff-9007-41378e8c3ff3" Title="IConnCalculatorFactory Interface" Url="html/T_IdeaStatiCa_Plugin_IConnCalculatorFactory.htm">
+        <HelpTOCNode Id="df1db092-0262-44f6-827b-52669e72bc8e" Title="IConnCalculatorFactory Methods" Url="html/Methods_T_IdeaStatiCa_Plugin_IConnCalculatorFactory.htm">
+          <HelpTOCNode Title="Create Method " Url="html/M_IdeaStatiCa_Plugin_IConnCalculatorFactory_Create.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+      <HelpTOCNode Id="e047cab9-b59a-4b26-b287-49674e5afca3" Title="IConnHiddenCheck Interface" Url="html/T_IdeaStatiCa_Plugin_IConnHiddenCheck.htm">
+        <HelpTOCNode Id="ddb5cfe4-c620-421b-8494-0031b55560de" Title="IConnHiddenCheck Methods" Url="html/Methods_T_IdeaStatiCa_Plugin_IConnHiddenCheck.htm">
+          <HelpTOCNode Title="Calculate Method " Url="html/M_IdeaStatiCa_Plugin_IConnHiddenCheck_Calculate.htm" />
+          <HelpTOCNode Title="CloseProject Method " Url="html/M_IdeaStatiCa_Plugin_IConnHiddenCheck_CloseProject.htm" />
+          <HelpTOCNode Title="CreateConProjFromIOM Method " Url="html/M_IdeaStatiCa_Plugin_IConnHiddenCheck_CreateConProjFromIOM.htm" />
+          <HelpTOCNode Title="GetConnectionModel Method " Url="html/M_IdeaStatiCa_Plugin_IConnHiddenCheck_GetConnectionModel.htm" />
+          <HelpTOCNode Title="GetProjectInfo Method " Url="html/M_IdeaStatiCa_Plugin_IConnHiddenCheck_GetProjectInfo.htm" />
+          <HelpTOCNode Title="OpenProject Method " Url="html/M_IdeaStatiCa_Plugin_IConnHiddenCheck_OpenProject.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+      <HelpTOCNode Id="08e07d5b-6ef4-4ce5-ae88-6b2497b7247e" Title="IdeaStatiCaClient(T) Class" Url="html/T_IdeaStatiCa_Plugin_IdeaStatiCaClient_1.htm">
+        <HelpTOCNode Title="IdeaStatiCaClient(T) Constructor " Url="html/M_IdeaStatiCa_Plugin_IdeaStatiCaClient_1__ctor.htm" />
+        <HelpTOCNode Id="32acb9a8-3e89-4855-b4c6-905d39b2b163" Title="IdeaStatiCaClient(T) Properties" Url="html/Properties_T_IdeaStatiCa_Plugin_IdeaStatiCaClient_1.htm">
+          <HelpTOCNode Title="Service Property " Url="html/P_IdeaStatiCa_Plugin_IdeaStatiCaClient_1_Service.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+      <HelpTOCNode Id="e217bb0c-9019-4552-9aa6-9f75a05eeaec" Title="IMemberCalculatorFactory Interface" Url="html/T_IdeaStatiCa_Plugin_IMemberCalculatorFactory.htm">
+        <HelpTOCNode Id="c8455e3f-f725-425a-89c4-7cd7a0b4de9d" Title="IMemberCalculatorFactory Methods" Url="html/Methods_T_IdeaStatiCa_Plugin_IMemberCalculatorFactory.htm">
+          <HelpTOCNode Title="Create Method " Url="html/M_IdeaStatiCa_Plugin_IMemberCalculatorFactory_Create.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+      <HelpTOCNode Id="660522bc-c5d0-4192-8ebd-3e29e1e54ffe" Title="IMemberHiddenCheck Interface" Url="html/T_IdeaStatiCa_Plugin_IMemberHiddenCheck.htm">
+        <HelpTOCNode Id="031c831b-76f0-4bb9-81d3-4b19907a0551" Title="IMemberHiddenCheck Methods" Url="html/Methods_T_IdeaStatiCa_Plugin_IMemberHiddenCheck.htm">
+          <HelpTOCNode Title="Calculate Method " Url="html/M_IdeaStatiCa_Plugin_IMemberHiddenCheck_Calculate.htm" />
+          <HelpTOCNode Title="CloseProject Method " Url="html/M_IdeaStatiCa_Plugin_IMemberHiddenCheck_CloseProject.htm" />
+          <HelpTOCNode Title="OpenProject Method " Url="html/M_IdeaStatiCa_Plugin_IMemberHiddenCheck_OpenProject.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+      <HelpTOCNode Id="ba6ca24e-9e2f-4b76-9142-2a27ac2ad891" Title="ISEventArgs Class" Url="html/T_IdeaStatiCa_Plugin_ISEventArgs.htm">
+        <HelpTOCNode Title="ISEventArgs Constructor " Url="html/M_IdeaStatiCa_Plugin_ISEventArgs__ctor.htm" />
+        <HelpTOCNode Id="7ee49414-4e49-4f41-8bb1-ea78da79f9b4" Title="ISEventArgs Properties" Url="html/Properties_T_IdeaStatiCa_Plugin_ISEventArgs.htm">
+          <HelpTOCNode Title="Status Property " Url="html/P_IdeaStatiCa_Plugin_ISEventArgs_Status.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+      <HelpTOCNode Title="ISEventHandler Delegate" Url="html/T_IdeaStatiCa_Plugin_ISEventHandler.htm" />
+      <HelpTOCNode Id="4903686c-b7a0-4e25-bfbd-3ccda048750e" Title="MemberHiddenClientFactory Class" Url="html/T_IdeaStatiCa_Plugin_MemberHiddenClientFactory.htm">
+        <HelpTOCNode Title="MemberHiddenClientFactory Constructor " Url="html/M_IdeaStatiCa_Plugin_MemberHiddenClientFactory__ctor.htm" />
+        <HelpTOCNode Id="5fc9751d-61f7-4c10-ad91-e1c725120fe8" Title="MemberHiddenClientFactory Methods" Url="html/Methods_T_IdeaStatiCa_Plugin_MemberHiddenClientFactory.htm">
+          <HelpTOCNode Title="Create Method " Url="html/M_IdeaStatiCa_Plugin_MemberHiddenClientFactory_Create.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+      <HelpTOCNode Id="cc012504-1a70-4efb-87de-893917fc2fb7" Title="MemberHiddenCheckClient Class" Url="html/T_IdeaStatiCa_Plugin_MemberHiddenCheckClient.htm">
+        <HelpTOCNode Title="MemberHiddenCheckClient Constructor " Url="html/M_IdeaStatiCa_Plugin_MemberHiddenCheckClient__ctor.htm" />
+        <HelpTOCNode Id="8e763d57-8ac1-4475-8e50-a24e13bccc9a" Title="MemberHiddenCheckClient Properties" Url="html/Properties_T_IdeaStatiCa_Plugin_MemberHiddenCheckClient.htm">
+          <HelpTOCNode Title="Service Property " Url="html/P_IdeaStatiCa_Plugin_MemberHiddenCheckClient_Service.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Id="c94c291a-1516-4f2a-98e2-0f911aa12a3f" Title="MemberHiddenCheckClient Methods" Url="html/Methods_T_IdeaStatiCa_Plugin_MemberHiddenCheckClient.htm">
+          <HelpTOCNode Title="Calculate Method " Url="html/M_IdeaStatiCa_Plugin_MemberHiddenCheckClient_Calculate.htm" />
+          <HelpTOCNode Title="CloseProject Method " Url="html/M_IdeaStatiCa_Plugin_MemberHiddenCheckClient_CloseProject.htm" />
+          <HelpTOCNode Title="OpenProject Method " Url="html/M_IdeaStatiCa_Plugin_MemberHiddenCheckClient_OpenProject.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+      <HelpTOCNode Id="50569099-3416-49a2-94ad-4ecf8be91943" Title="ModelBIM Class" Url="html/T_IdeaStatiCa_Plugin_ModelBIM.htm">
+        <HelpTOCNode Title="ModelBIM Constructor " Url="html/M_IdeaStatiCa_Plugin_ModelBIM__ctor.htm" />
+        <HelpTOCNode Id="5050991c-5b49-48ee-a1fc-08ebe4c7dd05" Title="ModelBIM Properties" Url="html/Properties_T_IdeaStatiCa_Plugin_ModelBIM.htm">
+          <HelpTOCNode Title="Items Property " Url="html/P_IdeaStatiCa_Plugin_ModelBIM_Items.htm" />
+          <HelpTOCNode Title="Messages Property " Url="html/P_IdeaStatiCa_Plugin_ModelBIM_Messages.htm" />
+          <HelpTOCNode Title="Model Property " Url="html/P_IdeaStatiCa_Plugin_ModelBIM_Model.htm" />
+          <HelpTOCNode Title="Project Property " Url="html/P_IdeaStatiCa_Plugin_ModelBIM_Project.htm" />
+          <HelpTOCNode Title="RequestedItems Property " Url="html/P_IdeaStatiCa_Plugin_ModelBIM_RequestedItems.htm" />
+          <HelpTOCNode Title="Results Property " Url="html/P_IdeaStatiCa_Plugin_ModelBIM_Results.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+      <HelpTOCNode Title="RequestedItemsType Enumeration" Url="html/T_IdeaStatiCa_Plugin_RequestedItemsType.htm" />
+      <HelpTOCNode Id="b391a9f1-1eb8-4034-be05-2597dd266ce3" Title="Tools Class" Url="html/T_IdeaStatiCa_Plugin_Tools.htm">
+        <HelpTOCNode Id="e91377ae-9c1b-4061-b6b6-7586d46bdfb3" Title="Tools Methods" Url="html/Methods_T_IdeaStatiCa_Plugin_Tools.htm">
+          <HelpTOCNode Title="ModelFromXml Method " Url="html/M_IdeaStatiCa_Plugin_Tools_ModelFromXml.htm" />
+          <HelpTOCNode Title="ModelsFromXml Method " Url="html/M_IdeaStatiCa_Plugin_Tools_ModelsFromXml.htm" />
+          <HelpTOCNode Id="ea070369-bfa3-4111-af16-bbb7677efd8e" Title="ModelToXml Method " Url="html/Overload_IdeaStatiCa_Plugin_Tools_ModelToXml.htm">
+            <HelpTOCNode Title="ModelToXml Method (ModelBIM)" Url="html/M_IdeaStatiCa_Plugin_Tools_ModelToXml.htm" />
+            <HelpTOCNode Title="ModelToXml Method (List(ModelBIM))" Url="html/M_IdeaStatiCa_Plugin_Tools_ModelToXml_1.htm" />
+          </HelpTOCNode>
+          <HelpTOCNode Title="ProjectFromXml Method " Url="html/M_IdeaStatiCa_Plugin_Tools_ProjectFromXml.htm" />
+          <HelpTOCNode Title="ProjectToXml Method " Url="html/M_IdeaStatiCa_Plugin_Tools_ProjectToXml.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+    </HelpTOCNode>
+  </HelpTOCNode>
+</HelpTOC>
