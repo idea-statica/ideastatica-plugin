@@ -7,6 +7,8 @@ Link to its [nuget package](https://www.nuget.org/packages/IdeaStatiCa.Plugin)
 
 Link to its [Help File](Help/IdeaStatiCa.Plugin.chm?raw=true)
 
+[Online documentation](https://idea-statica.github.io/ideastatica-plugin/ideastatica-plugin-api/latest/index.html)
+
 # IdeaStatiCa.PluginsTools
 it includes a set of tools for creating IOM
 
