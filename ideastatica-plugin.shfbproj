@@ -19,9 +19,10 @@
     <Language>en-US</Language>
     <DocumentationSources>
       <DocumentationSource sourceFile="IdeaStatiCa.Plugin\bin\Release\IdeaStatiCa.Plugin.dll" />
-<DocumentationSource sourceFile="IdeaStatiCa.Plugin\bin\Release\IdeaStatiCa.Plugin.xml" /></DocumentationSources>
-    <HelpFileFormat>HtmlHelp1</HelpFileFormat>
-    <SyntaxFilters>Standard</SyntaxFilters>
+      <DocumentationSource sourceFile="IdeaStatiCa.Plugin\bin\Release\IdeaStatiCa.Plugin.xml" />
+    </DocumentationSources>
+    <HelpFileFormat>Website</HelpFileFormat>
+    <SyntaxFilters>C#, Visual Basic</SyntaxFilters>
     <PresentationStyle>VS2013</PresentationStyle>
     <CleanIntermediates>True</CleanIntermediates>
     <KeepLogFile>True</KeepLogFile>
@@ -29,13 +30,17 @@
     <IndentHtml>False</IndentHtml>
     <BuildAssemblerVerbosity>OnlyWarningsAndErrors</BuildAssemblerVerbosity>
     <SaveComponentCacheCapacity>100</SaveComponentCacheCapacity>
-    <HelpTitle>\IdeaStatiCa.Plugin</HelpTitle>
+    <HelpTitle>IdeaStatiCa.Plugin</HelpTitle>
     <HelpFileVersion>20.1.0.0</HelpFileVersion>
-    <RootNamespaceContainer>False</RootNamespaceContainer>
-    <NamespaceGrouping>False</NamespaceGrouping>
+    <RootNamespaceContainer>True</RootNamespaceContainer>
+    <NamespaceGrouping>True</NamespaceGrouping>
     <MaximumGroupParts>2</MaximumGroupParts>
     <Preliminary>False</Preliminary>
     <SdkLinkTarget>Blank</SdkLinkTarget>
+    <HeaderText>Compatible with IDEA StatiCa 20.1</HeaderText>
+    <VisibleItems>InheritedMembers, Protected, ProtectedInternalAsProtected, NonBrowsable</VisibleItems>
+    <NamingMethod>MemberName</NamingMethod>
+    <ContentPlacement>AboveNamespaces</ContentPlacement>
   </PropertyGroup>
   <!-- There are no properties for these groups.  AnyCPU needs to appear in order for Visual Studio to perform
 			 the build.  The others are optional common platform types that may appear. -->
