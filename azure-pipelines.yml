@@ -3,31 +3,85 @@
 # Add steps that publish symbols, save build artifacts, and more:
 # https://docs.microsoft.com/azure/devops/pipelines/apps/windows/dot-net
 
-trigger:
-- main
-
-pool:
-  vmImage: 'windows-latest'
+#trigger:
+#- master
 
 variables:
+  majorVersion: 20
+  minorVersion: 1
+  myBuildId: $[counter('', 1)]
+
+  outputDirectory: '$(Build.SourcesDirectory)\bin\$(buildConfiguration)'
+  myBuildName: $(majorVersion).$(minorVersion).$(myBuildId)
+  name: '$(majorVersion).$(minorVersion).$(myBuildId)'
   solution: '**/*.sln'
   buildPlatform: 'Any CPU'
   buildConfiguration: 'Release'
 
-steps:
-- task: NuGetToolInstaller@1
+name: '$(majorVersion).$(minorVersion).$(myBuildId)'
 
-- task: NuGetCommand@2
-  inputs:
-    restoreSolution: '$(solution)'
+stages:
+- stage: BuildSolutions
+  displayName: Building Solutions
 
-- task: VSBuild@1
-  inputs:
-    solution: '$(solution)'
-    platform: '$(buildPlatform)'
-    configuration: '$(buildConfiguration)'
+  pool:
+    vmImage: 'windows-latest'
 
-- task: VSTest@2
-  inputs:
-    platform: '$(buildPlatform)'
-    configuration: '$(buildConfiguration)'
+  jobs:
+    - job: BuildSolution
+      displayName: Building solution
+
+      steps:
+        - checkout: self
+        - task: NuGetToolInstaller@1
+
+        - task: NuGetCommand@2
+          inputs:
+            restoreSolution: '$(solution)'
+
+        - powershell: |
+            Write-Host "Using an input-macro works: $(outputDirectory)"
+
+        - task: Assembly-Info-NetCore@2
+          inputs:
+            Path: '$(Build.SourcesDirectory)'
+            FileNames: '**/*.csproj'
+            InsertAttributes: true
+            FileEncoding: 'auto'
+            WriteBOM: true
+            GeneratePackageOnBuild: true
+            PackageId: 'IdeaStatiCa.Plugin'
+            Authors: 'IDEA StatiCa'
+            Company: 'IDEA StatiCa'
+            Product: 'IdeaStatiCa.Plugin'
+            PackageProjectUrl: 'https://github.com/idea-statica/ideastatica-plugin'
+            RepositoryUrl: 'https://github.com/idea-statica/ideastatica-plugin'
+            VersionNumber: $(myBuildName)
+            FileVersionNumber: $(myBuildName)
+            PackageVersion: $(myBuildName)
+            InformationalVersion: $(myBuildName)
+            RepositoryType: GitHub
+            LogLevel: 'verbose'
+            FailOnWarning: false
+            DisableTelemetry: false
+            
+        - task: VSBuild@1
+          inputs:
+            solution: '$(solution)'
+            platform: '$(buildPlatform)'
+            configuration: '$(buildConfiguration)'
+            maximumCpuCount: true
+            logProjectEvents: false
+
+        - task: ArchiveFiles@2
+          displayName: 'Archiving files $(outputDirectory) to $(Build.ArtifactStagingDirectory)/IOM_$(myBuildName).7z'
+          inputs:
+            rootFolderOrFile: '$(outputDirectory)'
+            includeRootFolder: false
+            archiveType: '7z'
+            archiveFile: '$(outputDirectory)/IOM_$(myBuildName).7z'
+            replaceExistingArchive: true
+
+        - publish: '$(outputDirectory)/IOM_$(myBuildName).7z'
+          displayName: 'Publishing IOM IOM_$(myBuildName)'
+          artifact: Binaries
