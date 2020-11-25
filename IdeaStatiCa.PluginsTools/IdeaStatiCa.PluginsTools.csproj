@@ -5,7 +5,7 @@
     <AssemblyTitle>IdeaStatiCa.PluginsTools</AssemblyTitle>
     <Product>IdeaStatiCa.PluginsTools</Product>
     <Copyright></Copyright>
-    <OutputPath>bin\$(Configuration)\</OutputPath>
+    <OutputPath>..\bin\Release\</OutputPath>
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
     <Authors>IdeaStatiCa</Authors>
     <Version>20.1.1</Version>

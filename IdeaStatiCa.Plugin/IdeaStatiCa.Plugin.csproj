@@ -5,11 +5,11 @@
     <AssemblyTitle>IdeaStatiCa.Plugin</AssemblyTitle>
     <Product>IdeaStatiCa.Plugin</Product>
     <Copyright></Copyright>
-    <OutputPath>bin\$(Configuration)\</OutputPath>
+    <OutputPath>..\bin\Release\</OutputPath>
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
     <Authors>IdeaStatiCa</Authors>
     <Version>20.1.4</Version>
-    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <AssemblyVersion>20.1.4.0</AssemblyVersion>
     <FileVersion>20.1.4.0</FileVersion>
     <PackageReleaseNotes>ver 20.1.2.0
@@ -28,11 +28,11 @@ better details about thrown exceptions</PackageReleaseNotes>
     <DebugType>pdbonly</DebugType>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net46|AnyCPU'">
-    <DocumentationFile>bin\Release\IdeaStatiCa.Plugin.xml</DocumentationFile>
+    <DocumentationFile></DocumentationFile>
     <NoWarn>1701;1702;1591</NoWarn>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net46|AnyCPU'">
-    <DocumentationFile>bin\Debug\IdeaStatiCa.Plugin.xml</DocumentationFile>
+    <DocumentationFile></DocumentationFile>
     <NoWarn>1701;1702;1591</NoWarn>
   </PropertyGroup>
   <ItemGroup>
