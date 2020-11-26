@@ -49,7 +49,7 @@ stages:
             InsertAttributes: true
             FileEncoding: 'auto'
             WriteBOM: true
-            GeneratePackageOnBuild: false
+            GeneratePackageOnBuild: true
             PackageId: 'IdeaStatiCa.Plugin'
             Authors: 'IDEA StatiCa'
             Company: 'IDEA StatiCa'
