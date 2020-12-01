@@ -61,6 +61,7 @@ namespace IdeaStatiCa.Plugin
 		private readonly string EventName;
 		private readonly string ClientUrlFormat;
 		private readonly string AutomationUrlFormat;
+		private readonly Diagnostics.IIdeaLogger ideaLogger = null;
 
 #if DEBUG
 		private readonly TimeSpan OpenServerTimeLimit = TimeSpan.MaxValue;
@@ -73,6 +74,7 @@ namespace IdeaStatiCa.Plugin
 			string clientUrlFormat = Constants.DefaultPluginUrlFormat,
 			string automationUrlFormat = Constants.DefaultIdeaStaticaAutoUrlFormat)
 		{
+			ideaLogger = Diagnostics.IdeaDiagnostics.GetLogger("ideastatica.plugin.automationhosting");
 			this.Status = AutomationStatus.Unknown;
 			this.automation = hostedService;
 			this.EventName = eventName;
@@ -85,6 +87,11 @@ namespace IdeaStatiCa.Plugin
 
 		public AutomationStatus Status { get; private set; }
 
+		/// <summary>
+		/// 
+		/// </summary>
+		/// <param name="id">The identifier if BIM application (its process id)</param>
+		/// <returns>Running task. </returns>
 		public Task RunAsync(string id)
 		{
 			if (hostingTask != null)
@@ -98,7 +105,15 @@ namespace IdeaStatiCa.Plugin
 
 			HostingTask = Task.Run(() =>
 			{
-				RunServer(id, token);
+				try
+				{
+					RunServer(id, token);
+				}
+				catch(Exception e)
+				{
+					ideaLogger.LogError("RunAsync  RunServer failed", e);
+					throw;
+				}
 			}, token);
 
 			return HostingTask;
@@ -127,14 +142,20 @@ namespace IdeaStatiCa.Plugin
 			}
 		}
 
-		private void RunServer(string id, System.Threading.CancellationToken cancellationToken)
+		protected virtual void RunServer(string id, System.Threading.CancellationToken cancellationToken)
 		{
-			try
+			ideaLogger.LogInformation("Calling RunServer");
+
+			mre.Reset();
+
+			bool isBimRunning = false;
+			if (!string.IsNullOrEmpty(id))
 			{
-				mre.Reset();
+				// try to attach to the service which is hosted in a BIM application
 				try
 				{
 					myAutomatingProcessId = int.Parse(id);
+					ideaLogger.LogInformation($"RunServer - processId == '{myAutomatingProcessId}'");
 
 					bimProcess = Process.GetProcessById(myAutomatingProcessId);
 					bimProcess.EnableRaisingEvents = true;
@@ -169,102 +190,108 @@ namespace IdeaStatiCa.Plugin
 					}
 
 					Status |= AutomationStatus.IsClient;
+					isBimRunning = true;
 				}
-				catch (Exception)
+				catch (Exception e)
 				{
-					bimProcess = null;
-					myAutomatingProcessId = -1;
-					if (automation != null)
-					{
-						// service was injected, set client's interface
-						if (automation is IClientBIM<ClientInterface> clientBIM)
-						{
-							clientBIM.BIM = null;
-						}
-					}
-				}
-
-				var myProcess = Process.GetCurrentProcess();
-				int myProcessId = myProcess.Id;
-
-				string baseAddress = string.Format(AutomationUrlFormat, myProcessId);
-
-				// expose my IAutomation interface
-				using (ServiceHost selfServiceHost = new ServiceHost(automation, new Uri(baseAddress)))
-				{
-					((ServiceBehaviorAttribute)selfServiceHost.Description.
-					Behaviors[typeof(ServiceBehaviorAttribute)]).InstanceContextMode
-					= InstanceContextMode.Single;
-
-					//Net named pipe
-					NetNamedPipeBinding binding = new NetNamedPipeBinding { MaxReceivedMessageSize = 2147483647 };
-					binding.ReceiveTimeout = TimeSpan.MaxValue;
-					selfServiceHost.AddServiceEndpoint(typeof(MyInterface), binding, baseAddress);
-
-					//MEX - Meta data exchange
-					ServiceMetadataBehavior behavior = new ServiceMetadataBehavior();
-					selfServiceHost.Description.Behaviors.Add(behavior);
-					selfServiceHost.AddServiceEndpoint(typeof(IMetadataExchange), MetadataExchangeBindings.CreateMexNamedPipeBinding(), baseAddress + "/mex");
-
-					selfServiceHost.Open(OpenServerTimeLimit);
-
-					if (!string.IsNullOrEmpty(id))
-					{
-						// notify plugin that service is running
-						string myEventName = string.Format("{0}{1}", EventName, id);
-						EventWaitHandle syncEvent;
-						if (EventWaitHandle.TryOpenExisting(myEventName, out syncEvent))
-						{
-							syncEvent.Set();
-							syncEvent.Dispose();
-						}
-					}
-
-#if DEBUG
-					foreach (var endpoint in selfServiceHost.Description.Endpoints)
-					{
-						Debug.WriteLine("{0} ({1})", endpoint.Address.ToString(), endpoint.Binding.Name);
-					}
-#endif
-
-					NotifyBIMStatusChanged(AppStatus.Started);
-
-					while (!cancellationToken.IsCancellationRequested)
-					{
-						Thread.Sleep(100);
-					}
-
-					try
-					{
-						if (bimClient != null)
-						{
-							bimClient.Close();
-							bimClient = null;
-						}
-					}
-					catch { }
-
-					try
-					{
-						if (selfServiceHost != null)
-						{
-							selfServiceHost.Close();
-						}
-					}
-					catch { }
-
-					NotifyBIMStatusChanged(AppStatus.Finished);
-
-					mre.Set();
+					ideaLogger.LogError("Can not attach to BIM application", e);
+					throw;
 				}
 			}
-			catch (Exception e)
+
+			if(!isBimRunning)
 			{
-				Debug.Assert(false, e.Message);
+				bimProcess = null;
+				myAutomatingProcessId = -1;
+				if (automation != null)
+				{
+					// service was injected, set client's interface
+					if (automation is IClientBIM<ClientInterface> clientBIM)
+					{
+						clientBIM.BIM = null;
+					}
+				}
+			}
+
+			var myProcess = Process.GetCurrentProcess();
+			int myProcessId = myProcess.Id;
+
+			string baseAddress = string.Format(AutomationUrlFormat, myProcessId);
+			ideaLogger.LogInformation($"RunServer - Starting Automation service listening on '{baseAddress}'");
+
+			// expose my IAutomation interface
+			using (ServiceHost selfServiceHost = new ServiceHost(automation, new Uri(baseAddress)))
+			{
+				((ServiceBehaviorAttribute)selfServiceHost.Description.
+				Behaviors[typeof(ServiceBehaviorAttribute)]).InstanceContextMode
+				= InstanceContextMode.Single;
+
+				//Net named pipe
+				NetNamedPipeBinding binding = new NetNamedPipeBinding { MaxReceivedMessageSize = 2147483647 };
+				binding.ReceiveTimeout = TimeSpan.MaxValue;
+				selfServiceHost.AddServiceEndpoint(typeof(MyInterface), binding, baseAddress);
+
+				//MEX - Meta data exchange
+				ServiceMetadataBehavior behavior = new ServiceMetadataBehavior();
+				selfServiceHost.Description.Behaviors.Add(behavior);
+				selfServiceHost.AddServiceEndpoint(typeof(IMetadataExchange), MetadataExchangeBindings.CreateMexNamedPipeBinding(), baseAddress + "/mex");
+
+				selfServiceHost.Open(OpenServerTimeLimit);
+
+				if (!string.IsNullOrEmpty(id))
+				{
+					// notify plugin that service is running
+					string myEventName = string.Format("{0}{1}", EventName, id);
+					EventWaitHandle syncEvent;
+					if (EventWaitHandle.TryOpenExisting(myEventName, out syncEvent))
+					{
+						syncEvent.Set();
+						syncEvent.Dispose();
+					}
+				}
+
+#if DEBUG
+				foreach (var endpoint in selfServiceHost.Description.Endpoints)
+				{
+					Debug.WriteLine("{0} ({1})", endpoint.Address.ToString(), endpoint.Binding.Name);
+				}
+#endif
+
+				NotifyBIMStatusChanged(AppStatus.Started);
+
+				while (!cancellationToken.IsCancellationRequested)
+				{
+					Thread.Sleep(100);
+				}
+
+				ideaLogger.LogInformation($"RunServer - Automation Service has been stopped");
+
+				try
+				{
+					if (bimClient != null)
+					{
+						bimClient.Close();
+						bimClient = null;
+					}
+				}
+				catch {}
+
+				try
+				{
+					if (selfServiceHost != null)
+					{
+						selfServiceHost.Close();
+					}
+				}
+				catch { }
+
+				NotifyBIMStatusChanged(AppStatus.Finished);
+
+				mre.Set();
 			}
 		}
 
-		protected void NotifyBIMStatusChanged(AppStatus newStatus)
+		protected virtual void NotifyBIMStatusChanged(AppStatus newStatus)
 		{
 			BIMStatusChanged?.Invoke(this, new ISEventArgs() { Status = newStatus });
 		}
