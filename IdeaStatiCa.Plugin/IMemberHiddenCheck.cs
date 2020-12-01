@@ -9,9 +9,9 @@ namespace IdeaStatiCa.Plugin
 	public interface IMemberHiddenCheck
 	{
 		/// <summary>
-		/// Open idea connection project in the hidden calculator
+		/// Open idea project in the service
 		/// </summary>
-		/// <param name="projectLocation">File name of the ideacon project file</param>
+		/// <param name="project">Idea Connection project.</param>
 		[OperationContract]
 		void OpenProject(string projectLocation);
 
