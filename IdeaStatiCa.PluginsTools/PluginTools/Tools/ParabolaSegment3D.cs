@@ -134,7 +134,7 @@ namespace CI.Geometry3D
 
 		#region ISegment3D Methods.
 
-
+		
 
 		/// <summary>
 		/// Create new parabola and make a copy of existing parabola.

@@ -90,7 +90,7 @@ namespace IdeaRS.GeometricItems
 
 		public static Segment ArcSegment(double EndX, double EndY, double PointX, double PointY)
 		{
-			return new Segment() { Type = SegmentType.CircArc3Points, Parameters = new double[] { EndX, EndY, PointX, PointY } };
+				return new Segment() { Type = SegmentType.CircArc3Points, Parameters = new double[] { EndX, EndY, PointX, PointY } };
 		}
 
 		public Segment Clone()

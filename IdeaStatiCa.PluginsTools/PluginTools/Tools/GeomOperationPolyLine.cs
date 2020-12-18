@@ -258,7 +258,7 @@ namespace CI.Geometry3D
 			}
 
 			IList<ISegment3D> segList = new List<ISegment3D>();
-			double forLoops = closed ? (points.Count - 1) : (points.Count - 2);
+			double forLoops = closed? (points.Count - 1) : (points.Count - 2);
 
 			for (int i = 0; i <= forLoops; i++)
 			{
@@ -1703,7 +1703,7 @@ namespace CI.Geometry3D
 		public static IPolyLine3D GetPartPolyline(IPolyLine3D polyline, double x1, double x2)
 		{
 			//tato p5esnot tady byla dodana kvuli opravě chyby https://svn.idea-rs.com/redmine/issues/15445  
-			var precission = 1e-6;
+			var precission =  1e-6;
 
 			if (x1.IsLesser(0, precission) | x1.IsGreater(x2, precission))
 			{
@@ -2848,7 +2848,7 @@ namespace CI.Geometry3D
 		public static int IsSegmentInPolyline(ISegment3D segment, IPolyLine3D polyline)
 		{
 			int inx = 0;
-			foreach (var seg in polyline.Segments)
+			foreach(var seg in polyline.Segments)
 			{
 				if (seg.Equals(segment))
 				{

@@ -129,6 +129,7 @@ namespace CI.Mathematics
 		{
 			return value * 60;
 		}
+
 		/// <summary>
 		/// conversion from system to years
 		/// </summary>

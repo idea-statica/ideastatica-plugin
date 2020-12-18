@@ -80,8 +80,10 @@ namespace CI.Geometry3D
 		/// <returns>2D Region</returns>
 		public static IRegion2D ConvertTo2D(IRegion3D region3D)
 		{
-			IRegion2D region2D = new Region2D();
-			region2D.Outline = ConvertTo2D(region3D.Outline);
+			IRegion2D region2D = new Region2D
+			{
+				Outline = ConvertTo2D(region3D.Outline)
+			};
 			foreach (IPolyLine3D polyline in region3D.Openings)
 			{
 				region2D.Openings.Add(ConvertTo2D(polyline));
@@ -102,8 +104,10 @@ namespace CI.Geometry3D
 				return null;
 			}
 
-			var region3D = new Region3D();
-			region3D.Outline = ConvertTo3D(region2D.Outline);
+			var region3D = new Region3D
+			{
+				Outline = ConvertTo3D(region2D.Outline)
+			};
 			foreach (var o in region2D.Openings)
 			{
 				region3D.AddOpening(ConvertTo3D(o));
@@ -241,8 +245,10 @@ namespace CI.Geometry3D
 		/// <returns>New PolyLine3D</returns>
 		public static IRegion3D GetLinearSegments(IRegion3D region, double distance)
 		{
-			IRegion3D newRegion = new Region3D();
-			newRegion.Outline = GetLinearSegments(region.Outline, distance);
+			IRegion3D newRegion = new Region3D
+			{
+				Outline = GetLinearSegments(region.Outline, distance)
+			};
 			foreach (IPolyLine3D opening in region.Openings)
 			{
 				newRegion.AddOpening(GetLinearSegments(opening, distance));
@@ -259,8 +265,10 @@ namespace CI.Geometry3D
 		/// <returns>New PolyLine3D</returns>
 		public static IRegion3D GetLinearSegments(IRegion3D region, int numberOfParts)
 		{
-			IRegion3D newRegion = new Region3D();
-			newRegion.Outline = GetLinearSegments(region.Outline, numberOfParts);
+			IRegion3D newRegion = new Region3D
+			{
+				Outline = GetLinearSegments(region.Outline, numberOfParts)
+			};
 			foreach (IPolyLine3D opening in region.Openings)
 			{
 				newRegion.AddOpening(GetLinearSegments(opening, numberOfParts));
@@ -555,8 +563,10 @@ namespace CI.Geometry3D
 				return null;
 			}
 
-			IRegion3D newRegion = new Region3D();
-			newRegion.Outline = GetValidPolyLine(region.Outline);
+			IRegion3D newRegion = new Region3D
+			{
+				Outline = GetValidPolyLine(region.Outline)
+			};
 			foreach (IPolyLine3D opening in region.Openings)
 			{
 				newRegion.AddOpening(GetValidPolyLine(opening));
@@ -787,8 +797,10 @@ namespace CI.Geometry3D
 				return null;
 			}
 
-			IRegion3D newRegion = new Region3D();
-			newRegion.Outline = SplitSegmentWithReflexAngle(region.Outline);
+			IRegion3D newRegion = new Region3D
+			{
+				Outline = SplitSegmentWithReflexAngle(region.Outline)
+			};
 			foreach (IPolyLine3D opening in region.Openings)
 			{
 				newRegion.AddOpening(SplitSegmentWithReflexAngle(opening));
@@ -940,7 +952,7 @@ namespace CI.Geometry3D
 
 				result = res;
 				return true;
-			}	
+			}
 
 			result = null;
 			return false;

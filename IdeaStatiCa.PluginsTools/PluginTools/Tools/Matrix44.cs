@@ -893,10 +893,12 @@ namespace CI.Geometry3D
 		/// <returns>Returns the vector multiplied with the matrix</returns>
 		internal static Vector3D Multiply(Matrix44 matrix, Vector3D vector)
 		{
-			Vector3D resVect = new Vector3D();
-			resVect.DirectionX = (matrix.matrixElement[0, 0] * vector.DirectionX) + (matrix.matrixElement[0, 1] * vector.DirectionY) + (matrix.matrixElement[0, 2] * vector.DirectionZ);
-			resVect.DirectionY = (matrix.matrixElement[1, 0] * vector.DirectionX) + (matrix.matrixElement[1, 1] * vector.DirectionY) + (matrix.matrixElement[1, 2] * vector.DirectionZ);
-			resVect.DirectionZ = (matrix.matrixElement[2, 0] * vector.DirectionX) + (matrix.matrixElement[2, 1] * vector.DirectionY) + (matrix.matrixElement[2, 2] * vector.DirectionZ);
+			Vector3D resVect = new Vector3D
+			{
+				DirectionX = (matrix.matrixElement[0, 0] * vector.DirectionX) + (matrix.matrixElement[0, 1] * vector.DirectionY) + (matrix.matrixElement[0, 2] * vector.DirectionZ),
+				DirectionY = (matrix.matrixElement[1, 0] * vector.DirectionX) + (matrix.matrixElement[1, 1] * vector.DirectionY) + (matrix.matrixElement[1, 2] * vector.DirectionZ),
+				DirectionZ = (matrix.matrixElement[2, 0] * vector.DirectionX) + (matrix.matrixElement[2, 1] * vector.DirectionY) + (matrix.matrixElement[2, 2] * vector.DirectionZ)
+			};
 			return resVect;
 		}
 
@@ -908,10 +910,12 @@ namespace CI.Geometry3D
 		/// <returns>Returns the point multiplied with the matrix</returns>
 		internal static IPoint3D Multiply(Matrix44 matrix, IPoint3D point)
 		{
-			IPoint3D resVect = new Point3D();
-			resVect.X = (matrix.matrixElement[0, 0] * point.X) + (matrix.matrixElement[0, 1] * point.Y) + (matrix.matrixElement[0, 2] * point.Z);
-			resVect.Y = (matrix.matrixElement[1, 0] * point.X) + (matrix.matrixElement[1, 1] * point.Y) + (matrix.matrixElement[1, 2] * point.Z);
-			resVect.Z = (matrix.matrixElement[2, 0] * point.X) + (matrix.matrixElement[2, 1] * point.Y) + (matrix.matrixElement[2, 2] * point.Z);
+			IPoint3D resVect = new Point3D
+			{
+				X = (matrix.matrixElement[0, 0] * point.X) + (matrix.matrixElement[0, 1] * point.Y) + (matrix.matrixElement[0, 2] * point.Z),
+				Y = (matrix.matrixElement[1, 0] * point.X) + (matrix.matrixElement[1, 1] * point.Y) + (matrix.matrixElement[1, 2] * point.Z),
+				Z = (matrix.matrixElement[2, 0] * point.X) + (matrix.matrixElement[2, 1] * point.Y) + (matrix.matrixElement[2, 2] * point.Z)
+			};
 			return resVect;
 		}
 
@@ -923,19 +927,23 @@ namespace CI.Geometry3D
 		/// <returns>Returns the vector multiplied with the matrix</returns>
 		internal static Vector3D Multiply(Vector3D vector, Matrix44 matrix)
 		{
-			Vector3D newPoint = new Vector3D();
-			newPoint.DirectionX = (vector.DirectionX * matrix.matrixElement[0, 0]) + (vector.DirectionY * matrix.matrixElement[1, 0]) + (vector.DirectionZ * matrix.matrixElement[2, 0]);
-			newPoint.DirectionY = (vector.DirectionX * matrix.matrixElement[0, 1]) + (vector.DirectionY * matrix.matrixElement[1, 1]) + (vector.DirectionZ * matrix.matrixElement[2, 1]);
-			newPoint.DirectionZ = (vector.DirectionX * matrix.matrixElement[0, 2]) + (vector.DirectionY * matrix.matrixElement[1, 2]) + (vector.DirectionZ * matrix.matrixElement[2, 2]);
+			Vector3D newPoint = new Vector3D
+			{
+				DirectionX = (vector.DirectionX * matrix.matrixElement[0, 0]) + (vector.DirectionY * matrix.matrixElement[1, 0]) + (vector.DirectionZ * matrix.matrixElement[2, 0]),
+				DirectionY = (vector.DirectionX * matrix.matrixElement[0, 1]) + (vector.DirectionY * matrix.matrixElement[1, 1]) + (vector.DirectionZ * matrix.matrixElement[2, 1]),
+				DirectionZ = (vector.DirectionX * matrix.matrixElement[0, 2]) + (vector.DirectionY * matrix.matrixElement[1, 2]) + (vector.DirectionZ * matrix.matrixElement[2, 2])
+			};
 			return newPoint;
 		}
 
 		internal static WM.Vector3D Multiply(WM.Vector3D vector, Matrix44 matrix)
 		{
-			WM.Vector3D newPoint = new WM.Vector3D();
-			newPoint.X = (vector.X * matrix.matrixElement[0, 0]) + (vector.Y * matrix.matrixElement[1, 0]) + (vector.Z * matrix.matrixElement[2, 0]);
-			newPoint.Y = (vector.X * matrix.matrixElement[0, 1]) + (vector.Y * matrix.matrixElement[1, 1]) + (vector.Z * matrix.matrixElement[2, 1]);
-			newPoint.Z = (vector.X * matrix.matrixElement[0, 2]) + (vector.Y * matrix.matrixElement[1, 2]) + (vector.Z * matrix.matrixElement[2, 2]);
+			WM.Vector3D newPoint = new WM.Vector3D
+			{
+				X = (vector.X * matrix.matrixElement[0, 0]) + (vector.Y * matrix.matrixElement[1, 0]) + (vector.Z * matrix.matrixElement[2, 0]),
+				Y = (vector.X * matrix.matrixElement[0, 1]) + (vector.Y * matrix.matrixElement[1, 1]) + (vector.Z * matrix.matrixElement[2, 1]),
+				Z = (vector.X * matrix.matrixElement[0, 2]) + (vector.Y * matrix.matrixElement[1, 2]) + (vector.Z * matrix.matrixElement[2, 2])
+			};
 			return newPoint;
 		}
 
@@ -947,28 +955,34 @@ namespace CI.Geometry3D
 		/// <returns>Returns the point multiplied with the matrix</returns>
 		internal static IPoint3D Multiply(IPoint3D point, Matrix44 matrix)
 		{
-			IPoint3D newPoint = new Point3D();
-			newPoint.X = (point.X * matrix.matrixElement[0, 0]) + (point.Y * matrix.matrixElement[1, 0]) + (point.Z * matrix.matrixElement[2, 0]);
-			newPoint.Y = (point.X * matrix.matrixElement[0, 1]) + (point.Y * matrix.matrixElement[1, 1]) + (point.Z * matrix.matrixElement[2, 1]);
-			newPoint.Z = (point.X * matrix.matrixElement[0, 2]) + (point.Y * matrix.matrixElement[1, 2]) + (point.Z * matrix.matrixElement[2, 2]);
+			IPoint3D newPoint = new Point3D
+			{
+				X = (point.X * matrix.matrixElement[0, 0]) + (point.Y * matrix.matrixElement[1, 0]) + (point.Z * matrix.matrixElement[2, 0]),
+				Y = (point.X * matrix.matrixElement[0, 1]) + (point.Y * matrix.matrixElement[1, 1]) + (point.Z * matrix.matrixElement[2, 1]),
+				Z = (point.X * matrix.matrixElement[0, 2]) + (point.Y * matrix.matrixElement[1, 2]) + (point.Z * matrix.matrixElement[2, 2])
+			};
 			return newPoint;
 		}
 
 		internal static WM.Point3D Multiply(WM.Point3D point, Matrix44 matrix)
 		{
-			WM.Point3D newPoint = new WM.Point3D();
-			newPoint.X = (point.X * matrix.matrixElement[0, 0]) + (point.Y * matrix.matrixElement[1, 0]) + (point.Z * matrix.matrixElement[2, 0]);
-			newPoint.Y = (point.X * matrix.matrixElement[0, 1]) + (point.Y * matrix.matrixElement[1, 1]) + (point.Z * matrix.matrixElement[2, 1]);
-			newPoint.Z = (point.X * matrix.matrixElement[0, 2]) + (point.Y * matrix.matrixElement[1, 2]) + (point.Z * matrix.matrixElement[2, 2]);
+			WM.Point3D newPoint = new WM.Point3D
+			{
+				X = (point.X * matrix.matrixElement[0, 0]) + (point.Y * matrix.matrixElement[1, 0]) + (point.Z * matrix.matrixElement[2, 0]),
+				Y = (point.X * matrix.matrixElement[0, 1]) + (point.Y * matrix.matrixElement[1, 1]) + (point.Z * matrix.matrixElement[2, 1]),
+				Z = (point.X * matrix.matrixElement[0, 2]) + (point.Y * matrix.matrixElement[1, 2]) + (point.Z * matrix.matrixElement[2, 2])
+			};
 			return newPoint;
 		}
 
 		internal static WM.Vector3D Multiply(Matrix44 matrix, WM.Vector3D vector)
 		{
-			WM.Vector3D resVect = new WM.Vector3D();
-			resVect.X = (matrix.matrixElement[0, 0] * vector.X) + (matrix.matrixElement[0, 1] * vector.Y) + (matrix.matrixElement[0, 2] * vector.Z);
-			resVect.Y = (matrix.matrixElement[1, 0] * vector.X) + (matrix.matrixElement[1, 1] * vector.Y) + (matrix.matrixElement[1, 2] * vector.Z);
-			resVect.Z = (matrix.matrixElement[2, 0] * vector.X) + (matrix.matrixElement[2, 1] * vector.Y) + (matrix.matrixElement[2, 2] * vector.Z);
+			WM.Vector3D resVect = new WM.Vector3D
+			{
+				X = (matrix.matrixElement[0, 0] * vector.X) + (matrix.matrixElement[0, 1] * vector.Y) + (matrix.matrixElement[0, 2] * vector.Z),
+				Y = (matrix.matrixElement[1, 0] * vector.X) + (matrix.matrixElement[1, 1] * vector.Y) + (matrix.matrixElement[1, 2] * vector.Z),
+				Z = (matrix.matrixElement[2, 0] * vector.X) + (matrix.matrixElement[2, 1] * vector.Y) + (matrix.matrixElement[2, 2] * vector.Z)
+			};
 			return resVect;
 		}
 

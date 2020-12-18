@@ -1,8 +1,8 @@
 
+using CI.DataModel;
 
 namespace CI.Geometry3D
 {
-	[IdeaRS.IdeaXML.IdeaAddToXML]
 	public class LineSegment3D : Segment3D, ILineSegment3D
 	{
 		#region Constructors
@@ -34,7 +34,7 @@ namespace CI.Geometry3D
 		public LineSegment3D(ILineSegment3D source) :
 			base(source)
 		{
-			Name = (source as DataModel.ElementBase).Name;
+			Name = (source as ElementBase).Name;
 		}
 
 		#endregion

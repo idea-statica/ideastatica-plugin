@@ -583,8 +583,10 @@ namespace CI.Geometry2D
 		internal bool CoordinatesFromTangent(ref Point start, Vector tangent, out Point p)
 		{
 			Refresh(ref start);
-			p = new Point();
-			p.X = (tangent.Y / tangent.X - b) / (2 * a);
+			p = new Point
+			{
+				X = (tangent.Y / tangent.X - b) / (2 * a)
+			};
 			var yy = GetValueByX(ref start, p.X, true);
 			if (yy.Length > 0)
 			{

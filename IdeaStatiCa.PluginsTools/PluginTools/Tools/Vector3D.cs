@@ -26,9 +26,9 @@ namespace CI.Geometry3D
 
 		public Vector3D(Vector3D anotherVector)
 		{
-			directionX = anotherVector.directionX;
-			directionY = anotherVector.directionY;
-			directionZ = anotherVector.directionZ;
+			directionX = anotherVector.DirectionX;
+			directionY = anotherVector.DirectionY;
+			directionZ = anotherVector.DirectionZ;
 		}
 
 		#endregion
@@ -92,17 +92,11 @@ namespace CI.Geometry3D
 		{
 			get
 			{
-				return Math.Sqrt((directionX * directionX) + (directionY * directionY) + (directionZ * directionZ));
+				return Math.Sqrt((DirectionX * DirectionX) + (DirectionY * DirectionY) + (DirectionZ * DirectionZ));
 			}
 		}
 
-		public double MagnitudeSquared
-		{
-			get
-			{
-				return (directionX * directionX) + (directionY * directionY) + (directionZ * directionZ);
-			}
-		}
+		public double MagnitudeSquared => (DirectionX * DirectionX) + (DirectionY * DirectionY) + (DirectionZ * DirectionZ);
 
 		#endregion
 
@@ -116,7 +110,7 @@ namespace CI.Geometry3D
 		/// <returns>Vector containing the Sum of LHS and RHS Vector</returns>
 		public static Vector3D operator +(Vector3D vector1, Vector3D vector2)
 		{
-			Vector3D newVector = new Vector3D(vector1.directionX + vector2.directionX, vector1.directionY + vector2.directionY, vector1.directionZ + vector2.directionZ);
+			Vector3D newVector = new Vector3D(vector1.DirectionX + vector2.DirectionX, vector1.DirectionY + vector2.DirectionY, vector1.DirectionZ + vector2.DirectionZ);
 
 			return newVector;
 		}
@@ -129,7 +123,7 @@ namespace CI.Geometry3D
 		/// <returns>Vector containing the Difference between LHS and RHS Vector</returns>
 		public static Vector3D operator -(Vector3D vector1, Vector3D vector2)
 		{
-			Vector3D newVector = new Vector3D(vector1.directionX - vector2.directionX, vector1.directionY - vector2.directionY, vector1.directionZ - vector2.directionZ);
+			Vector3D newVector = new Vector3D(vector1.DirectionX - vector2.DirectionX, vector1.DirectionY - vector2.DirectionY, vector1.DirectionZ - vector2.DirectionZ);
 
 			return newVector;
 		}
@@ -142,7 +136,7 @@ namespace CI.Geometry3D
 		/// <returns>Magnified Vector3D</returns>
 		public static Vector3D operator *(Vector3D vector, double scalar)
 		{
-			Vector3D v1 = new Vector3D(vector.directionX * scalar, vector.directionY * scalar, vector.directionZ * scalar);
+			Vector3D v1 = new Vector3D(vector.DirectionX * scalar, vector.DirectionY * scalar, vector.DirectionZ * scalar);
 			return v1;
 		}
 
@@ -164,7 +158,7 @@ namespace CI.Geometry3D
 		/// <returns>Negated Vector</returns>
 		public static Vector3D operator -(Vector3D vector)
 		{
-			Vector3D negationVector = new Vector3D(-vector.directionX, -vector.directionY, -vector.directionZ);
+			Vector3D negationVector = new Vector3D(-vector.DirectionX, -vector.DirectionY, -vector.DirectionZ);
 
 			return negationVector;
 		}
@@ -189,7 +183,7 @@ namespace CI.Geometry3D
 
 			//return divideVector;
 
-			return new Vector3D(vector.directionX / scalar, vector.directionY / scalar, vector.directionZ / scalar);
+			return new Vector3D(vector.DirectionX / scalar, vector.DirectionY / scalar, vector.DirectionZ / scalar);
 		}
 
 		/// <summary>
@@ -200,9 +194,9 @@ namespace CI.Geometry3D
 		/// <returns>returns the cross product of two vector</returns>
 		public static Vector3D operator *(Vector3D multiplyVector1, Vector3D multiplyVector2)
 		{
-			double x = (multiplyVector1.directionY * multiplyVector2.directionZ) - (multiplyVector1.directionZ * multiplyVector2.directionY);
-			double y = (multiplyVector1.directionZ * multiplyVector2.directionX) - (multiplyVector1.directionX * multiplyVector2.directionZ);
-			double z = (multiplyVector1.directionX * multiplyVector2.directionY) - (multiplyVector1.directionY * multiplyVector2.directionX);
+			double x = (multiplyVector1.DirectionY * multiplyVector2.DirectionZ) - (multiplyVector1.DirectionZ * multiplyVector2.DirectionY);
+			double y = (multiplyVector1.DirectionZ * multiplyVector2.DirectionX) - (multiplyVector1.DirectionX * multiplyVector2.DirectionZ);
+			double z = (multiplyVector1.DirectionX * multiplyVector2.DirectionY) - (multiplyVector1.DirectionY * multiplyVector2.DirectionX);
 			Vector3D perpVector = new Vector3D(x, y, z);
 			return perpVector;
 		}
@@ -225,7 +219,7 @@ namespace CI.Geometry3D
 		/// <returns>returns the dot product of two vectors</returns>
 		public static double operator |(Vector3D dotVector1, Vector3D dotVector2)
 		{
-			return (dotVector1.directionX * dotVector2.directionX) + (dotVector1.directionY * dotVector2.directionY) + (dotVector1.directionZ * dotVector2.directionZ);
+			return (dotVector1.DirectionX * dotVector2.DirectionX) + (dotVector1.DirectionY * dotVector2.DirectionY) + (dotVector1.DirectionZ * dotVector2.DirectionZ);
 		}
 		#endregion
 	}

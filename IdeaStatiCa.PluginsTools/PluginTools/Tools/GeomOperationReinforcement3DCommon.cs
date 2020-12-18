@@ -61,7 +61,6 @@ namespace CI.Geometry3D
 			return true;
 		}
 
-
 		/// <summary>
 		/// checks if vectors are parallel
 		/// </summary>

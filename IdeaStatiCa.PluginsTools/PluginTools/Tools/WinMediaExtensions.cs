@@ -1,4 +1,5 @@
 ﻿using System;
+using CI.Mathematics;
 using WM = System.Windows.Media.Media3D;
 
 namespace CI.Geometry3D
@@ -155,18 +156,18 @@ namespace CI.Geometry3D
 			dest.Z = src.Z;
 		}
 
-		/// <summary>
-		/// GetLCSMatrix
-		/// </summary>
-		/// <param name="origin"></param>
-		/// <param name="dirX"></param>
-		/// <returns></returns>
-		public static Matrix44 GetLCSMatrix(WM.Point3D origin, WM.Vector3D dirX)
+        /// <summary>
+        /// A
+        /// </summary>
+        /// <param name="origin"></param>
+        /// <param name="dirX"></param>
+        /// <returns></returns>
+        public static Matrix44 GetLCSMatrix(WM.Point3D origin, WM.Vector3D dirX)
 		{
 			dirX.Normalize();
 			Vector3D localX = new Vector3D(dirX.X, dirX.Y, dirX.Z);
 			Vector3D localZ = new Vector3D(0, 0, 1);
-			if (GeomOperation.IsCollinear(localZ, localX, Mathematics.MathConstants.ZeroWeak)) //MathConstants.ZeroGeneral))
+			if (GeomOperation.IsCollinear(localZ, localX, MathConstants.ZeroWeak)) //MathConstants.ZeroGeneral))
 			{
 				// When X is vertical then Z goes in X dir or -X
 				//localZ = new Vector3D(0, 1, 0);
@@ -265,7 +266,7 @@ namespace CI.Geometry3D
 		}
 
 		/// <summary>
-		/// IsParallel
+		/// A
 		/// </summary>
 		/// <param name="vect"></param>
 		/// <param name="testedVect"></param>
@@ -367,6 +368,5 @@ namespace CI.Geometry3D
 		{
 			return new WM.Point3D(0.5 * (p1.X + p2.X), 0.5 * (p1.Y + p2.Y), 0.5 * (p1.Z + p2.Z));
 		}
-
 	}
 }

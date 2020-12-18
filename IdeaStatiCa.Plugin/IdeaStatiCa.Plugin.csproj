@@ -8,7 +8,7 @@
     <OutputPath>bin\$(Configuration)\</OutputPath>
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
     <Authors>IdeaStatiCa</Authors>
-    <Version>20.1.4</Version>
+    <Version>21.0.0</Version>
     <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
     <AssemblyVersion>20.1.4.0</AssemblyVersion>
     <FileVersion>20.1.4.0</FileVersion>
@@ -21,6 +21,9 @@
 
       ver 20.1.7.0
       adding reference to the package IdeaStatiCa.Diagnostics
+
+      ver 21.0.0.0
+      adding support for exporting all connection data (stuctural data and results of FE Analysis)
     </PackageReleaseNotes>
     <RepositoryUrl>https://github.com/idea-statica/ideastatica-plugin</RepositoryUrl>
     <PackageProjectUrl>https://github.com/idea-statica/ideastatica-plugin</PackageProjectUrl>
@@ -42,7 +45,7 @@
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="IdeaStatiCa.Diagnostics" Version="20.1.2" />
-    <PackageReference Include="IdeaStatiCa.OpenModel" Version="20.1.11" />
+    <PackageReference Include="IdeaStatiCa.OpenModel" Version="21.0.13" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System.ServiceModel" />

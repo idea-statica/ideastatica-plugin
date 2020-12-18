@@ -4,7 +4,7 @@ using System.Windows;
 
 namespace CI.GiCL2D
 {
-    public class PolygonReader : IPolygonReader
+	public class PolygonReader : IPolygonReader
 	{
 		#region IPolygonReader Members
 
@@ -49,10 +49,9 @@ namespace CI.GiCL2D
 		{
 			if (pr == null) throw (new ArgumentNullException("pr"));
 			myValue = new List<Point>();
-			double x, y;
 			for (int i = 0; i < pr.Length; i++)
 			{
-				pr.GetRow(i, out x, out y);
+				pr.GetRow(i, out double x, out double y);
 				myValue.Add(new Point(x, y));
 			}
 		}
@@ -99,10 +98,9 @@ namespace CI.GiCL2D
 		{
 			if (pr == null) throw (new ArgumentNullException("pr"));
 			myValue = new Point[pr.Length];
-			double x, y;
 			for (int i = 0; i < pr.Length; i++)
 			{
-				pr.GetRow(i, out x, out y);
+				pr.GetRow(i, out double x, out double y);
 				myValue[i].X = x;
 				myValue[i].Y = y;
 			}

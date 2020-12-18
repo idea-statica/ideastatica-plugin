@@ -13,10 +13,10 @@ namespace CI.GiCL2D
 #endif
 	public struct Arc2D
 	{
-        /// <summary>
-        /// pocatecni bod
-        /// </summary>
-        public Point Begin;
+		/// <summary>
+		/// pocatecni bod
+		/// </summary>
+		public Point Begin;
 
 		/// <summary>
 		/// koncovy bod
@@ -182,8 +182,7 @@ namespace CI.GiCL2D
 			// vypocitam prusecik offsetovanych primek
 			Point[] p1 = Funcs2D.LineOffset(pt1, pt2, a);
 			Point[] p2 = Funcs2D.LineOffset(pt2, pt3, a);
-			Point rr;
-			if (p1 == null || p2 == null || !TwoLine2D.CrossRel(p1[0], p1[1], p2[0], p2[1], out rr))
+			if (p1 == null || p2 == null || !TwoLine2D.CrossRel(p1[0], p1[1], p2[0], p2[1], out Point rr))
 			{
 				// tri body na jedne primce
 				Begin = pt1; End = pt3;
@@ -192,7 +191,6 @@ namespace CI.GiCL2D
 			}
 			if (radius > 0)
 			{
-
 				if (testPt)
 				{
 					if (!TwoLine2D.TestRelOnLine(TwoLine2D.CrossStatus.And, rr.X) || !TwoLine2D.TestRelOnLine(TwoLine2D.CrossStatus.And, rr.Y))
@@ -324,8 +322,7 @@ namespace CI.GiCL2D
 		/// <returns></returns>
 		public bool IsAngleOn(double angle)
 		{
-			double st, an;
-			if (GetAngles(out st, out an) == null) return false;
+			if (GetAngles(out double st, out double an) == null) return false;
 			angle = Funcs2D.PureRadianAngle(angle);
 			if (an > 0)
 			{
@@ -346,8 +343,7 @@ namespace CI.GiCL2D
 		/// <returns></returns>
 		public bool IsPointOn(Point pt)
 		{
-			double st, an;
-			Circle2D? c = GetAngles(out st, out an);
+			Circle2D? c = GetAngles(out double st, out double an);
 			if (c == null) return false;
 			if (!Funcs2D.Distance(pt, c.Value.Center).IsEqual(Math.Abs(Radius))) return false;
 			st = Funcs2D.PureRadianAngle(st);
@@ -393,8 +389,7 @@ namespace CI.GiCL2D
 		/// <returns>Vrati pole bodu, pokud je oblouk empty vrati null </returns>
 		public Point[] Discretization(double koef, bool withoutBegin)
 		{
-			double start, angle;
-			Circle2D? c = GetAngles(out start, out angle);
+			Circle2D? c = GetAngles(out double start, out double angle);
 			Point[] ret = null;
 			if (c.HasValue)
 			{

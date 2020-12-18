@@ -11,7 +11,7 @@ namespace CI.Geometry2D
 {
 	public static class RegionRecognition
 	{
-		public static bool TryGetCenterlineOfOpenCFSection(IPolyLine2D outline, double thickness, out IList<IPolyLine2D> centerlines, double tolerance = 0.0001)
+		public static bool TryGetCenterlineOfOpenCFSection(IPolyLine2D outline, double thickness, out IList<IPolyLine2D> centerlines, double tolerance = 0.0001, bool isClosed = true)
 		{
 			int edgeSegmentsCount = 0;
 
@@ -22,7 +22,7 @@ namespace CI.Geometry2D
 			{
 				ISegment2D seg = outline.Segments[i];
 				IList<ISegment2D> candidates = FindSecondSideOfPlate(begPt, seg, outline, thickness, tolerance);
-				if (candidates.Count == 0)
+				if (!candidates.Any())
 				{
 					edgeSegmentsCount++;
 				}
@@ -31,8 +31,7 @@ namespace CI.Geometry2D
 				{
 					int ix = outline.Segments.IndexOf(candidate);
 					Point candidateBegPt = (ix == 0) ? outline.StartPoint : outline.Segments[ix - 1].EndPoint;
-					Point clBegPt, clEndPt;
-					CreateCenterlineSegment(begPt, seg, candidateBegPt, candidate, out clBegPt, out clEndPt);
+					CreateCenterlineSegment(begPt, seg, candidateBegPt, candidate, out Point clBegPt, out Point clEndPt);
 					segLst.Add(new Tuple<int, int, Point, Point>(i, ix, clBegPt, clEndPt));
 				}
 
@@ -46,7 +45,7 @@ namespace CI.Geometry2D
 
 			//iterations
 			List<Tuple<Point, Point>> centerlineSegments = new List<Tuple<Point, Point>>();
-			while (segLst.Count > 0)
+			while (segLst.Any())
 			{
 				List<Tuple<int, int, Point, Point>> resolved = new List<Tuple<int, int, Point, Point>>();
 
@@ -54,7 +53,7 @@ namespace CI.Geometry2D
 				{
 					bool pair = false;
 					Tuple<int, int, Point, Point> seg = segLst[i];
-					if (resolved.Contains(seg))
+					if (resolved.Contains(seg) && isClosed)
 					{
 						continue;
 					}
@@ -80,7 +79,7 @@ namespace CI.Geometry2D
 						centerlineSegments.Add(new Tuple<Point, Point>(seg.Item3, seg.Item4));
 						resolved.Add(seg);
 
-						Tuple<int, int, Point, Point> secondPart = segLst.Find((item) => item.Item1 == seg.Item2 && item.Item2 == seg.Item1);
+						Tuple<int, int, Point, Point> secondPart = segLst.FirstOrDefault((item) => item.Item1 == seg.Item2 && item.Item2 == seg.Item1);
 						if (secondPart != null)
 						{
 							resolved.Add(secondPart);
@@ -108,7 +107,7 @@ namespace CI.Geometry2D
 							if (pairMember != null)
 							{
 								resolved.Add(pairMember);
-								Tuple<int, int, Point, Point> part3 = segLst.Find((item) => item.Item1 == pairMember.Item2 && item.Item2 == pairMember.Item1);
+								Tuple<int, int, Point, Point> part3 = segLst.FirstOrDefault((item) => item.Item1 == pairMember.Item2 && item.Item2 == pairMember.Item1);
 								if (part3 != null)
 								{
 									resolved.Add(part3);
@@ -125,21 +124,21 @@ namespace CI.Geometry2D
 				}
 			}
 
-			if (centerlineSegments.Count == 0)
+			if (!centerlineSegments.Any())
 			{
 				return false;
 			}
 
 			List<Tuple<Point, Point>> centerlineOrder = new List<Tuple<Point, Point>>();
-			centerlineOrder.Add(centerlineSegments[0]);
-			centerlineSegments.Remove(centerlineSegments[0]);
+			centerlineOrder.Add(centerlineSegments.First());
+			centerlineSegments.Remove(centerlineSegments.First());
 
 			bool escape = false;
-			while (centerlineSegments.Count > 0 && !escape)
+			while (centerlineSegments.Any() && !escape)
 			{
 				List<Tuple<Point, Point>> toBeRemoved = new List<Tuple<Point,Point>>();
 				Tuple<Point, Point> forwardDir = centerlineOrder.Last();
-				Tuple<Point, Point> backwardDir = centerlineOrder[0];
+				Tuple<Point, Point> backwardDir = centerlineOrder.First();
 
 				foreach(Tuple<Point, Point> seg in centerlineSegments)
 				{
@@ -173,7 +172,7 @@ namespace CI.Geometry2D
 					centerlineSegments.Remove(remItem);
 				}
 
-				if (toBeRemoved.Count == 0)
+				if (!toBeRemoved.Any())
 				{
 					Debug.Fail("Nespojitá střednice!! V algoritmu je chyba.");
 					escape = true;

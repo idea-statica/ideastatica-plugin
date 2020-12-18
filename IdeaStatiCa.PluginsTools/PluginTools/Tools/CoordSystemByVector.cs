@@ -117,9 +117,6 @@ namespace CI.Geometry3D
 			else
 			{
 				transformation.Origin = originPoint;
-				transformation.AxisX = VecX;
-				transformation.AxisY = VecY;
-				transformation.AxisZ = VecZ;
 			}
 
 			return transformation;
@@ -140,9 +137,6 @@ namespace CI.Geometry3D
 			else
 			{
 				transformation.Origin = originPoint;
-				transformation.AxisX = VecX;
-				transformation.AxisY = VecY;
-				transformation.AxisZ = VecZ;
 			}
 
 			return transformation;

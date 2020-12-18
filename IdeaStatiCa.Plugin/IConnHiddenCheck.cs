@@ -54,13 +54,13 @@ namespace IdeaStatiCa.Plugin
 		[OperationContract]
 		string GetConnectionModelXML(string connectionId);
 
-        /// <summary>
-        /// Export the manufacture sequence of <paramref name="connectionId"/> as a template and save it in <paramref name="conTemplateFileName"/> (.contemp file)
-        /// </summary>
-        /// <param name="connectionId">>Identifier of the connection in the project, empty guid means the first connection in the project</param>
-        /// <param name="conTemplateFileName">The file name of the output file</param>
-        /// <returns>returns 'OK' if success otherwise an error message</returns>
-        [OperationContract]
+		/// <summary>
+		/// Export the manufacture sequence of <paramref name="connectionId"/> as a template and save it in <paramref name="conTemplateFileName"/> (.contemp file)
+		/// </summary>
+		/// <param name="connectionId">>Identifier of the connection in the project, empty guid means the first connection in the project</param>
+		/// <param name="conTemplateFileName">The file name of the output file</param>
+		/// <returns>returns 'OK' if success otherwise an error message</returns>
+		[OperationContract]
 		string ExportToTemplate(string connectionId, string conTemplateFileName);
 
 		/// <summary>
@@ -85,6 +85,14 @@ namespace IdeaStatiCa.Plugin
 		/// <returns>Geometry of the connection in the IOM format</returns>
 		[OperationContract]
 		IdeaRS.OpenModel.Connection.ConnectionData GetConnectionModel(string connectionId);
+
+		/// <summary>
+		/// Get structural data and corresponding results of FE analysi for <paramref name="connectionId"/>
+		/// </summary>
+		/// <param name="connectionId">Identifier of the required connection</param>
+		/// <returns>The instance which includes stuctural data and results of FE analysis</returns>
+		[OperationContract]
+		IdeaRS.OpenModel.OpenModelTuple GetAllConnectionData(string connectionId);
 
 		/// <summary>
 		/// Creates Idea connection project from given <paramref name="iomXmlFileName"/>, <paramref name="iomResXmlFileName"/> and projects saves into the <paramref name="newIdeaConFileName"/>

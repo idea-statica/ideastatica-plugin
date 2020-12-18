@@ -2,7 +2,7 @@
 using System.Reflection;
 using System.Windows;
 using System.Xml.Serialization;
-using CI.Common;
+
 
 namespace CI.Geometry2D
 {
@@ -11,11 +11,8 @@ namespace CI.Geometry2D
 	/// </summary>
 	[Obfuscation(Feature = "renaming")]
 	[XmlInclude(typeof(LineSegment2D))]
-	[XmlInclude(typeof(CircularArcSegment2D))]
-	[XmlInclude(typeof(EllipticArcSegment2D))]
-	[XmlInclude(typeof(ParabolicArcSegment2D))]
 	[DebuggerDisplay("EndPoint=[{EndPoint.X}; {EndPoint.Y}]")]
-	public abstract class Segment2D : NotifyPropertyChangedImpl, ISegment2D, ISegment2DCom
+	public abstract class Segment2D : ISegment2D, ISegment2DCom
 	{
 		private Point endPoint;
 

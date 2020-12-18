@@ -238,7 +238,7 @@ namespace CI.Geometry2D
 		}
 
 		/// <summary>
-		/// SetPoints
+		///
 		/// </summary>
 		/// <param name="beg"></param>
 		/// <param name="centr"></param>

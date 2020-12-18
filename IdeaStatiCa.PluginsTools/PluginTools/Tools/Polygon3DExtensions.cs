@@ -66,7 +66,7 @@ namespace CI.Geometry3D
 			var points = new List<WM.Point3D>(2);
 
 			var count = polygon.Count;
-			for (var i = 1; i < count; i++)
+			for (var i = 1; i < count; ++i)
 			{
 				var l0 = polygon[i - 1];
 				var l = polygon[i] - l0;
@@ -84,7 +84,7 @@ namespace CI.Geometry3D
 
 			RemoveDuplicates(points);
 			count = points.Count;
-			//System.Diagnostics.Debug.Assert(!(count > 2 && count % 2 != 0));
+			// System.Diagnostics.Debug.Assert(!(count > 2 && count % 2 != 0));
 			var lines = new List<Line3D>(count / 2);
 			for (var i = 1; i < count; i += 2)
 			{
@@ -94,6 +94,7 @@ namespace CI.Geometry3D
 
 			return lines;
 		}
+
 		private static List<Line3D> GetIntersection(List<Line3D> lines1, List<Line3D> lines2)
 		{
 			List<Line3D> _lines1, _lines2;
@@ -121,7 +122,7 @@ namespace CI.Geometry3D
 					var d2 = WM.Vector3D.DotProduct(v2, v1);
 					var d3 = WM.Vector3D.DotProduct(v3, v1);
 
-					if ((d2.IsLesser(0) && d3.IsLesser(0)) || (d2.IsGreater(d1) && d3.IsGreater(d1))) // if ((d2 < 0 && d3 < 0) || (d2 > d1 && d3 > d1))
+					if ((d2 < 0 && d3 < 0) || (d2 > d1 && d3 > d1))
 					{
 						continue;
 					}
@@ -129,7 +130,7 @@ namespace CI.Geometry3D
 					var p = new List<double>() { 0, d2, d1, d3 };
 					p.Sort();
 					WM.Point3D p1, p2;
-					if (!d1.IsEqual(0, 1e-6)) // if (d1 != 0)
+					if (d1 != 0)
 					{
 						p1 = l1.P1 + p[1] * v1 / d1;
 						p2 = l1.P1 + p[2] * v1 / d1;

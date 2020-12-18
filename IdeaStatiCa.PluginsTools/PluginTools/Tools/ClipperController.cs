@@ -37,12 +37,14 @@ namespace CI.Geometry2D
 
 		public static IRegion2D Simplify(IRegion2D region, double maxDiscretizationAngle = 5)
 		{
-			PolyLine2DDiscretizator discretizator = new PolyLine2DDiscretizator();
-			discretizator.NumberOfTiles = 1;
-			discretizator.LengthOfTile = double.MaxValue;
-			discretizator.Angle = maxDiscretizationAngle;
+			PolyLine2DDiscretizator discretizator = new PolyLine2DDiscretizator
+			{
+				NumberOfTiles = 1,
+				LengthOfTile = double.MaxValue,
+				Angle = maxDiscretizationAngle
+			};
 			var polyline = region.Outline;
-			var containsCircArc = polyline.Segments.Any(s => s is CircularArcSegment2D);
+			var containsCircArc = polyline.Segments.FirstOrDefault(s => s is CircularArcSegment2D) != null;
 			var polygon = CreatePolygon(polyline, discretizator, true);
 			var solution = Clipper.SimplifyPolygon(polygon);
 			if (solution.Count == 1)
@@ -51,7 +53,7 @@ namespace CI.Geometry2D
 
 				foreach (var opening in region.Openings)
 				{
-					containsCircArc = opening.Segments.Any(s => s is CircularArcSegment2D);
+					containsCircArc = opening.Segments.FirstOrDefault(s => s is CircularArcSegment2D) != null;
 					polygon = CreatePolygon(opening, discretizator, true);
 					solution = Clipper.SimplifyPolygon(polygon);
 					if (solution.Count == 1)
@@ -88,7 +90,7 @@ namespace CI.Geometry2D
 		public void Add(IPolyLine2D polyline, PolyType type)
 		{
 			if (!this.containsCircArc)
-				this.containsCircArc |= polyline.Segments.Any(s => s is CircularArcSegment2D);
+				this.containsCircArc |= polyline.Segments.FirstOrDefault(s => s is CircularArcSegment2D) != null;
 
 			var p = CreatePolygon(polyline, this.Discretizator, false);
 			this.clipper.AddPath(p, type, polyline.IsClosed);
@@ -330,7 +332,7 @@ namespace CI.Geometry2D
 		{
 			var discretizator = this.Discretizator;
 
-			containsCircArc |= region.Outline.Segments.Any(s => s is CircularArcSegment2D);
+			containsCircArc |= region.Outline.Segments.FirstOrDefault(s => s is CircularArcSegment2D) != null;
 			yield return CreatePolygon(region.Outline, discretizator, true);
 
 			int openingsCount = region.Openings.Count;
@@ -338,7 +340,7 @@ namespace CI.Geometry2D
 			{
 				for (int i = 0; i < openingsCount; ++i)
 				{
-					containsCircArc |= region.Openings[i].Segments.Any(s => s is CircularArcSegment2D);
+					containsCircArc |= region.Openings[i].Segments.FirstOrDefault(s => s is CircularArcSegment2D) != null;
 					yield return CreatePolygon(region.Openings[i], discretizator, false);
 				}
 			}
@@ -419,15 +421,17 @@ namespace CI.Geometry2D
 
 		public static IEnumerable<IPolyLine2D> BuildOffset(IPolyLine2D polyline, double delta, JoinType joinType, EndType endType, double mitterLimit, bool sort = false, double maxDiscretizationAngle = 5)
 		{
-			PolyLine2DDiscretizator discretizator = new PolyLine2DDiscretizator();
-			discretizator.NumberOfTiles = 1;
-			discretizator.LengthOfTile = double.MaxValue;
-			discretizator.Angle = maxDiscretizationAngle;
+			PolyLine2DDiscretizator discretizator = new PolyLine2DDiscretizator
+			{
+				NumberOfTiles = 1,
+				LengthOfTile = double.MaxValue,
+				Angle = maxDiscretizationAngle
+			};
 			var p = CreatePolygon(polyline, discretizator, true);
 
 			bool containsCircArc = joinType == JoinType.jtRound || endType == EndType.etOpenRound;
 			if (!containsCircArc)
-				containsCircArc = polyline.Segments.Any(s => s is CircularArcSegment2D);
+				containsCircArc = polyline.Segments.FirstOrDefault(s => s is CircularArcSegment2D) != null;
 
 			var co = new ClipperOffset(mitterLimit);
 			co.AddPath(p, joinType, endType);
@@ -451,16 +455,18 @@ namespace CI.Geometry2D
 
 		public static IEnumerable<IPolyLine2D> BuildOffset(IEnumerable<IPolyLine2D> polylines, double delta, JoinType joinType, EndType endType, double mitterLimit, bool sort = false, double maxDiscretizationAngle = 5)
 		{
-			PolyLine2DDiscretizator discretizator = new PolyLine2DDiscretizator();
-			discretizator.NumberOfTiles = 1;
-			discretizator.LengthOfTile = double.MaxValue;
-			discretizator.Angle = maxDiscretizationAngle;
+			PolyLine2DDiscretizator discretizator = new PolyLine2DDiscretizator
+			{
+				NumberOfTiles = 1,
+				LengthOfTile = double.MaxValue,
+				Angle = maxDiscretizationAngle
+			};
 			bool containsCircArc = joinType == JoinType.jtRound || endType == EndType.etOpenRound;
 			var polygons = new List<List<IntPoint>>(polylines.Count());
 			foreach (var polyline in polylines)
 			{
 				if (!containsCircArc)
-					containsCircArc |= polyline.Segments.Any(s => s is CircularArcSegment2D);
+					containsCircArc |= polyline.Segments.FirstOrDefault(s => s is CircularArcSegment2D) != null;
 
 				var polygon = CreatePolygon(polyline, discretizator, true);
 				polygons.Add(polygon);

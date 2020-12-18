@@ -136,7 +136,7 @@ namespace CI.Geometry3D
 
 		#region Methods
 
-
+		
 		#region PointOnRegion Members
 
 		protected void SubscribeEventsFromRegion()

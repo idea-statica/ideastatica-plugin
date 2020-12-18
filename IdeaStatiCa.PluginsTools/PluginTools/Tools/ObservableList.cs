@@ -130,7 +130,6 @@ namespace System.Collections.CI.Common //TODO
 			NotifyCollectionChangedEventArgs arg = new NotifyCollectionChangedEventArgs(NotifyCollectionChangedAction.Add, item);
 #endif
 
-
 			OnCollectionChanged(arg);
 		}
 
@@ -635,7 +634,7 @@ namespace System.Collections.CI.Common //TODO
 		/// <param name="origArg">Original argument.</param>
 		protected void ForwardPropertyChanged(string propertyName, object origSender, PropertyChangedEventArgs origArg)
 		{
-			PropertyChangedEventHandler handler = PropertyChanged;
+			/*PropertyChangedEventHandler handler = PropertyChanged;
 			if (handler != null)
 			{
 				if (origArg is ForwardedPropertyChangedEventArgs)
@@ -643,7 +642,7 @@ namespace System.Collections.CI.Common //TODO
 					origSender = (origArg as ForwardedPropertyChangedEventArgs).OriginalSender;
 				}
 				handler(this, new ForwardedPropertyChangedEventArgs(propertyName, origSender, origArg));
-			}
+			}*/
 		}
 
 		/// <summary>

@@ -72,7 +72,7 @@ namespace CI.Geometry3D
 						Add(seg);
 					}
 
-					if (source.IsClosed && segments.Count > 0)
+					if (source.IsClosed && segments. Count > 0)
 					{
 						segments[segments.Count - 1].EndPoint = segments[0].StartPoint;
 					}
@@ -304,7 +304,7 @@ namespace CI.Geometry3D
 			return indexOfDelSegment;
 		}
 
-		/// <summary>
+ 		/// <summary>
 		/// Remove segment[index], adaptes geometry so that shorter segment changes positions
 		/// </summary>
 		/// <param name="index">Segment index</param>

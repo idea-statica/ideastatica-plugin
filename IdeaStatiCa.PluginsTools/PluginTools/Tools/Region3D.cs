@@ -211,7 +211,7 @@ namespace CI.Geometry3D
 
 		#endregion
 
-
+		
 
 		/// <summary>
 		/// Subscribe events from openings

@@ -6,10 +6,10 @@ using System.Text;
 using System.Windows;
 using System.Windows.Media;
 
-//#if !SILVERLIGHT
-//using CI.Geometry2D;
-//using CI.Geometry3D;
-//#endif
+#if !SILVERLIGHT
+using CI.Geometry2D;
+using CI.Geometry3D;
+#endif
 
 namespace CI
 {
@@ -256,34 +256,6 @@ namespace CI
 			}
 
 			return maxKey;
-		}
-
-		/// <summary>
-		/// Returns the absolute minimum System.Double value or zero, if sequence is empty.
-		/// </summary>
-		/// <param name="source">A sequence of System.Double values to determine the absolute minimum value of.</param>
-		/// <returns>The absolute minimum System.Double value or zero, if sequence is empty.</returns>
-		public static double MinAbsOrDefault(this IEnumerable<double> source)
-		{
-			double minKey = 0;
-
-			using (var enumerator = source.GetEnumerator())
-			{
-				if (enumerator.MoveNext())
-				{
-					minKey = enumerator.Current;
-					while (enumerator.MoveNext())
-					{
-						var currentKey = enumerator.Current;
-						if (Math.Abs(currentKey) < Math.Abs(minKey))
-						{
-							minKey = currentKey;
-						}
-					}
-				}
-			}
-
-			return minKey;
 		}
 
 		/// <summary>
@@ -1117,7 +1089,7 @@ namespace CI
 		/// <param name="rightValue">Value on RHS of operator</param>
 		/// <param name="tolerance">Tolerance level for comparison</param>
 		/// <returns>True if equal</returns>
-		public static bool IsEqualWithTolerance(this Geometry2D.IdaComPoint2D leftValue, Geometry2D.IdaComPoint2D rightValue, double tolerance = 1e-9)
+		public static bool IsEqualWithTolerance(this IdaComPoint2D leftValue, IdaComPoint2D rightValue, double tolerance = 1e-9)
 		{
 			return (Math.Abs(leftValue.X - rightValue.X) <= tolerance) && (Math.Abs(leftValue.Y - rightValue.Y) <= tolerance);
 		}
@@ -1141,7 +1113,7 @@ namespace CI
 		/// <param name="rightValue">Value on RHS of operator</param>
 		/// <param name="tolerance">Tolerance level for comparison</param>
 		/// <returns>True if equal</returns>
-		public static bool IsEqualWithTolerance(this Geometry3D.IPoint3D leftValue, Geometry3D.IPoint3D rightValue, double tolerance = 1e-9)
+		public static bool IsEqualWithTolerance(this IPoint3D leftValue, IPoint3D rightValue, double tolerance = 1e-9)
 		{
 			return (Math.Abs(leftValue.X - rightValue.X) <= tolerance) && (Math.Abs(leftValue.Y - rightValue.Y) <= tolerance) && (Math.Abs(leftValue.Z - rightValue.Z) <= tolerance);
 		}
@@ -1151,7 +1123,7 @@ namespace CI
 		/// </summary>
 		/// <param name="src">Source point</param>
 		/// <returns>Returns true is X or Y or Z is not a number</returns>
-		public static bool IsNaN(this Geometry3D.IPoint3D src)
+		public static bool IsNaN(this IPoint3D src)
 		{
 			return (double.IsNaN(src.X) || double.IsNaN(src.Y) || double.IsNaN(src.Z));
 		}
@@ -1167,7 +1139,7 @@ namespace CI
 		/// <param name="rightValue">Value on RHS of operator</param>
 		/// <param name="tolerance">Tolerance level for comparison</param>
 		/// <returns>True if equal</returns>
-		public static bool IsEqualWithToleranceRelativeY(this Geometry2D.IdaComPoint2D leftValue, Geometry2D.IdaComPoint2D rightValue, double tolerance = 1e-9)
+		public static bool IsEqualWithToleranceRelativeY(this IdaComPoint2D leftValue, IdaComPoint2D rightValue, double tolerance = 1e-9)
 		{
 			return (Math.Abs(leftValue.X - rightValue.X) <= tolerance) && (Math.Abs((Math.Abs(leftValue.Y) - Math.Abs(rightValue.Y))) <= tolerance);
 		}

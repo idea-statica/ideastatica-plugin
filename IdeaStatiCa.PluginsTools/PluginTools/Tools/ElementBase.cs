@@ -26,7 +26,7 @@ namespace CI.DataModel
 	/// Base abstarct class for structural objects
 	/// </summary>
 	[ComVisible(true)]
-	public abstract class ElementBase : INotifyPropertyChanged, IWeakEventListener
+	public abstract class ElementBase :   INotifyPropertyChanged, IWeakEventListener
 	{
 		#region Constructors
 

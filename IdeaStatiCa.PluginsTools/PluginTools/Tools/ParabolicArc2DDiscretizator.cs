@@ -27,7 +27,7 @@ namespace CI.Geometry2D
 			{
 				if (value == 0)
 				{
-					System.Diagnostics.Debug.Assert(false, "Angle cannot be zero!\nThe value is not set.");
+					System.Diagnostics.Debug.Fail("Angle cannot be zero!\nThe value is not set.");
 				}
 				else
 				{
@@ -67,11 +67,10 @@ namespace CI.Geometry2D
 				var mat = new Matrix();
 				mat.Rotate(deltaAngle);
 				var t = segment.GetTangentOnSegment(ref start, 0);
-				Point p;
 				for (int i = 1; i < numberOfTiles; ++i)
 				{
 					t = mat.Transform(t);
-					if (segment.CoordinatesFromTangent(ref start, t, out p))
+					if (segment.CoordinatesFromTangent(ref start, t, out Point p))
 					{
 						target.Add(p);
 					}

@@ -53,6 +53,5 @@ namespace CI.Geometry2D
 		IPolyLine2DCom OutlineCom { get; set; }
 
 		IList OpeningsCom { get; set; }
-
 	}
 }

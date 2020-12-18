@@ -1,4 +1,4 @@
-using System.Diagnostics;
+﻿using System.Diagnostics;
 using System.Xml.Serialization;
 using WM = System.Windows.Media.Media3D;
 using System;
@@ -59,7 +59,7 @@ namespace CI.Geometry3D
 			this.z = src.Z;
 		}
 
-
+		
 		/// <summary>
 		/// Create a Point3D from IPoint3D
 		/// </summary>

@@ -10,6 +10,5 @@ namespace CI.Geometry3D
 		double Y { get; set; }
 
 		double Z { get; set; }
-
-    }
+	}
 }

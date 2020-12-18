@@ -24,7 +24,7 @@ namespace CI.Geometry2D
 			{
 				if (value == 0)
 				{
-					System.Diagnostics.Debug.Assert(false, "Angle cannot be zero!\nThe value is not set.");
+					System.Diagnostics.Debug.Fail("Angle cannot be zero!\nThe value is not set.");
 				}
 				else
 				{

@@ -10,7 +10,6 @@ namespace CI.Geometry3D
 	/// </summary>
 	public static partial class GeomOperation
 	{
-
 		/// <summary>
 		/// Gets verticall flag
 		/// </summary>
@@ -94,10 +93,12 @@ namespace CI.Geometry3D
 		/// <returns>Displaced arc</returns>
 		public static IArcSegment3D Add(IArcSegment3D arc, Vector3D displacement)
 		{
-			IArcSegment3D newArc = new ArcSegment3D();
-			newArc.StartPoint = Add(arc.StartPoint, displacement);
-			newArc.IntermedPoint = Add(arc.IntermedPoint, displacement);
-			newArc.EndPoint = Add(arc.EndPoint, displacement);
+			IArcSegment3D newArc = new ArcSegment3D
+			{
+				StartPoint = Add(arc.StartPoint, displacement),
+				IntermedPoint = Add(arc.IntermedPoint, displacement),
+				EndPoint = Add(arc.EndPoint, displacement)
+			};
 			return newArc;
 		}
 
@@ -109,9 +110,11 @@ namespace CI.Geometry3D
 		/// <returns>Displaced line</returns>
 		public static ILineSegment3D Add(ILineSegment3D line, Vector3D displacement)
 		{
-			ILineSegment3D newLine = new LineSegment3D();
-			newLine.StartPoint = Add(line.StartPoint, displacement);
-			newLine.EndPoint = Add(line.EndPoint, displacement);
+			ILineSegment3D newLine = new LineSegment3D
+			{
+				StartPoint = Add(line.StartPoint, displacement),
+				EndPoint = Add(line.EndPoint, displacement)
+			};
 			return newLine;
 		}
 
@@ -347,10 +350,12 @@ namespace CI.Geometry3D
 			// Point on Axis X - in tangent direction
 			Vector3D tangentVector = new Vector3D();
 			GetTangentOnSegment(segment, relativePosition, ref tangentVector);
-			IPoint3D axisxPoint = new Point3D();
-			axisxPoint.X = originPoint.X + tangentVector.DirectionX;
-			axisxPoint.Y = originPoint.Y + tangentVector.DirectionY;
-			axisxPoint.Z = originPoint.Z + tangentVector.DirectionZ;
+			IPoint3D axisxPoint = new Point3D
+			{
+				X = originPoint.X + tangentVector.DirectionX,
+				Y = originPoint.Y + tangentVector.DirectionY,
+				Z = originPoint.Z + tangentVector.DirectionZ
+			};
 
 			return fullSegment.LocalCoordinateSystem.GetCoordinateSystemMatrix(originPoint, axisxPoint);
 		}
@@ -363,9 +368,7 @@ namespace CI.Geometry3D
 		/// <returns>Transformation matrix</returns>
 		public static IMatrix44 GetTransformation(IPolyLine3D polyLine3D, double relativePosition)
 		{
-			double positionOnSeg = 0;
-			int inx;
-			ISegment3D segment = GetSegmentAtPosition(polyLine3D, relativePosition, out positionOnSeg, out inx);
+			ISegment3D segment = GetSegmentAtPosition(polyLine3D, relativePosition, out double positionOnSeg, out int inx);
 			IMatrix44 lcs = GeomOperation.GetTransformation(segment, positionOnSeg);
 			return lcs;
 		}
@@ -435,13 +438,13 @@ namespace CI.Geometry3D
 		{
 			if (relativePosition.IsEqual(0))
 			{
-				point = new Point3D(segment.StartPoint);
+				point = new Point3D(segment.StartPoint.X, segment.StartPoint.Y, segment.StartPoint.Z);
 				return true;
 			}
 
 			if (relativePosition.IsEqual(1))
 			{
-				point = new Point3D(segment.EndPoint);
+				point = new Point3D(segment.EndPoint.X, segment.EndPoint.Y, segment.EndPoint.Z);
 				return true;
 			}
 
@@ -1388,7 +1391,7 @@ namespace CI.Geometry3D
 						return true;
 					}
 				}
-				
+
 				return false;
 			}
 		}
@@ -1436,7 +1439,7 @@ namespace CI.Geometry3D
 			{
 				if (relativePosition1.IsGreater(0) && relativePosition1.IsLesser(1))
 				{
-					if (relativePosition2.IsGreater(0) && relativePosition2.IsLesser(1, 1e-7))
+					if (relativePosition2.IsGreater(0) && relativePosition2.IsLesser(1))
 					{
 						return true;
 					}

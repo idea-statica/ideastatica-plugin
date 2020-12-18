@@ -79,5 +79,13 @@ namespace IdeaStatiCa.Plugin
 		/// <returns>Connection model</returns>
 		[OperationContract]
 		IdeaRS.OpenModel.Connection.ConnectionData GetConnectionModel(int connectionId);
+
+		/// <summary>
+		/// Get IOM connection model in IOM format
+		/// </summary>
+		/// <param name="connectionId">The ID of the connection in the project</param>
+		/// <returns>Connection model</returns>
+		[OperationContract]
+		IdeaRS.OpenModel.OpenModelTuple GetAllConnectionData(int connectionId);
 	}
 }

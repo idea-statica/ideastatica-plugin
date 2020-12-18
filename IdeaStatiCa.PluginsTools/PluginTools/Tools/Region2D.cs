@@ -16,7 +16,7 @@ namespace CI.Geometry2D
 	/// </summary>
 	[Obfuscation(Feature = "renaming")]
 
-	public class Region2D : IRegion2D, IRegion2DCom, IEditableObject
+	public class Region2D :  IRegion2D, IRegion2DCom, IEditableObject
 	{
 		#region Fields
 
@@ -209,7 +209,7 @@ namespace CI.Geometry2D
 
 		#endregion Public methods
 
-		/// <summary>
+				/// <summary>
 		/// Updates geometry of this instance.
 		/// </summary>
 		protected virtual void GeometryChanged()

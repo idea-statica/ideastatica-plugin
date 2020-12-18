@@ -1,25 +1,25 @@
-﻿using System;
+﻿using IdeaRS.OpenModel;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Text;
 using System.Xml;
 using System.Xml.Serialization;
-using IdeaRS.OpenModel;
-using log4net;
+using IdeaStatiCa.Diagnostics;
 
 namespace IdeaStatiCa.PluginsTools
 {
-    static public class CommunicationTool
+	static public class CommunicationTool
 	{
-		public static readonly ILog logger = LogManager.GetLogger("PluginLogger");
+		private static IIdeaLogger ideaLogger = IdeaDiagnostics.GetLogger("ideastatica.plugintools");
 
-		public static void SendToServer(OpenModelContainer openModelContainer, string dataFilePath = "")
+		public static void SendToServer(OpenModelTuple openModelContainer, string dataFilePath = "")
 		{
 			var projectTempFile = GetTempPath();
 			if (!Directory.Exists(projectTempFile))
 			{
-				logger.InfoFormat("CreateDirectory: {0}", Path.GetDirectoryName(projectTempFile));
+				ideaLogger.LogInformation($"CreateDirectory: {Path.GetDirectoryName(projectTempFile)}");
 				Directory.CreateDirectory(Path.GetDirectoryName(projectTempFile));
 			}
 
@@ -27,7 +27,7 @@ namespace IdeaStatiCa.PluginsTools
 			{
 
 				{
-					XmlSerializer xs = new XmlSerializer(typeof(OpenModelContainer));
+					XmlSerializer xs = new XmlSerializer(typeof(OpenModelTuple));
 					Stream fs = new FileStream(projectTempFile, FileMode.Create);
 					XmlTextWriter writer = new XmlTextWriter(fs, Encoding.Unicode)
 					{
@@ -38,13 +38,13 @@ namespace IdeaStatiCa.PluginsTools
 					writer.Close();
 					fs.Close();
 				}
-				logger.Info("OpenModel Container seriazed");
+				ideaLogger.LogInformation("OpenModel Container seriazed");
 
 				var thisAssembly = System.Reflection.Assembly.GetExecutingAssembly();
 				var location = Path.GetDirectoryName(thisAssembly.Location);
 				string cmdLine = Path.Combine(location, @"IdeaStatiCa.PluginComunicationProvider.exe");
 
-				logger.InfoFormat("PluginComunicationProvider path: {0}", cmdLine);
+				ideaLogger.LogInformation($"PluginComunicationProvider path: {cmdLine}");
 				using (Process proc = new Process())
 				{
 					string workDir = dataFilePath;
@@ -59,7 +59,7 @@ namespace IdeaStatiCa.PluginsTools
 							Directory.CreateDirectory(Path.GetDirectoryName(workDir));
 						}
 					}
-					logger.InfoFormat("Process start -p:{0} -o:{1}", workDir, projectTempFile);
+					ideaLogger.LogInformation($"Process start -p:{workDir} -o:{projectTempFile}");
 					ProcessStartInfo psi = new ProcessStartInfo(cmdLine, string.Format("-p \"{0}\" -o \"{1}\"", workDir, projectTempFile))
 					{
 						WindowStyle = ProcessWindowStyle.Normal,
@@ -72,7 +72,7 @@ namespace IdeaStatiCa.PluginsTools
 
 					if (!proc.WaitForExit(15 * 60 * 1000))
 					{
-						logger.Error("Time out");
+						ideaLogger.LogError("Time out");
 						proc.Kill();
 						Debug.Fail("Time out");
 						throw new InvalidOperationException("Communication time out");
@@ -83,8 +83,8 @@ namespace IdeaStatiCa.PluginsTools
 			}
 			catch (Exception e)
 			{
-				logger.Error(e.ToString());
-				logger.Error(e.StackTrace.ToString());
+				ideaLogger.LogError(e.ToString());
+				ideaLogger.LogError(e.StackTrace.ToString());
 				Debug.Fail(e.ToString());
 			}
 		}

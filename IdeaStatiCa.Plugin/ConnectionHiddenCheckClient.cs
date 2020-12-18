@@ -62,6 +62,11 @@ namespace IdeaStatiCa.Plugin
 			return Service.GetConnectionModel(connectionId);
 		}
 
+		public IdeaRS.OpenModel.OpenModelTuple GetAllConnectionData(string connectionId)
+		{
+			return Service.GetAllConnectionData(connectionId);
+		}
+
 		public string GetConnectionModelXML(string connectionId)
 		{
 			return Service.GetConnectionModelXML(connectionId);

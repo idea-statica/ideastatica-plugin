@@ -6,7 +6,7 @@ namespace CI.Mathematics
 	/// <summary>
 	/// Provides a mathematical tools.
 	/// </summary>
-	public static class Tools
+	public class Tools
 	{
 		/// <summary>
 		/// Interchanges two values.

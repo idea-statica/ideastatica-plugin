@@ -34,7 +34,7 @@ namespace CI.Geometry2D
 			{
 				if (value == 0)
 				{
-					System.Diagnostics.Debug.Assert(false, "LengthOfTile cannot be zero!\nThe value is not set.");
+					System.Diagnostics.Debug.Fail("LengthOfTile cannot be zero!\nThe value is not set.");
 				}
 				else
 				{

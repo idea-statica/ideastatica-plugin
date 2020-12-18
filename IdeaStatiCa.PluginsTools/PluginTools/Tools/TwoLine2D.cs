@@ -173,9 +173,8 @@ namespace CI.GiCL2D
 											Point p21, CrossStatus s21, Vector p22, CrossStatus s22,
 											out Point retPt)																										// vraci absolutni souradnice pruseciku
 		{
-			Point u;
 			retPt = new Point();
-			if (!CrossRel(p11, p12, p21, p22, out u)) return false;
+			if (!CrossRel(p11, p12, p21, p22, out Point u)) return false;
 
 			if (!TestRelOnLine(s11, s12, u.X)) return false;
 			if (!TestRelOnLine(s21, s22, u.Y)) return false;
@@ -248,10 +247,12 @@ namespace CI.GiCL2D
 			/// Neni paralelni
 			/// </summary>
 			Nothing,
+
 			/// <summary>
 			/// paralelni nelezi na jedne primce
 			/// </summary>
 			ParallelOut,
+
 			/// <summary>
 			/// paralelni a lezi na jedne primce
 			/// </summary>

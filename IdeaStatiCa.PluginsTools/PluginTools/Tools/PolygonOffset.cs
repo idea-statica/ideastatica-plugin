@@ -32,12 +32,9 @@ namespace CI.GiCL2D
 
 			// zjistim smer otaceni
 			myIsReversed = Funcs2D.PolygonIsClockwise(poly) == IsOutline;
-
-			// outline musi byt levotociva a dira pravotociva
-			double x, y;
 			for (int i = 0; i < poly.Length; i++)
 			{
-				poly.GetRow(i, out x, out y);
+				poly.GetRow(i, out double x, out double y);
 				mySrc[i].Pt.X = x;
 				mySrc[i].Pt.Y = y;
 				mySrc[i].Id = i;
@@ -175,7 +172,6 @@ namespace CI.GiCL2D
 			List<Point> retPt = new List<Point>();
 			List<int> retInx = new List<int>();
 			Point[] bln = null, eln; // ofsetovane usecky
-			Point rpt;
 			int b, m, e, len;
 			if (IsClosed)
 			{
@@ -222,7 +218,7 @@ namespace CI.GiCL2D
 				// prusecik
 				TwoLine2D.CrossAbs(bln[0], bln[1],
 											eln[0], eln[1],
-											TwoLine2D.CrossStatus.Infinite, out rpt);
+											TwoLine2D.CrossStatus.Infinite, out Point rpt);
 				retPt.Add(rpt);
 				retInx.Add(m);
 

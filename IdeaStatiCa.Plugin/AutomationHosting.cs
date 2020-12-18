@@ -109,9 +109,9 @@ namespace IdeaStatiCa.Plugin
 				{
 					RunServer(id, token);
 				}
-				catch(Exception e)
+				catch (Exception ex)
 				{
-					ideaLogger.LogError("RunAsync  RunServer failed", e);
+					ideaLogger.LogError("RunAsync  RunServer failed", ex);
 					throw;
 				}
 			}, token);
@@ -192,9 +192,9 @@ namespace IdeaStatiCa.Plugin
 					Status |= AutomationStatus.IsClient;
 					isBimRunning = true;
 				}
-				catch (Exception e)
+				catch (Exception ex)
 				{
-					ideaLogger.LogError("Can not attach to BIM application", e);
+					ideaLogger.LogError("Can not attach to BIM application", ex);
 					throw;
 				}
 			}

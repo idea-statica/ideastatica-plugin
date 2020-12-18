@@ -1,8 +1,9 @@
 ﻿using System.Windows.Media.Media3D;
+
 namespace CI.Common
 {
 	/// <summary>
-	/// Defines an axis-aligned box-shaped 3D volume.
+	/// Defines an axis-aligned box-shaped 3D volume. 
 	/// </summary>
 	public class BoundingBox3D
 	{

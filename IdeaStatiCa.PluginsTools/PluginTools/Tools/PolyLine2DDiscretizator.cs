@@ -36,8 +36,7 @@ namespace CI.Geometry2D
 		{
 			set
 			{
-				ISegment2DDiscretizator discretizator;
-				discretizators.TryGetValue(typeof(LineSegment2D), out discretizator);
+				discretizators.TryGetValue(typeof(LineSegment2D), out ISegment2DDiscretizator discretizator);
 				if (discretizator != null)
 				{
 					((Line2DDiscretizator)discretizator).NumberOfTiles = value;
@@ -52,8 +51,7 @@ namespace CI.Geometry2D
 		{
 			set
 			{
-				ISegment2DDiscretizator discretizator;
-				discretizators.TryGetValue(typeof(CircularArcSegment2D), out discretizator);
+				discretizators.TryGetValue(typeof(CircularArcSegment2D), out ISegment2DDiscretizator discretizator);
 				if (discretizator != null)
 				{
 					((CircArc2DDiscretizator)discretizator).NumberOfTiles = value;
@@ -74,8 +72,7 @@ namespace CI.Geometry2D
 		{
 			set
 			{
-				ISegment2DDiscretizator discretizator;
-				discretizators.TryGetValue(typeof(LineSegment2D), out discretizator);
+				discretizators.TryGetValue(typeof(LineSegment2D), out ISegment2DDiscretizator discretizator);
 				if (discretizator != null)
 				{
 					((Line2DDiscretizator)discretizator).LengthOfTile = value;
@@ -90,8 +87,7 @@ namespace CI.Geometry2D
 		{
 			set
 			{
-				ISegment2DDiscretizator discretizator;
-				discretizators.TryGetValue(typeof(CircularArcSegment2D), out discretizator);
+				discretizators.TryGetValue(typeof(CircularArcSegment2D), out ISegment2DDiscretizator discretizator);
 				if (discretizator != null)
 				{
 					((CircArc2DDiscretizator)discretizator).Angle = value;
@@ -158,8 +154,7 @@ namespace CI.Geometry2D
 		/// <exception cref="System.ArgumentOutOfRangeException"> discretizator is null.</exception>
 		private ISegment2DDiscretizator SelectSegment2DDiscretizator(Type type)
 		{
-			ISegment2DDiscretizator discretizator;
-			discretizators.TryGetValue(type, out discretizator);
+			discretizators.TryGetValue(type, out ISegment2DDiscretizator discretizator);
 			if (discretizator == null)
 			{
 				throw new ArgumentOutOfRangeException(string.Format("PolyLine2DDiscretizator.SelectSegment2DDiscretizator(Type {0}) - discretizator is null", type.Name));

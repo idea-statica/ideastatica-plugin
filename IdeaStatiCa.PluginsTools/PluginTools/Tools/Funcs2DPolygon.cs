@@ -63,11 +63,10 @@ namespace CI.GiCL2D
 		{
 			if (poly == null) throw (new ArgumentNullException("PolygonBoundary(poly)"));
 			Rect2D ret = Rect2D.Empty;
-			double x, y;
 			Point pt = new Point();
 			for (int i = 0; i < poly.Length; i++)
 			{
-				poly.GetRow(i, out x, out y);
+				poly.GetRow(i, out double x, out double y);
 				pt.X = x;
 				pt.Y = y;
 				if (mat != null) mat.TransTo(pt, ref pt);
@@ -117,13 +116,13 @@ namespace CI.GiCL2D
 				e = 0;
 				b = 1;
 			}
-			Point p1, p2, pr;
+			Point p1, p2;
 			for (int i = b; i < poly.Length; i++)
 			{
 				b = e; e = i;
 				p1 = new Point(p[b, 0], p[b, 1]);
 				p2 = new Point(p[e, 0], p[e, 1]);
-				if (TwoLine2D.CrossRel(pt, v, p1, p2.Minus(p1), out pr))
+				if (TwoLine2D.CrossRel(pt, v, p1, p2.Minus(p1), out Point pr))
 				{
 					if (TwoLine2D.TestRelOnLine(TwoLine2D.CrossStatus.And, pr.Y))
 					{
@@ -299,11 +298,10 @@ namespace CI.GiCL2D
 		{
 			List<int> r = PolygonParallelEdges(poly, closed, pt2.Minus(pt1));
 			Point[,] ret = new Point[r.Count, 2];
-			double x, y;
 			int i = 0, k;
 			foreach (int j in r)
 			{
-				poly.GetRow(j, out x, out y);
+				poly.GetRow(j, out double x, out double y);
 				ret[i, 0].X = x; ret[i, 0].Y = y;
 				if (j == poly.Length - 1) k = 0;
 				else k = j + 1;
@@ -319,16 +317,14 @@ namespace CI.GiCL2D
 			IPolygonReader[] ret = null;
 			List<Tuple<double, int, int>> cr = new List<Tuple<double, int, int>>();
 			bool[] bcr = new bool[polygons.Length];
-
-			double x, y;
-			Point pr, ptt = new Point();
+			Point ptt = new Point();
 			Vector norm = Funcs2D.VectorNormal(v);
 			for (int i = 0; i < polygons.Length; i++)
 				for (int j = 0; j < polygons[i].Length; j++)
 				{
-					polygons[i].GetRow(j, out x, out y);
+					polygons[i].GetRow(j, out double x, out double y);
 					ptt.X = x; ptt.Y = y;
-					if (TwoLine2D.CrossRel(pt, v, ptt, norm, out pr))
+					if (TwoLine2D.CrossRel(pt, v, ptt, norm, out Point pr))
 					{
 						if (Funcs2D.IsEqual(pr.Y, 0.0, Funcs2D.Epson))
 						{

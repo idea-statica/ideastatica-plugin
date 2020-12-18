@@ -164,9 +164,11 @@ namespace CI.GiCL2D
 		// vypocte bod na primce
 		public static Point PointOnLine(Point pt, Vector v, double rel) // vrati absolutni bod na usecce [pt,v], ktery je urceny relativni sourdnici 'rel'
 		{
-			Point retPt = new Point();
-			retPt.X = pt.X + (rel * v.X);
-			retPt.Y = pt.Y + (rel * v.Y);
+			Point retPt = new Point
+			{
+				X = pt.X + (rel * v.X),
+				Y = pt.Y + (rel * v.Y)
+			};
 			return retPt;
 		}
 
@@ -189,14 +191,14 @@ namespace CI.GiCL2D
 			return PointOnLine(pt, v, rel);
 		}
 
-
+		// 
 		/// <summary>
-		/// 
+		/// Vypocte bod na primce ve vzdalenosti 'len' od pocatku
 		/// </summary>
-		/// <param name="a1"></param>
-		/// <param name="a2"></param>
-		/// <param name="len"></param>
-		/// <returns></returns>
+		/// <param name="pt">pocatecni bod primky</param>
+		/// <param name="v">konecny bod primky</param>
+		/// <param name="len">vzdalenost od pocatku</param>
+		/// <returns>vrati absolutni bod na usecce [a1,a2]</returns>
 		public static Point PointOnLineLen(Point a1, Point a2, double len)
 		{
 			return PointOnLineLen(a1, a2.Minus(a1), len);
@@ -205,10 +207,9 @@ namespace CI.GiCL2D
 		//vypocita kolmy prumet bodu na usecce , vysledek je relativni souradnice usecky
 		public static double PointToLine(Point pt1, Vector v, Point pk)
 		{
-			Point ret;
 			Vector vn = Funcs2D.VectorNormal(v);
 
-			TwoLine2D.CrossRel(pt1, v, pk, vn, out ret);
+			TwoLine2D.CrossRel(pt1, v, pk, vn, out Point ret);
 
 			return ret.X;
 		}
@@ -438,8 +439,7 @@ namespace CI.GiCL2D
 			Point[] p2 = Funcs2D.LineOffset(pt2, pt3, a);
 			if (p2 == null) ret |= 2;
 			if (ret != 0) return ret;
-			Point rr;
-			if (!TwoLine2D.CrossRel(p1[0], p1[1], p2[0], p2[1], out rr)) return 4;
+			if (!TwoLine2D.CrossRel(p1[0], p1[1], p2[0], p2[1], out Point rr)) return 4;
 			if (!TwoLine2D.TestRelOnLine(TwoLine2D.CrossStatus.And, rr.X)) ret |= 1;
 			if (!TwoLine2D.TestRelOnLine(TwoLine2D.CrossStatus.And, rr.Y)) ret |= 2;
 			return ret;
@@ -623,7 +623,7 @@ namespace CI.GiCL2D
 	/// The extension methods.
 	/// </summary>
 	public static class Extension
-	{ 
+	{
 		#region Double extension methods
 
 		/// <summary>

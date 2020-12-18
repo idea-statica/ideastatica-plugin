@@ -131,7 +131,7 @@ namespace IdeaRS.GeometricItems
 		#endregion Polyline
 
 		#region Boundary
-		public static Rect2D Boundary(this IRegion2D source)
+		public static Rect2D  Boundary(this IRegion2D source)
 		{
 			return source.Outline.Boundary();
 		}
@@ -139,7 +139,7 @@ namespace IdeaRS.GeometricItems
 		public static Rect2D Boundary(this IPolyLine2D source)
 		{
 			Point start = source.StartPoint;
-			var ret = new Rect2D(start, new Size());
+			var ret = new Rect2D(start,new Size());
 			foreach (var s in source.Segments)
 			{
 				var sg = s.Convert(ref start);

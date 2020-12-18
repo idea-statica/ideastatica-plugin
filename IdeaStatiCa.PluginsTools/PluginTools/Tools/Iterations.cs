@@ -15,58 +15,57 @@ namespace CI.Mathematics
 		/// Sets the maximal number of iterations.
 		/// </summary>
 		public static int MaxIterSteps
-        {
-            set => maxIterSteps = value;
+		{
+			set { maxIterSteps = value; }
+		}
 
-        }
+		#region Numerical differentiation
 
-        #region Numerical differentiation
-
-        /// <summary>
-        /// Numerical differentiation, forward method.
-        /// Produce an estimate of the derivative of a mathematical function.
-        /// </summary>
-        /// <typeparam name="T">The type of parameters needed for function.</typeparam>
-        /// <param name="f">The function for evaluation.</param>
-        /// <param name="param">The parameter needed for evaluation of specified function.</param>
-        /// <param name="x">The position for required derivation.</param>
-        /// <returns>The derivative of function in x.</returns>
-        public static double DifferentiateForward<T>(Func<double, T, double> f, T param, double x)
+		/// <summary>
+		/// Numerical differentiation, forward method.
+		/// Produce an estimate of the derivative of a mathematical function.
+		/// </summary>
+		/// <typeparam name="T">The type of parameters needed for function.</typeparam>
+		/// <param name="f">The function for evaluation.</param>
+		/// <param name="param">The parameter needed for evaluation of specified function.</param>
+		/// <param name="x">The position for required derivation.</param>
+		/// <returns>The derivative of function in x.</returns>
+		public static double DifferentiateForward<T>(Func<double, T, double> f, T param, double x)
 		{
 			return (f(x + DerivationSmallChange, param) - f(x, param)) / DerivationSmallChange;
 		}
 
-        /// <summary>
-        /// Numerical differentiation, forward method.
-        /// Produce an estimate of the derivative of a mathematical function.
-        /// </summary>
-        /// <typeparam name="T">The type of parameters needed for function.</typeparam>
-        /// <param name="f">The function for evaluation.</param>
-        /// <param name="param">The parameter needed for evaluation of specified function.</param>
-        /// <param name="x">The position for required derivation.</param>
-        /// <returns>The derivative of function in x.</returns>
-        public static double DifferentiateCentral<T>(Func<double, T, double> f, T param, double x)
-        {
-            return (f(x + DerivationSmallChange, param) - f(x - DerivationSmallChange, param)) / 2.0 / DerivationSmallChange;
-        }
+		/// <summary>
+		/// Numerical differentiation, forward method.
+		/// Produce an estimate of the derivative of a mathematical function.
+		/// </summary>
+		/// <typeparam name="T">The type of parameters needed for function.</typeparam>
+		/// <param name="f">The function for evaluation.</param>
+		/// <param name="param">The parameter needed for evaluation of specified function.</param>
+		/// <param name="x">The position for required derivation.</param>
+		/// <returns>The derivative of function in x.</returns>
+		public static double DifferentiateCentral<T>(Func<double, T, double> f, T param, double x)
+		{
+			return (f(x + DerivationSmallChange, param) - f(x - DerivationSmallChange, param)) / 2.0 / DerivationSmallChange;
+		}
 
-        #endregion
+		#endregion
 
-        #region Iterations
+		#region Iterations
 
-        /// <summary>
-        /// Finds iteratively the root of specfied function.
-        /// Function must fulfil the condition f(init1)*f(init2) &lt; 0.
-        /// </summary>
-        /// <typeparam name="T">The type of parameters needed for function.</typeparam>
-        /// <param name="f">The function for evaluation.</param>
-        /// <param name="param">The parameter needed for evaluation of specified function.</param>
-        /// <param name="a">The begin of the interval.</param>
-        /// <param name="b">The end of the interval.</param>
-        /// <param name="tolerance">The calculation tolerance.</param>
-        /// <param name="value">The calculated value X, where the function has zero.</param>
-        /// <returns>True if success, false otherwise.</returns>
-        public static bool BisectionMethod<T>(Func<double, T, double> f, T param, double a, double b, double tolerance, out double value)
+		/// <summary>
+		/// Finds iteratively the root of specfied function.
+		/// Function must fulfil the condition f(init1)*f(init2) &lt; 0.
+		/// </summary>
+		/// <typeparam name="T">The type of parameters needed for function.</typeparam>
+		/// <param name="f">The function for evaluation.</param>
+		/// <param name="param">The parameter needed for evaluation of specified function.</param>
+		/// <param name="a">The begin of the interval.</param>
+		/// <param name="b">The end of the interval.</param>
+		/// <param name="tolerance">The calculation tolerance.</param>
+		/// <param name="value">The calculated value X, where the function has zero.</param>
+		/// <returns>True if success, false otherwise.</returns>
+		public static bool BisectionMethod<T>(Func<double, T, double> f, T param, double a, double b, double tolerance, out double value)
 		{
 			double x0 = a;
 			double x1 = b;

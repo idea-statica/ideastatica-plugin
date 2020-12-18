@@ -39,26 +39,4 @@ namespace CI
 			return (int)Math.Round(obj / tolerance);
 		}
 	}
-
-	public class DoubleComparer : IComparer<double>
-	{
-		public DoubleComparer()
-		{
-		}
-
-		public DoubleComparer(double tolerance)
-		{
-			Tolerance = tolerance;
-		}
-
-		/// <summary>
-		/// Sets the tolerance for comaprison of two double values.
-		/// </summary>
-		public double Tolerance { get; set; }
-
-		public int Compare(double x, double y)
-		{
-			return x.IsEqual(y, Tolerance) ? 0 : x.CompareTo(y);
-		}
-	}
 }

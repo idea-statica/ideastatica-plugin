@@ -198,9 +198,8 @@ namespace CI.GiCL2D
 			{
 				if (myEnd == src.myBegin) return false;
 				if (myBegin == src.myEnd) return false;
-				Point t;
 				if (!TwoLine2D.CrossRel(new Point(p[myBegin, 0], p[myBegin, 1]), new Point(p[myEnd, 0], p[myEnd, 1]),
-											new Point(p[src.myBegin, 0], p[src.myBegin, 1]), new Point(p[src.myEnd, 0], p[src.myEnd, 1]), out t)) return false;
+											new Point(p[src.myBegin, 0], p[src.myBegin, 1]), new Point(p[src.myEnd, 0], p[src.myEnd, 1]), out Point t)) return false;
 				if (!TwoLine2D.TestRelOnLine(TwoLine2D.CrossStatus.And, t.X)) return false;
 				if (!TwoLine2D.TestRelOnLine(TwoLine2D.CrossStatus.And, t.Y)) return false;
 				if (Funcs2D.IsEqual(t.X, 0, Funcs2D.Epson) || Funcs2D.IsEqual(t.Y, 0, Funcs2D.Epson)) return false; // prusecik je na zacatku usecky, nezapisu
