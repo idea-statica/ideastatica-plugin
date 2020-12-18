@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFrameworks>net46;net47;net48</TargetFrameworks>
-    <AppendTargetFrameworkToOutputPath>True</AppendTargetFrameworkToOutputPath>
+    <TargetFramework>net461</TargetFramework>
+    <AppendTargetFrameworkToOutputPath>False</AppendTargetFrameworkToOutputPath>
     <AssemblyTitle>IdeaStatiCa.PluginsTools</AssemblyTitle>
     <Product>IdeaStatiCa.PluginsTools</Product>
     <Copyright></Copyright>
@@ -28,7 +28,7 @@
     <NoWarn>1701;1702;1591</NoWarn>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="IdeaStatiCa.OpenModel" Version="20.1.0" />
+    <PackageReference Include="IdeaStatiCa.OpenModel" Version="20.1.11" />
     <PackageReference Include="log4net" Version="2.0.8" />
   </ItemGroup>
   <ItemGroup>
