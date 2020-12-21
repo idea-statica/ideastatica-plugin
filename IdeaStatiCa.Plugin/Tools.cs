@@ -14,6 +14,26 @@ namespace IdeaStatiCa.Plugin
 			return SerializeModel(model, xs);
 		}
 
+		public static string OpenModelTupleToXml(IdeaRS.OpenModel.OpenModelTuple model)
+		{
+			XmlSerializer xs = new XmlSerializer(typeof(List<IdeaRS.OpenModel.OpenModelTuple>));
+			return SerializeModel(model, xs);
+		}
+
+
+		public static IdeaRS.OpenModel.OpenModelTuple OpenModelTupleFromXml(string xml)
+		{
+			var serializer = new XmlSerializer(typeof(IdeaRS.OpenModel.OpenModelTuple));
+			IdeaRS.OpenModel.OpenModelTuple iomTuple = serializer.Deserialize(new MemoryStream(Encoding.Unicode.GetBytes(xml))) as IdeaRS.OpenModel.OpenModelTuple;
+
+			if (iomTuple?.OpenModel != null)
+			{
+				iomTuple.OpenModel.ReferenceElementsReconstruction();
+			}
+
+			return iomTuple;
+		}
+
 		private static string SerializeModel(object model, XmlSerializer xs)
 		{
 			string res;
