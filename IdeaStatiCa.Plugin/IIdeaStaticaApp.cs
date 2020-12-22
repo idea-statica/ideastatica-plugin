@@ -81,11 +81,11 @@ namespace IdeaStatiCa.Plugin
 		IdeaRS.OpenModel.Connection.ConnectionData GetConnectionModel(int connectionId);
 
 		/// <summary>
-		/// Get IOM connection model in IOM format
+		/// Get structural data and corresponding results of FE analysi for <paramref name="connectionId"/>
 		/// </summary>
-		/// <param name="connectionId">The ID of the connection in the project</param>
-		/// <returns>Connection model</returns>
+		/// <param name="connectionId">Identifier of the required connection</param>
+		/// <returns>XML string which prepresents the instance of of IdeaRS.OpenModel.OpenModelTuple (stuctural data and results of FE analysis)</returns>
 		[OperationContract]
-		IdeaRS.OpenModel.OpenModelTuple GetAllConnectionData(int connectionId);
+		string GetAllConnectionData(int connectionId);
 	}
 }

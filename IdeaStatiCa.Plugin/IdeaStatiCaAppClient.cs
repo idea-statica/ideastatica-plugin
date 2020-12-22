@@ -49,7 +49,7 @@ namespace IdeaStatiCa.Plugin
 			return Service.GetConnectionModel(connectionId);
 		}
 
-		public OpenModelTuple GetAllConnectionData(int connectionId)
+		public string GetAllConnectionData(int connectionId)
 		{
 			return Service.GetAllConnectionData(connectionId);
 		}
