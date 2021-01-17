@@ -4,6 +4,7 @@
 	{
 		public IdeaStatiCaClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : base(binding, remoteAddress)
 		{
+			
 		}
 
 		public T Service => base.Channel;

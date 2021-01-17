@@ -1,0 +1,16 @@
+﻿syntax = "proto3";
+
+import "google/protobuf/any.proto";
+
+option csharp_namespace = "IdeaStatiCa.Plugin.gRPC";
+
+service GrpcService {
+	rpc Connect(stream GrpcMessage) returns (stream GrpcMessage);
+}
+
+message GrpcMessage {
+    string messageName = 1;
+    string data = 2;
+    string clientId = 3;
+    string operationId = 4;
+} 

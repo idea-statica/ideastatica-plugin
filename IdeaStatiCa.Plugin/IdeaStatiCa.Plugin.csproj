@@ -41,6 +41,13 @@
     <NoWarn>1701;1702;1591</NoWarn>
   </PropertyGroup>
   <ItemGroup>
+    <PackageReference Include="Google.Protobuf" Version="3.14.0" />
+    <PackageReference Include="Grpc" Version="2.35.0-pre1" />
+    <PackageReference Include="Grpc.Core" Version="2.35.0-pre1" />
+    <PackageReference Include="Grpc.Tools" Version="2.35.0-pre1">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
     <PackageReference Include="IdeaStatiCa.Diagnostics" Version="20.1.2" />
     <PackageReference Include="IdeaStatiCa.OpenModel" Version="20.1.11" />
   </ItemGroup>
@@ -53,5 +60,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Remove="IConnectionAutomation.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="proto\GrpcReflectionService.proto" />
+  </ItemGroup>
+  <ItemGroup>
+    <Protobuf Include="proto\GrpcReflectionService.proto" />
   </ItemGroup>
 </Project>

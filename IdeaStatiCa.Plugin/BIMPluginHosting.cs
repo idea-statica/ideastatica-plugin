@@ -1,4 +1,5 @@
-﻿using System;
+﻿using IdeaStatiCa.Plugin.gRPC;
+using System;
 using System.Diagnostics;
 using System.ServiceModel;
 using System.ServiceModel.Description;
@@ -35,7 +36,7 @@ namespace IdeaStatiCa.Plugin
 		private string clientId = string.Empty;
 		private string workingDirectory = string.Empty;
 		private readonly string EventName;
-		private readonly string PluginUrlFormat;
+		private readonly string PluginUrlFormat; 
 
 #if DEBUG
 		private readonly int OpenServerTimeLimit = -1;
@@ -158,7 +159,7 @@ namespace IdeaStatiCa.Plugin
 			try
 			{
 				IdeaStaticaApp.Exited -= new EventHandler(IS_Exited);
-				IdeaStaticaApp.Dispose();
+				IdeaStaticaApp.Dispose(); 
 			}
 			catch { }
 			IdeaStaticaApp = null;
@@ -198,7 +199,7 @@ namespace IdeaStatiCa.Plugin
 				if (!syncEvent.WaitOne(OpenServerTimeLimit))
 				{
 					syncEvent.Close();
-					throw new CommunicationException(string.Format("Can not start '{0}'", exePath));
+					throw new CommunicationException(string.Format("Cannot start '{0}'", exePath));
 				}
 				syncEvent.Close();
 			}

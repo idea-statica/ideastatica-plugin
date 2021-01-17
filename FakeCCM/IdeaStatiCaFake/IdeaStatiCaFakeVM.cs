@@ -2,10 +2,13 @@
 using IdeaRS.OpenModel.Message;
 using IdeaRS.OpenModel.Result;
 using IdeaStatiCa.Plugin;
+using IdeaStatiCa.Plugin.gRPC;
 using Microsoft.Win32;
+using NS = Newtonsoft.Json;
 using System;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Runtime.CompilerServices;
@@ -13,242 +16,280 @@ using System.Text;
 using System.Windows.Input;
 using System.Xml;
 using System.Xml.Serialization;
+using IdeaStatiCa.Plugin.gRPC.Reflection;
 
 namespace IdeaStatiCaFake
 {
-	public class IdeaStatiCaFakeVM : INotifyPropertyChanged, IDisposable
-	{
-		private AutomationHosting<IAutomation, IApplicationBIM> AutomationHosting { get; set; }
-		private IApplicationBIM FEA
-		{ get { return AutomationHosting?.MyBIM; } }
+    public class IdeaStatiCaFakeVM : INotifyPropertyChanged, IDisposable
+    {
+        private GrpcReflectionClient grpcClient;
 
-		public AppStatus FEAStatus { get; set; }
+        private AutomationHosting<IAutomation, IApplicationBIM> AutomationHosting { get; set; }
+        private IApplicationBIM FEA
+        { 
+            get { return AutomationHosting?.MyBIM; } 
+        }
 
-		private string modelFeaXml;
+        public AppStatus FEAStatus { get; set; }
 
-		public IdeaStatiCaFakeVM()
-		{
-			ModelFeaXml = string.Empty;
-			FEAStatus = AppStatus.Finished;
-			ImportConnectionCmd = new CustomCommand(this.CanImportConnection, this.ImportConnection);
-			ImportMemberCmd = new CustomCommand(this.CanImportMember, this.ImportMember);
-			ShowModelXmlCmd = new CustomCommand(this.CanShowXml, this.ShowXml);
-			SaveModelXmlCmd = new CustomCommand(this.CanSaveXml, this.SaveXml);
-			Actions = new ObservableCollection<string>();
+        private string modelFeaXml;
 
-			string clientId = string.Empty;
-			string project = string.Empty;
-			var startupArgs = Environment.GetCommandLineArgs();
-			if (startupArgs != null)
-			{
-				var autoArg = startupArgs.FirstOrDefault(a => a.StartsWith(Constants.AutomationParam));
-				{
-					if (!string.IsNullOrEmpty(autoArg))
-					{
-						clientId = autoArg.Substring(Constants.AutomationParam.Length + 1);
-					}
-				}
+        public IdeaStatiCaFakeVM()
+        {
+            // Pre attach debuggeru.
+            //Debug.Fail("Starting...");
 
-				var projectArg = startupArgs.FirstOrDefault(a => a.StartsWith(Constants.ProjectParam));
-				{
-					if (!string.IsNullOrEmpty(projectArg))
-					{
-						project = projectArg.Substring(Constants.ProjectParam.Length + 1);
-					}
-				}
+            ModelFeaXml = string.Empty;
+            FEAStatus = AppStatus.Finished;
+            ImportConnectionCmd = new CustomCommand(this.CanImportConnection, this.ImportConnection);
+            ImportMemberCmd = new CustomCommand(this.CanImportMember, this.ImportMember);
+            ShowModelXmlCmd = new CustomCommand(this.CanShowXml, this.ShowXml);
+            SaveModelXmlCmd = new CustomCommand(this.CanSaveXml, this.SaveXml);
+            Actions = new ObservableCollection<string>();
 
-				if (!string.IsNullOrEmpty(clientId))
-				{
-					Actions.Add(string.Format("Starting Automation clientid = {0}", clientId));
-					AutomationHosting = new AutomationHosting<IAutomation, IApplicationBIM>(new AutomationService<IApplicationBIM>());
-					AutomationHosting.BIMStatusChanged += new ISEventHandler(AutomationHosting_FEAStatusChanged);
-					AutomationHosting.RunAsync(clientId);
-				}
-			}
-		}
+            string clientId = string.Empty;
+            string project = string.Empty;
+            int grpcPort = 0;
+            bool grpcEnabled = false;
 
-		public event PropertyChangedEventHandler PropertyChanged;
+            var startupArgs = Environment.GetCommandLineArgs();
+            
+            if (startupArgs != null)
+            {
+                var autoArg = startupArgs.FirstOrDefault(a => a.StartsWith(Constants.AutomationParam));
+                {
+                    if (!string.IsNullOrEmpty(autoArg))
+                    {
+                        clientId = autoArg.Substring(Constants.AutomationParam.Length + 1);
+                    }
+                }
 
-		public ObservableCollection<string> Actions { get; set; }
+                var projectArg = startupArgs.FirstOrDefault(a => a.StartsWith(Constants.ProjectParam));
+                {
+                    if (!string.IsNullOrEmpty(projectArg))
+                    {
+                        project = projectArg.Substring(Constants.ProjectParam.Length + 1);
+                    }
+                }
 
-		public CustomCommand ImportConnectionCmd { get; set; }
+                var grpcArg = startupArgs.FirstOrDefault(a => a.StartsWith(Constants.GrpcPortParam));
+                {
+                    if(!string.IsNullOrEmpty(grpcArg))
+                    {
+                        grpcEnabled = int.TryParse(grpcArg.Substring(Constants.GrpcPortParam.Length + 1), out grpcPort);
+                    }
+                }
 
-		public CustomCommand ImportMemberCmd { get; set; }
+                if (!string.IsNullOrEmpty(clientId))
+                {
+                    //Actions.Add(string.Format("Starting Automation clientid = {0}", clientId));
+                    //AutomationHosting = new AutomationHosting<IAutomation, IApplicationBIM>(new AutomationService<IApplicationBIM>());
+                    //AutomationHosting.BIMStatusChanged += new ISEventHandler(AutomationHosting_FEAStatusChanged);
+                    //AutomationHosting.RunAsync(clientId);
+                }
 
-		public CustomCommand ShowModelXmlCmd { get; set; }
+                if(grpcEnabled)
+                {
+                    InitializeGrpc(clientId, grpcPort);
+                }
+            }
+        }
 
-		public CustomCommand SaveModelXmlCmd { get; set; }
+        private async void InitializeGrpc(string clientId, int grpcPort)
+        {
+            grpcClient = new GrpcReflectionClient(clientId, grpcPort);
 
-		public string ModelFeaXml
-		{
-			get => modelFeaXml;
-			set
-			{
-				modelFeaXml = value;
-				NotifyPropertyChanged();
-			}
-		}
+            await grpcClient.ConnectAsync();
 
-		public bool CanImportConnection(object param)
-		{
-			return FEA != null;
-		}
+            Actions.Add($"GRPC server disconnected");
+        }
 
-		public void ImportConnection(object param)
-		{
-			Actions.Add("ImportConnection - calling GetActiveSelectionModel");
-			var xmlString = FEA.GetActiveSelectionModelXML(IdeaRS.OpenModel.CountryCode.ECEN, RequestedItemsType.Connections);
-			var modelFEA = Tools.ModelFromXml(xmlString);
-			ModelFeaXml = xmlString;
-			Actions.Add(string.Format("ImportConnection - recieved results {0}", modelFEA.Project));
-		}
+        public event PropertyChangedEventHandler PropertyChanged;
 
-		public bool CanImportMember(object param)
-		{
-			return FEA != null;
-		}
+        public ObservableCollection<string> Actions { get; set; }
 
-		public void ImportMember(object param)
-		{
-			Actions.Add("ImportMember - calling GetActiveSelectionModel");
-			var xmlString = FEA.GetActiveSelectionModelXML(IdeaRS.OpenModel.CountryCode.ECEN, RequestedItemsType.Substructure);
-			var modelFEA = Tools.ModelFromXml(xmlString);
-			ModelFeaXml = xmlString;
-			Actions.Add(string.Format("ImportMember - recieved results {0}", modelFEA.Project));
-		}
+        public CustomCommand ImportConnectionCmd { get; set; }
 
-		public bool CanShowXml(object param)
-		{
-			return !string.IsNullOrEmpty(ModelFeaXml);
-		}
+        public CustomCommand ImportMemberCmd { get; set; }
 
-		public void ShowXml(object param)
-		{
-			XmlViewerWnd viewer = new XmlViewerWnd();
-			viewer.DataContext = this;
-			viewer.ShowDialog();
-		}
+        public CustomCommand ShowModelXmlCmd { get; set; }
 
-		public bool CanSaveXml(object param)
-		{
-			return !string.IsNullOrEmpty(ModelFeaXml);
-		}
+        public CustomCommand SaveModelXmlCmd { get; set; }
 
-		public void SaveXml(object param)
-		{
-			SaveFileDialog saveFileDialog = new SaveFileDialog();
-			saveFileDialog.Filter = "XML Files | *.xml";
-			if (saveFileDialog.ShowDialog() == true)
-			{
-				var modelFEA = Tools.ModelFromXml(ModelFeaXml);
-				File.WriteAllText(saveFileDialog.FileName, ModelFeaXml);
-				//SaveToFiles(modelFEA.Model, modelFEA.Results, modelFEA.Messages, saveFileDialog.FileName);
-				//File.WriteAllText(saveFileDialog.FileName + "M", ModelFeaXml);
-			}
-		}
+        public string ModelFeaXml
+        {
+            get => modelFeaXml;
+            set
+            {
+                modelFeaXml = value;
+                NotifyPropertyChanged();
+            }
+        }
 
-		protected bool SaveToFiles(OpenModel openStructModel, OpenModelResult openStructModelR, OpenMessages openMessages, string saveFileDialog)
-		{
-			try
-			{
-				{
-					XmlSerializer xs = new XmlSerializer(typeof(OpenModel));
-					Stream fs = new FileStream(saveFileDialog, FileMode.Create);
-					XmlTextWriter writer = new XmlTextWriter(fs, Encoding.Unicode);
-					// Serialize using the XmlTextWriter.
-					writer.Formatting = Formatting.Indented;
-					xs.Serialize(writer, openStructModel);
-					writer.Close();
-					fs.Close();
-				}
-				if (openStructModelR != null)
-				{
-					XmlSerializer xs = new XmlSerializer(typeof(OpenModelResult));
+        public bool CanImportConnection(object param)
+        {
+            return grpcClient.IsConnected;
+        }
 
-					Stream fs = new FileStream(saveFileDialog + "R", FileMode.Create);
-					XmlTextWriter writer = new XmlTextWriter(fs, Encoding.Unicode);
-					// Serialize using the XmlTextWriter.
-					writer.Formatting = Formatting.Indented;
-					xs.Serialize(writer, openStructModelR);
-					writer.Close();
-					fs.Close();
-				}
-				if (openMessages != null)
-				{
-					XmlSerializer xs = new XmlSerializer(typeof(OpenMessages));
-					Stream fs = new FileStream(saveFileDialog + "E", FileMode.Create);
-					XmlTextWriter writer = new XmlTextWriter(fs, Encoding.Unicode);
-					// Serialize using the XmlTextWriter.
-					writer.Formatting = Formatting.Indented;
-					xs.Serialize(writer, openMessages);
-					writer.Close();
-					fs.Close();
-				}
+        public async void ImportConnection(object param)
+        {
+            //Actions.Add("ImportConnection - calling GetActiveSelectionModel");
+            //var xmlString = FEA.GetActiveSelectionModelXML(IdeaRS.OpenModel.CountryCode.ECEN, RequestedItemsType.Connections);
+            //var modelFEA = Tools.ModelFromXml(xmlString);
+            //ModelFeaXml = xmlString;
+            //Actions.Add(string.Format("ImportConnection - recieved results {0}", modelFEA.Project));
+             
+            var result = await grpcClient.InvokeMethodAsync<string>("GetActiveSelectionModelXML", IdeaRS.OpenModel.CountryCode.ECEN, RequestedItemsType.Connections);
 
-				return true;
-			}
-			catch (Exception)
-			{
-				return false;
-			}
-		}
+            Actions.Add(result);
+        }
 
-		private void AutomationHosting_FEAStatusChanged(object sender, ISEventArgs e)
-		{
-			System.Windows.Application.Current.Dispatcher.BeginInvoke(
-				System.Windows.Threading.DispatcherPriority.Normal,
-				(Action)(() =>
-				{
-					FEAStatus = e.Status;
-					CommandManager.InvalidateRequerySuggested();
-					Actions.Add(string.Format("FEA Status Changed = {0}", e.Status));
-				}));
-		}
+        public bool CanImportMember(object param)
+        {
+            return grpcClient.IsConnected;
+        }
 
-		private void NotifyPropertyChanged([CallerMemberName] String propertyName = "")
-		{
-			PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-		}
+        public void ImportMember(object param)
+        {
+            Actions.Add("ImportMember - calling GetActiveSelectionModel");
+            var xmlString = FEA.GetActiveSelectionModelXML(IdeaRS.OpenModel.CountryCode.ECEN, RequestedItemsType.Substructure);
+            var modelFEA = Tools.ModelFromXml(xmlString);
+            ModelFeaXml = xmlString;
+            Actions.Add(string.Format("ImportMember - recieved results {0}", modelFEA.Project));
+        }
 
-		#region IDisposable Support
+        public bool CanShowXml(object param)
+        {
+            return !string.IsNullOrEmpty(ModelFeaXml);
+        }
 
-		private bool disposedValue = false; // To detect redundant calls
+        public void ShowXml(object param)
+        {
+            XmlViewerWnd viewer = new XmlViewerWnd();
+            viewer.DataContext = this;
+            viewer.ShowDialog();
+        }
 
-		protected virtual void Dispose(bool disposing)
-		{
-			if (!disposedValue)
-			{
-				if (disposing)
-				{
-					if (AutomationHosting != null)
-					{
-						AutomationHosting.Dispose();
-					}
-				}
+        public bool CanSaveXml(object param)
+        {
+            return !string.IsNullOrEmpty(ModelFeaXml);
+        }
 
-				// TODO: free unmanaged resources (unmanaged objects) and override a finalizer below.
-				// TODO: set large fields to null.
+        public void SaveXml(object param)
+        {
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            saveFileDialog.Filter = "XML Files | *.xml";
+            if (saveFileDialog.ShowDialog() == true)
+            {
+                var modelFEA = Tools.ModelFromXml(ModelFeaXml);
+                File.WriteAllText(saveFileDialog.FileName, ModelFeaXml);
+                //SaveToFiles(modelFEA.Model, modelFEA.Results, modelFEA.Messages, saveFileDialog.FileName);
+                //File.WriteAllText(saveFileDialog.FileName + "M", ModelFeaXml);
+            }
+        }
 
-				disposedValue = true;
-			}
-		}
+        protected bool SaveToFiles(OpenModel openStructModel, OpenModelResult openStructModelR, OpenMessages openMessages, string saveFileDialog)
+        {
+            try
+            {
+                {
+                    XmlSerializer xs = new XmlSerializer(typeof(OpenModel));
+                    Stream fs = new FileStream(saveFileDialog, FileMode.Create);
+                    XmlTextWriter writer = new XmlTextWriter(fs, Encoding.Unicode);
+                    // Serialize using the XmlTextWriter.
+                    writer.Formatting = Formatting.Indented;
+                    xs.Serialize(writer, openStructModel);
+                    writer.Close();
+                    fs.Close();
+                }
+                if (openStructModelR != null)
+                {
+                    XmlSerializer xs = new XmlSerializer(typeof(OpenModelResult));
 
-		// TODO: override a finalizer only if Dispose(bool disposing) above has code to free unmanaged resources.
-		// ~MainVM()
-		// {
-		//   // Do not change this code. Put cleanup code in Dispose(bool disposing) above.
-		//   Dispose(false);
-		// }
+                    Stream fs = new FileStream(saveFileDialog + "R", FileMode.Create);
+                    XmlTextWriter writer = new XmlTextWriter(fs, Encoding.Unicode);
+                    // Serialize using the XmlTextWriter.
+                    writer.Formatting = Formatting.Indented;
+                    xs.Serialize(writer, openStructModelR);
+                    writer.Close();
+                    fs.Close();
+                }
+                if (openMessages != null)
+                {
+                    XmlSerializer xs = new XmlSerializer(typeof(OpenMessages));
+                    Stream fs = new FileStream(saveFileDialog + "E", FileMode.Create);
+                    XmlTextWriter writer = new XmlTextWriter(fs, Encoding.Unicode);
+                    // Serialize using the XmlTextWriter.
+                    writer.Formatting = Formatting.Indented;
+                    xs.Serialize(writer, openMessages);
+                    writer.Close();
+                    fs.Close();
+                }
 
-		// This code added to correctly implement the disposable pattern.
-		public void Dispose()
-		{
-			// Do not change this code. Put cleanup code in Dispose(bool disposing) above.
-			Dispose(true);
-			// TODO: uncomment the following line if the finalizer is overridden above.
-			// GC.SuppressFinalize(this);
-		}
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
 
-		#endregion IDisposable Support
-	}
+        private void AutomationHosting_FEAStatusChanged(object sender, ISEventArgs e)
+        {
+            System.Windows.Application.Current.Dispatcher.BeginInvoke(
+                System.Windows.Threading.DispatcherPriority.Normal,
+                (Action)(() =>
+                {
+                    FEAStatus = e.Status;
+                    CommandManager.InvalidateRequerySuggested();
+                    Actions.Add(string.Format("FEA Status Changed = {0}", e.Status));
+                }));
+        }
+
+        private void NotifyPropertyChanged([CallerMemberName] String propertyName = "")
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+
+        #region IDisposable Support
+
+        private bool disposedValue = false; // To detect redundant calls
+
+        protected virtual void Dispose(bool disposing)
+        {
+            if (!disposedValue)
+            {
+                if (disposing)
+                {
+                    if (AutomationHosting != null)
+                    {
+                        AutomationHosting.Dispose();
+                    }
+                }
+
+                // TODO: free unmanaged resources (unmanaged objects) and override a finalizer below.
+                // TODO: set large fields to null.
+
+                disposedValue = true;
+            }
+        }
+
+        // TODO: override a finalizer only if Dispose(bool disposing) above has code to free unmanaged resources.
+        // ~MainVM()
+        // {
+        //   // Do not change this code. Put cleanup code in Dispose(bool disposing) above.
+        //   Dispose(false);
+        // }
+
+        // This code added to correctly implement the disposable pattern.
+        public void Dispose()
+        {
+            // Do not change this code. Put cleanup code in Dispose(bool disposing) above.
+            Dispose(true);
+            // TODO: uncomment the following line if the finalizer is overridden above.
+            // GC.SuppressFinalize(this);
+        }
+
+        #endregion IDisposable Support
+    }
 }
