@@ -138,7 +138,7 @@ namespace IdeaStatiCaFake
             //var modelFEA = Tools.ModelFromXml(xmlString);
             //ModelFeaXml = xmlString;
             //Actions.Add(string.Format("ImportConnection - recieved results {0}", modelFEA.Project));
-             
+            
             var result = await grpcClient.InvokeMethodAsync<string>("GetActiveSelectionModelXML", IdeaRS.OpenModel.CountryCode.ECEN, RequestedItemsType.Connections);
 
             Actions.Add(result);
