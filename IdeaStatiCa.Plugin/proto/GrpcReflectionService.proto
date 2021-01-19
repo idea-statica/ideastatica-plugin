@@ -5,7 +5,7 @@ import "google/protobuf/any.proto";
 option csharp_namespace = "IdeaStatiCa.Plugin.gRPC";
 
 service GrpcService {
-	rpc Connect(stream GrpcMessage) returns (stream GrpcMessage);
+	rpc ConnectAsync(stream GrpcMessage) returns (stream GrpcMessage);
 }
 
 message GrpcMessage {

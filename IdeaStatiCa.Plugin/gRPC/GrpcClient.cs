@@ -98,7 +98,7 @@ namespace IdeaStatiCa.Plugin.gRPC
 
                 var serviceClient = new GrpcService.GrpcServiceClient(channel);
 
-                client = serviceClient.Connect();
+                client = serviceClient.ConnectAsync();
                 IsConnected = true;
 
                 ClientConnected?.Invoke(this, EventArgs.Empty);
