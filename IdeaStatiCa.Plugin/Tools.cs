@@ -14,14 +14,13 @@ namespace IdeaStatiCa.Plugin
 			return SerializeModel(model, xs);
 		}
 
-		public static string OpenModelTupleToXml(IdeaRS.OpenModel.OpenModelContainer model)
+		public static string OpenModelContainerToXml(IdeaRS.OpenModel.OpenModelContainer model)
 		{
-			XmlSerializer xs = new XmlSerializer(typeof(List<IdeaRS.OpenModel.OpenModelContainer>));
+			XmlSerializer xs = new XmlSerializer(typeof(IdeaRS.OpenModel.OpenModelContainer));
 			return SerializeModel(model, xs);
 		}
 
-
-		public static IdeaRS.OpenModel.OpenModelContainer OpenModelTupleFromXml(string xml)
+		public static IdeaRS.OpenModel.OpenModelContainer OpenModelContainerFromXml(string xml)
 		{
 			var serializer = new XmlSerializer(typeof(IdeaRS.OpenModel.OpenModelContainer));
 			IdeaRS.OpenModel.OpenModelContainer iomTuple = serializer.Deserialize(new MemoryStream(Encoding.Unicode.GetBytes(xml))) as IdeaRS.OpenModel.OpenModelContainer;

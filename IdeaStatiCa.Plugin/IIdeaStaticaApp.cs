@@ -84,7 +84,7 @@ namespace IdeaStatiCa.Plugin
 		/// Get structural data and corresponding results of FE analysi for <paramref name="connectionId"/>
 		/// </summary>
 		/// <param name="connectionId">Identifier of the required connection</param>
-		/// <returns>XML string which prepresents the instance of of IdeaRS.OpenModel.OpenModelTuple (stuctural data and results of FE analysis)</returns>
+		/// <returns>XML string which prepresents the instance of of IdeaRS.OpenModel.OpenModelContainer (stuctural data and results of FE analysis)</returns>
 		[OperationContract]
 		string GetAllConnectionData(int connectionId);
 	}
