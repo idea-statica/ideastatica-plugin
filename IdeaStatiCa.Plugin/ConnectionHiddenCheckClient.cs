@@ -113,6 +113,31 @@ namespace IdeaStatiCa.Plugin
 			return Service.AddBoltAssembly(boltAssemblyName);
 		}
 
+		public string GetParametersJSON(string connectionId)
+		{
+			return Service.GetParametersJSON(connectionId);
+		}
+
+		public string ApplyParameters(string connectionId, string parametersJSON)
+		{
+			return Service.ApplyParameters(connectionId, parametersJSON);
+		}
+
+		public string GetConnectionLoadingJSON(string connectionId)
+		{
+			return Service.GetConnectionLoadingJSON(connectionId);
+		}
+
+		public string UpdateLoadingFromJson(string connectionId, string loadingJSON)
+		{
+			return Service.UpdateLoadingFromJson(connectionId, loadingJSON);
+		}
+
+		public string GetCheckResultsJSON(string connectionId)
+		{
+			return Service.GetCheckResultsJSON(connectionId);
+		}
+
 		protected IConnHiddenCheck Service => base.Channel;
 	}
 }

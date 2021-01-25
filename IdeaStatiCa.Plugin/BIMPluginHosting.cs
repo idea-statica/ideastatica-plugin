@@ -215,13 +215,13 @@ namespace IdeaStatiCa.Plugin
 
 				if (!SyncEvent.WaitOne(OpenServerTimeLimit))
 				{
-					throw new CommunicationException(string.Format("Can not start '{0}'", exePath));
+					throw new CommunicationException(string.Format("Start of '{0}' failed with timeout.", exePath));
 				}
 
 				if(connectionProc.HasExited)
 				{
 					// IDEA StatiCa process is not running
-					throw new CommunicationException(string.Format("Can not start '{0}'", exePath));
+					throw new CommunicationException(string.Format("Application '{0}' has exited unexpectedly.", exePath));
 				}
 			}
 			finally
