@@ -109,9 +109,9 @@ namespace IdeaStatiCa.Plugin
 				{
 					RunServer(id, token);
 				}
-				catch(Exception e)
+				catch (Exception ex)
 				{
-					ideaLogger.LogError("RunAsync  RunServer failed", e);
+					ideaLogger.LogError("method: RunAsync; RunServer failed", ex);
 					throw;
 				}
 			}, token);
@@ -144,7 +144,7 @@ namespace IdeaStatiCa.Plugin
 
 		protected virtual void RunServer(string id, System.Threading.CancellationToken cancellationToken)
 		{
-			ideaLogger.LogInformation("Calling RunServer");
+			ideaLogger.LogDebug($"method: RunServer id = {id}");
 
 			mre.Reset();
 
@@ -155,7 +155,7 @@ namespace IdeaStatiCa.Plugin
 				try
 				{
 					myAutomatingProcessId = int.Parse(id);
-					ideaLogger.LogInformation($"RunServer - processId == '{myAutomatingProcessId}'");
+					ideaLogger.LogDebug($"RunServer - processId == '{myAutomatingProcessId}'");
 
 					bimProcess = Process.GetProcessById(myAutomatingProcessId);
 					bimProcess.EnableRaisingEvents = true;
@@ -175,6 +175,7 @@ namespace IdeaStatiCa.Plugin
 						Thread.Sleep(100);
 						if (counter > 200)
 						{
+							ideaLogger.LogDebug($"method: RunServer;  Can not open client '{feaPluginUrl}', attempts {counter}");
 							throw new CommunicationException("Can not open client");
 						}
 						counter++;
@@ -192,9 +193,9 @@ namespace IdeaStatiCa.Plugin
 					Status |= AutomationStatus.IsClient;
 					isBimRunning = true;
 				}
-				catch (Exception e)
+				catch (Exception ex)
 				{
-					ideaLogger.LogError("Can not attach to BIM application", e);
+					ideaLogger.LogError("Can not attach to BIM application", ex);
 					throw;
 				}
 			}
@@ -217,7 +218,7 @@ namespace IdeaStatiCa.Plugin
 			int myProcessId = myProcess.Id;
 
 			string baseAddress = string.Format(AutomationUrlFormat, myProcessId);
-			ideaLogger.LogInformation($"RunServer - Starting Automation service listening on '{baseAddress}'");
+			ideaLogger.LogDebug($"RunServer - Starting Automation service listening on '{baseAddress}'");
 
 			// expose my IAutomation interface
 			using (ServiceHost selfServiceHost = new ServiceHost(automation, new Uri(baseAddress)))
@@ -242,6 +243,7 @@ namespace IdeaStatiCa.Plugin
 				{
 					// notify plugin that service is running
 					string myEventName = string.Format("{0}{1}", EventName, id);
+					ideaLogger.LogTrace($"Trying to open the event  {myEventName}");
 					EventWaitHandle syncEvent;
 					if (EventWaitHandle.TryOpenExisting(myEventName, out syncEvent))
 					{
@@ -264,7 +266,7 @@ namespace IdeaStatiCa.Plugin
 					Thread.Sleep(100);
 				}
 
-				ideaLogger.LogInformation($"RunServer - Automation Service has been stopped");
+				ideaLogger.LogDebug($"RunServer - Automation Service has been stopped");
 
 				try
 				{

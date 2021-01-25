@@ -135,5 +135,49 @@ namespace IdeaStatiCa.Plugin
 		/// <returns></returns>
 		[OperationContract]
 		int AddBoltAssembly(string boltAssemblyName);
+
+		/// <summary>
+		/// Get list of parameters in JSON format for <paramref name="connectionId"/>
+		/// <see href="https://idea-statica.github.io/iom/iom-api/latest/html/N_IdeaRS_OpenModel_Parameters.htm">IOM Parameters</see>
+		/// </summary>
+		/// <param name="connectionId">Id of the parameter</param>
+		/// <returns></returns>
+		[OperationContract]
+		string GetParametersJSON(string connectionId);
+
+		/// <summary>
+		/// Apply <paramref name="parametersJSON"/> on connection<paramref name="connectionId"/>
+		/// <see href="https://idea-statica.github.io/iom/iom-api/latest/html/N_IdeaRS_OpenModel_Parameters.htm">IOM Parameters</see>
+		/// </summary>
+		/// <param name="connectionId">Id of the parameter</param>
+		/// <param name="parametersJSON">JSON string including parameters</param>
+		/// <returns></returns>
+		[OperationContract]
+		string ApplyParameters(string connectionId, string parametersJSON);
+
+		/// <summary>
+		/// Get loading for connection <paramref name="connectionId"/> (List of CalcCaseData)
+		/// </summary>
+		/// <param name="connectionId">Id of the parameter</param>
+		/// <returns></returns>
+		[OperationContract]
+		string GetConnectionLoadingJSON(string connectionId);
+
+		/// <summary>
+		/// Set loading for the connection
+		/// </summary>
+		/// <param name="connectionId">Id of the connection</param>
+		/// <param name="loadingJSON">JSON including list of CalcCaseData</param>
+		/// <returns></returns>
+		[OperationContract]
+		string UpdateLoadingFromJson(string connectionId, string loadingJSON);
+
+		/// <summary>
+		/// Get the details results of the connection <paramref name="connectionId"/>
+		/// </summary>
+		/// <param name="connectionId">Id of the connection</param>
+		/// <returns>Json which represents </returns>
+		[OperationContract]
+		string GetCheckResultsJSON(string connectionId);
 	}
 }
