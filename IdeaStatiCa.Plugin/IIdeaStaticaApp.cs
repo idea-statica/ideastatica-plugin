@@ -18,6 +18,9 @@ namespace IdeaStatiCa.Plugin
 
 		[DataMember]
 		public string Name { get; set; }
+
+		[DataMember]
+		public string GroupId { get; set; }
 	}
 
 	/// <summary>
