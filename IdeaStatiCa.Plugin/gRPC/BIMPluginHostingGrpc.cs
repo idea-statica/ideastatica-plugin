@@ -10,12 +10,12 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace IdeaStatiCa.Plugin.gRPC
+namespace IdeaStatiCa.Plugin
 {
     /// <summary>
     /// gRPC Implementation of <see cref="BIMPluginHosting"/>
     /// </summary>
-    public class BIMPluginHostingRpc : IBIMPluginHosting, IDisposable
+    public class BIMPluginHostingGrpc : IBIMPluginHosting, IDisposable
     {
         private GrpcReflectionServer grpcServer;
         private CancellationTokenSource tokenSource;
@@ -59,7 +59,7 @@ namespace IdeaStatiCa.Plugin.gRPC
 		readonly TimeSpan OpenServerTimeLimit = TimeSpan.FromMinutes(1);
 #endif
 
-        public BIMPluginHostingRpc(IBIMPluginFactory factory, string eventName = Constants.DefaultPluginEventName)
+        public BIMPluginHostingGrpc(IBIMPluginFactory factory, string eventName = Constants.DefaultPluginEventName)
         {
             mre = new ManualResetEvent(false);
             bimPluginFactory = factory;            

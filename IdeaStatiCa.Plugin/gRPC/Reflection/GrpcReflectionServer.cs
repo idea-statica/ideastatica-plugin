@@ -18,7 +18,7 @@ namespace IdeaStatiCa.Plugin.gRPC.Reflection
         /// <param name="port">Port on which server will run.</param>
         public GrpcReflectionServer(object instance, int port) : base(port)
         {
-            RegisterHandler(GrpcReflectionHandler.GRPC_REFLECTION_HANDLER_MESSAGE, new GrpcReflectionHandler(instance));
+            RegisterHandler(GrpcReflectionMessageHandler.GRPC_REFLECTION_HANDLER_MESSAGE, new GrpcReflectionMessageHandler(instance));
         }
     }
 }

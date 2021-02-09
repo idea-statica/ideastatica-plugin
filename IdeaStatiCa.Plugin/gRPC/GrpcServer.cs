@@ -107,7 +107,7 @@ namespace IdeaStatiCa.Plugin.gRPC
         /// <param name="requestStream">Data incoming from client</param>
         /// <param name="responseStream">Data sent to client</param>
         /// <returns></returns>
-        public async override Task ConnectAsync(IAsyncStreamReader<GrpcMessage> requestStream, IServerStreamWriter<GrpcMessage> responseStream, ServerCallContext context)
+        public async override Task Connect(IAsyncStreamReader<GrpcMessage> requestStream, IServerStreamWriter<GrpcMessage> responseStream, ServerCallContext context)
         {
             if(!await requestStream.MoveNext())
             {

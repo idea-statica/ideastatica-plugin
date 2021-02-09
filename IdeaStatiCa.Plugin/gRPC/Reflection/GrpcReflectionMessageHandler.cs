@@ -10,17 +10,17 @@ namespace IdeaStatiCa.Plugin.gRPC.Reflection
     /// <summary>
     /// Handler that invokes methods for specified object over gRPC via reflection.
     /// </summary>
-    public class GrpcReflectionHandler : IGrpcMessageHandler<object>
+    public class GrpcReflectionMessageHandler : IGrpcMessageHandler<object>
     {
         public const string GRPC_REFLECTION_HANDLER_MESSAGE = "Grpc.Handlers.Reflection";
 
         private object instance;
 
         /// <summary>
-        /// Initializes new <see cref="GrpcReflectionHandler"/>
+        /// Initializes new <see cref="GrpcReflectionMessageHandler"/>
         /// </summary>
         /// <param name="instance">Instance for which the messages will be handled.</param>
-        public GrpcReflectionHandler(object instance)
+        public GrpcReflectionMessageHandler(object instance)
         {
             if(instance == null)
             {

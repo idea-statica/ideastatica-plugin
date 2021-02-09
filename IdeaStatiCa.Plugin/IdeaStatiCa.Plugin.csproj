@@ -41,6 +41,7 @@
     <NoWarn>1701;1702;1591</NoWarn>
   </PropertyGroup>
   <ItemGroup>
+    <PackageReference Include="Castle.Windsor" Version="5.1.1" />
     <PackageReference Include="Google.Protobuf" Version="3.14.0" />
     <PackageReference Include="Grpc" Version="2.35.0-pre1" />
     <PackageReference Include="Grpc.Core" Version="2.35.0-pre1" />
@@ -50,6 +51,7 @@
     </PackageReference>
     <PackageReference Include="IdeaStatiCa.Diagnostics" Version="20.1.2" />
     <PackageReference Include="IdeaStatiCa.OpenModel" Version="20.1.11" />
+    <PackageReference Include="Nito.AsyncEx.Context" Version="5.1.0" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System.ServiceModel" />

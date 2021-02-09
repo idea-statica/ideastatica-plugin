@@ -24,7 +24,7 @@ namespace IdeaStatiCaFake
     {
         private GrpcReflectionClient grpcClient;
 
-        private AutomationHosting<IAutomation, IApplicationBIM> AutomationHosting { get; set; }
+        private AutomationHostingGrpc<IAutomation, IApplicationBIM> AutomationHosting { get; set; }
         private IApplicationBIM FEA
         { 
             get { return AutomationHosting?.MyBIM; } 
@@ -80,12 +80,12 @@ namespace IdeaStatiCaFake
                     }
                 }
 
-                if (!string.IsNullOrEmpty(clientId))
+                if (!string.IsNullOrEmpty(clientId) && grpcEnabled)
                 {
-                    //Actions.Add(string.Format("Starting Automation clientid = {0}", clientId));
-                    //AutomationHosting = new AutomationHosting<IAutomation, IApplicationBIM>(new AutomationService<IApplicationBIM>());
-                    //AutomationHosting.BIMStatusChanged += new ISEventHandler(AutomationHosting_FEAStatusChanged);
-                    //AutomationHosting.RunAsync(clientId);
+                    Actions.Add(string.Format("Starting Automation clientid = {0}", clientId));
+                    AutomationHosting = new AutomationHostingGrpc<IAutomation, IApplicationBIM>(new AutomationService<IApplicationBIM>(), grpcPort);
+                    AutomationHosting.BIMStatusChanged += new ISEventHandler(AutomationHosting_FEAStatusChanged);
+                    AutomationHosting.RunAsync(clientId);
                 }
 
                 if(grpcEnabled)
@@ -131,17 +131,13 @@ namespace IdeaStatiCaFake
             return grpcClient.IsConnected;
         }
 
-        public async void ImportConnection(object param)
+        public void ImportConnection(object param)
         {
-            //Actions.Add("ImportConnection - calling GetActiveSelectionModel");
-            //var xmlString = FEA.GetActiveSelectionModelXML(IdeaRS.OpenModel.CountryCode.ECEN, RequestedItemsType.Connections);
-            //var modelFEA = Tools.ModelFromXml(xmlString);
-            //ModelFeaXml = xmlString;
-            //Actions.Add(string.Format("ImportConnection - recieved results {0}", modelFEA.Project));
-            
-            var result = await grpcClient.InvokeMethodAsync<string>("GetActiveSelectionModelXML", IdeaRS.OpenModel.CountryCode.ECEN, RequestedItemsType.Connections);
-
-            Actions.Add(result);
+            Actions.Add("ImportConnection - calling GetActiveSelectionModel");
+            var xmlString = FEA.GetActiveSelectionModelXML(IdeaRS.OpenModel.CountryCode.ECEN, RequestedItemsType.Connections);
+            var modelFEA = Tools.ModelFromXml(xmlString);
+            ModelFeaXml = xmlString;
+            Actions.Add(string.Format("ImportConnection - recieved results {0}", modelFEA.Project));
         }
 
         public bool CanImportMember(object param)

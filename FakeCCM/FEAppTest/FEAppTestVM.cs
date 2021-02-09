@@ -73,7 +73,7 @@ namespace FEAppTest
 		{
 			var factory = new PluginFactory(this);
 			// use gRPC instead of wcf
-			feaAppHosting = new BIMPluginHostingRpc(factory);
+			feaAppHosting = new BIMPluginHostingGrpc(factory);
 			feaAppHosting.AppStatusChanged += new ISEventHandler(IdeaStaticAppStatusChanged);
 			var id = Process.GetCurrentProcess().Id.ToString();
 

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using IdeaStatiCa.Plugin.gRPC.Reflection;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,6 +13,20 @@ namespace IdeaStatiCa.Plugin.Tests.gRPC
         Value2
     }
 
+    [GrpcReflectionService]
+    public interface IGrpcMockClass
+    {
+        [GrpcReflectionMethod]
+        Task<string> TestMethod(string param1,
+            int param2,
+            short param3,
+            bool param4,
+            GrpcMockEnum param5,
+            GrpcMockSubClass param6);
+
+        string SampleValue();
+    }
+
     public class GrpcMockSubClass
     {
         public string Title { get; set; }
@@ -21,21 +36,26 @@ namespace IdeaStatiCa.Plugin.Tests.gRPC
         public GrpcMockSubClass Child { get; set; }
     }
 
-    public class GrpcMockClass
+    public class GrpcMockClass: IGrpcMockClass
     {
         public string Value { get; set; }
 
         public async Task<string> TestMethod(
-            string param1, 
-            int param2, 
-            short param3, 
-            bool param4, 
-            GrpcMockEnum param5, 
+            string param1,
+            int param2,
+            short param3,
+            bool param4,
+            GrpcMockEnum param5,
             GrpcMockSubClass param6)
         {
             await Task.Delay(10);
 
             return Value;
+        }
+
+        public string SampleValue()
+        {
+            return "Here";
         }
     }
 }

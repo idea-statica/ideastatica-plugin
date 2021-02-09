@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace IdeaStatiCa.Plugin.gRPC.Reflection
 {
     /// <summary>
-    /// Client for the <see cref="GrpcReflectionHandler"/> enabled <see cref="GrpcClient"/>
+    /// Client for the <see cref="GrpcReflectionMessageHandler"/> enabled <see cref="GrpcClient"/>
     /// </summary>
     public class GrpcReflectionClient
     {
@@ -39,6 +39,15 @@ namespace IdeaStatiCa.Plugin.gRPC.Reflection
         }
 
         /// <summary>
+        /// Disconnects client from the server.
+        /// </summary>
+        /// <returns></returns>
+        public async Task DisconnectAsync()
+        {
+            await client.DisconnectAsync();
+        }
+
+        /// <summary>
         /// Invokes remote method over gRPC via reflection.
         /// </summary>
         /// <typeparam name="T">Type to which the result will be converted.</typeparam>
@@ -54,10 +63,27 @@ namespace IdeaStatiCa.Plugin.gRPC.Reflection
                 Parameters = parsedArgs
             };
             var data = JsonConvert.SerializeObject(request);
-            var response = await client.SendMessageSync(GrpcReflectionHandler.GRPC_REFLECTION_HANDLER_MESSAGE, data);
+            var response = await client.SendMessageSync(GrpcReflectionMessageHandler.GRPC_REFLECTION_HANDLER_MESSAGE, data);
 
             // hadnle response
             var responseData = JsonConvert.DeserializeObject<T>(response.Data);
+
+            return responseData;
+        }
+
+        public async Task<object> InvokeMethodAsync(Type returnType, string methodName, params object[] arguments)
+        {
+            var parsedArgs = ReflectionHelper.GetMethodInvokeArguments(arguments);
+            var request = new GrpcReflectionInvokeData()
+            {
+                MethodName = methodName,
+                Parameters = parsedArgs
+            };
+            var data = JsonConvert.SerializeObject(request);
+            var response = await client.SendMessageSync(GrpcReflectionMessageHandler.GRPC_REFLECTION_HANDLER_MESSAGE, data);
+
+            // hadnle response
+            var responseData = JsonConvert.DeserializeObject(response.Data, returnType);
 
             return responseData;
         }

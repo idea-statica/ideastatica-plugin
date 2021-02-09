@@ -69,12 +69,12 @@ namespace IdeaStatiCa.Plugin.Tests
                 Value = "SampleValue"
             };
             var grpcServer = new GrpcReflectionServer(instance, port);
-            var grpcClient = new GrpcReflectionClient(clientId, port);
+            var grpcClient = new GrpcServiceBasedReflectionClient<IGrpcMockClass>(clientId, port);
 
             grpcServer.Start();
             await grpcClient.ConnectAsync();
 
-            var value = await grpcClient.InvokeMethodAsync<string>("TestMethod", "param", int.MaxValue, short.MaxValue, true, GrpcMockEnum.Value2, new GrpcMockSubClass()
+            var value = await grpcClient.Service.TestMethod("param", int.MaxValue, short.MaxValue, true, GrpcMockEnum.Value2, new GrpcMockSubClass()
             {
                 Title = "First",
                 ID = 1,
@@ -85,7 +85,10 @@ namespace IdeaStatiCa.Plugin.Tests
                 }
             });
 
+            var anotherValue = grpcClient.Service.SampleValue();
+
             Assert.AreEqual(value, "SampleValue");
+            Assert.AreEqual("Here", anotherValue);
         }
     }
 }
