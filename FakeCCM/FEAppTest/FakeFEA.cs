@@ -15,7 +15,11 @@ namespace FEAppTest
 			this.log = log;
 		}
 
-		public ModelBIM FeaModel { get => feaModel; set => feaModel = value; }
+		public ModelBIM FeaModel
+		{
+			get => feaModel;
+			set => feaModel = value;
+		}
 
 		protected override string ApplicationName => "My FEA";
 

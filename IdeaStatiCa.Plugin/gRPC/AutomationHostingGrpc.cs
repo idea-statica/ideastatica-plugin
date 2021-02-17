@@ -139,7 +139,19 @@ namespace IdeaStatiCa.Plugin
                 grpcClient = new GrpcServiceBasedReflectionClient<ClientInterface>(id, GrpcPort);                
                 grpcClient.ConnectAsync().WaitAndUnwrapException();
 
-                Status |= AutomationStatus.IsClient;
+        if (!string.IsNullOrEmpty(id))
+        {
+          // notify plugin that service is running
+          string myEventName = string.Format("{0}{1}", EventName, id);
+          EventWaitHandle syncEvent;
+          if (EventWaitHandle.TryOpenExisting(myEventName, out syncEvent))
+          {
+            syncEvent.Set();
+            syncEvent.Dispose();
+          }
+        }
+
+        Status |= AutomationStatus.IsClient;
                 isBimRunning = true;
             }
 
