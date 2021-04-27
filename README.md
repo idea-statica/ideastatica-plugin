@@ -1,4 +1,4 @@
-# Version 21 was moved to the new repository [ideastatica-public](https://github.com/idea-statica/ideastatica-public)
+## Version 21 was moved to the new repository [ideastatica-public](https://github.com/idea-statica/ideastatica-public)
 
 ## IdeaStatiCa.Plugin for version 20.1 and older
 is the gateway to IDEA StatiCa. It includes classes which allows communication and controlling IDEA StatiCa applications. It also includes classes which provides IDEA StatiCa services to other applications.
